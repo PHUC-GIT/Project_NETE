@@ -1,4 +1,4 @@
-<img width="900" height="585" alt="Netscape-redesign-RE-VER2" src="https://github.com/user-attachments/assets/a99015db-e3f6-4388-ad1b-9532da5b9730" />
+<img width="900" height="585" alt="Netscape-redesign-RE-VER2" src="https://github.com/user-attachments/assets/2b3a2e0d-bddb-4ebf-8571-cd0d6b04a3a6" />
 
 # NET.E: Crystal Gems  
 ### The Ultimate Low-Quality File Server (That shouldn't work, yet it is.)
