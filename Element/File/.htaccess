@@ -1,0 +1,5 @@
+LimitRequestBody 1610612736
+php_value post_max_size 1536M
+php_value upload_max_filesize 1536M
+php_value memory_limit 1536M
+php_value max_execution_time 500

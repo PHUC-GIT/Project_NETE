@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /Element/
+Disallow: /Fonts/
+Disallow: /JS/
+Disallow: /Resource/
+Disallow: /Style/

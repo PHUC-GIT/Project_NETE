@@ -1,0 +1,53 @@
+<?php
+    $s = '../../Element/Database/database.php';
+    if (file_exists($s)){
+        $f=$s;
+    } else {
+        $f = './Element/Database/database.php';
+    }
+    require_once $f;
+
+    class report extends database{
+        private function getUserIP(): string {
+            // Only trust X_FORWARDED_FOR if behind a trusted proxy
+            if (!empty($_SERVER['HTTP_CLIENT_IP']) && filter_var($_SERVER['HTTP_CLIENT_IP'], FILTER_VALIDATE_IP)) {
+                $ip = $_SERVER['HTTP_CLIENT_IP'];
+            } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+                $ipList = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+                $ip = 'Unknown';
+                foreach ($ipList as $candidateIp) {
+                    $candidateIp = trim($candidateIp);
+                    // Use the first valid, public IP found (or just the first valid one)
+                    if (filter_var($candidateIp, FILTER_VALIDATE_IP)) {
+                        $ip = $candidateIp;
+                        break; 
+                    }
+                }
+            } else {
+                $ip = $_SERVER['REMOTE_ADDR'] ?? 'Unknown';
+            }
+            // Final sanity check and sanitization before returning
+            return filter_var($ip, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        }
+
+        public function report_in($cause, $user): bool {
+            // Use the new private method
+            $ip = $this->getUserIP();
+            $report = $this->connect->prepare("INSERT INTO report (cause, user, IP) VALUES (?,?,?)");
+            $report->execute(array($cause, $user, $ip));
+            return $report->rowCount() > 0;
+        }
+
+        public function listreport(){
+            $getList=$this->connect->prepare("SELECT * FROM report");
+            $getList->execute();
+            return $getList->fetchAll(PDO::FETCH_OBJ);
+        }
+
+        public function listallfile(){
+            $allPDF=$this->connect->prepare("SELECT files.*, user.username FROM files JOIN user ON files.Uploader = user.iduser");
+            $allPDF->execute();
+            return $allPDF->fetchAll(PDO::FETCH_OBJ);
+        }
+    }
+?>

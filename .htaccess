@@ -1,0 +1,2 @@
+RedirectMatch 403 /server-status
+RedirectMatch 403 /server-info
