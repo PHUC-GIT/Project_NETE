@@ -85,7 +85,7 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             NET.ESCAPE CRYSTAL GEMS © 2024-2026 ALL RIGHTS RESERVED<br>
             Release: v1.0 — Build 108.03032026<br> <!-- Away remember to changing this when you mess something in source. -->
             <br>
-            GitHub Page: <a class="Custom_Link" href="https://github.com/PHUC-GIT/Project_NET.E" target="_blank">Project_NET.E</a>
+            GitHub Page: <a class="Custom_Link" href="https://github.com/PHUC-GIT/Project_NETE" target="_blank">Project_NET.E</a>
             <br>
             <details>
             <summary>
