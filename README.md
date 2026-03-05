@@ -70,13 +70,14 @@ It's already have Admin user inside.
 Place in:  
 `Element/Database/Database_Config/config.ini`  
 
-**Do NOT commit this file to Git.**
-
+config.ini for example
+"
 [section]
 servername = 127.0.0.1
 dbname = your_db << It's your DB name when import the DB.
 username = root
 pass = null << if you don't have password
+"
 
 
 ### 3. Set Apache/PHP Hardening (optional but recommended)
@@ -92,7 +93,7 @@ expose_php = Off
 To find the admin login page you need to access by `https://[yoursite]/login_admin.php`
 and verify your key file here. The default key can be find in the Extra folder. Changing default admin key is recommended.
 
-### 5. Additional SetupSetup
+### 5. Additional Setup
 Please reference to "note" in this repo if you want to learn how to manage user and extra configure.
 
 ---
