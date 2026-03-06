@@ -51,9 +51,10 @@ Users can be managed via the **Admin GUI** inside the app.
 > ⚠️ **User deletion requires manual action:**
 1. Delete all associated file references in the database
 2. Delete all associated notes in the database
-3. Delete all reference database entries
-4. Finally delete the user's physical files folder
-   *(Remember the hashed folder name to avoid mistakes)*
+3. Delete all user preference database entries
+4. Delete User in User table
+5. Finally delete the user's physical files folder located inside `User_Data\` folder
+   *(Remember the user hashed folder name to avoid mistakes)*
 
 **Storage allocation values for `storage_allocated` column:**
 | Value | Size | Usage |
