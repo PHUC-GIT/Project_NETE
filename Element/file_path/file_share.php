@@ -3,7 +3,7 @@
     <?php
     // Check if someone direct URL without index.php
     if (!defined('NETE_INTEGRITY_CHECK')) {
-        header('location: /Index.php');
+        header('location: ../../Index.php');
         die;
     }
     define('RECHECK_FILE_STATUS_TIMER', 30 * 24 * 60 * 60);

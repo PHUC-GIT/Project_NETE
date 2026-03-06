@@ -2,7 +2,7 @@
 <?php
 // Check if someone direct URL without index.php
 if (!defined('NETE_INTEGRITY_CHECK')) {
-    header('location: /Index.php');
+    header('location: ../../Index.php');
     die;
 }
 ?>
@@ -80,10 +80,10 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
     <div class="flex_div span_container">
         <span>
             ABOUT<br>
-            Made By: PHUC-GIT<br>
+            Made By: <a class="Custom_Link" href="https://github.com/PHUC-GIT" target="_blank">PHUC-GIT</a><br>
             <br>
-            NET.ESCAPE CRYSTAL GEMS © 2024-2026 ALL RIGHTS RESERVED<br>
-            Release: v1.0 — Build 108.03032026<br> <!-- Away remember to changing this when you mess something in source. -->
+            NET.ESCAPE CRYSTAL GEMS © 2024-2026 ALL RIGHT RESERVED<br>
+            Release: v1.0.1 - Build: 109.06032026<br> <!-- Away remember to changing this when you mess something in source. -->
             <br>
             GitHub Page: <a class="Custom_Link" href="https://github.com/PHUC-GIT/Project_NETE" target="_blank">Project_NET.E</a>
             <br>

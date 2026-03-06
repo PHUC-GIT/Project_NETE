@@ -14,7 +14,7 @@ class database {
       session_regenerate_id(true);
       if (!headers_sent()) {
           $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "System unable to processe your info.");
-          header('Location: /index.php');
+          header('Location: ../../index.php');
       }
       exit;
   }

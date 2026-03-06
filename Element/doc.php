@@ -3,7 +3,7 @@
     <?php
     // Check if someone direct URL without index.php
     if (!defined('NETE_INTEGRITY_CHECK')) {
-        header('location: /Index.php');
+        header('location: ../Index.php');
         die;
     }
     define('RECHECK_FILE_STATUS_TIMER', 30 * 24 * 60 * 60);
@@ -203,6 +203,14 @@
             margin: 0;
             padding: 5px;
             font-size: 1.5rem;
+        }
+
+        .Card_Text {
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
 
         .outline {
@@ -492,12 +500,11 @@
 
         .Card_File_Add {
             width: 50%;
-            height: 150px;
+            height: 250px;
             border-radius: 10px;
             background-color: rgba(0, 0, 0, 0.5);
             fill: gray;
             border: 1px solid gray;
-            display: inline-block;
             margin-top: 10px;
             margin-left: auto;
             margin-right: auto;
@@ -786,9 +793,9 @@
                     <?php
                 }
                 ?>
-                    <div class="Card_File_Add" style="display: flex; justify-content: center; align-items: center;">
-                        <svg width="100" height="200" version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><linearGradient id="a" x1="3.5801" x2="24.585" y1="30.194" y2="5.2285" gradientUnits="userSpaceOnUse"><stop stop-color="#0072ff" offset="0"/><stop stop-color="#98c5ff" offset="1"/></linearGradient></defs><path d="m20.48 1.7988h-16.078c-.65079 0-1.1738.52304-1.1738 1.1738v26.381c0 .65079.52304 1.1758 1.1738 1.1758h23.113c.65079 0 1.1738-.525 1.1738-1.1758v-20.695l-8.209-6.8594z" fill="url(#a)" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width=".7"/><path d="m28.69 8.6582-8.209-6.8594v5.6855c0 .65079.52304 1.1738 1.1738 1.1738z" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width=".7"/><path transform="translate(2.3907 1.3895)" d="m21.459 17.042-6.2203 1.67-1.67 6.2203-1.67-6.2203-6.2203-1.67 6.2203-1.67 1.67-6.2203 1.67 6.2203z" fill="#fff" stroke-linejoin="bevel" stroke-width="1.868" style="paint-order:stroke fill markers"/></svg>
-                        <h2>Use "Upload Button" to upload file!</h2>
+                    <div class="Card_File_Add" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <svg width="300" height="400" version="1.1" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><linearGradient id="d"><stop stop-color="#fff" offset="0"/><stop stop-color="#fff" stop-opacity="0" offset="1"/></linearGradient><linearGradient id="e" x1="18.815" x2="18.815" y1="36.03" y2="-6.5562" gradientTransform="matrix(2.66 0 0 2.66 25.604 17.44)" gradientUnits="userSpaceOnUse"><stop stop-color="#cecece" offset="0"/><stop stop-color="#404040" stop-opacity="0" offset="1"/></linearGradient><linearGradient id="f" x1="73.419" x2="73.419" y1="21.788" y2="120.33" gradientTransform="translate(0 1.6792)" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" offset="0"/><stop stop-color="#404040" stop-opacity="0" offset="1"/></linearGradient><mask id="c" maskUnits="userSpaceOnUse"><rect width="120" height="120" ry=".29814" fill="url(#a)" style="paint-order:stroke fill markers"/></mask><linearGradient id="a" x1="60" x2="60" y1="21.788" y2="88.075" gradientTransform="translate(1.5173e-6)" gradientUnits="userSpaceOnUse" xlink:href="#d"/><mask id="b" maskUnits="userSpaceOnUse"><rect width="120" height="120" ry=".29814" fill="url(#a)" style="paint-order:stroke fill markers"/></mask></defs><g><path d="m85.924 21.788h-42.768c-1.7311 0-3.1224 1.3913-3.1224 3.1224v70.174c0 1.7311 1.3913 3.1276 3.1224 3.1276h61.482c1.7311 0 3.1224-1.3965 3.1224-3.1276v-55.05z" fill="url(#e)" mask="url(#b)" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.862"/><path d="m35.412 29.801-19.488 7.6484c-1.6115.63237-2.398 2.4354-1.7656 4.0469l21.254 54.164z" fill="#cecece" mask="url(#c)"/><path d="m73.894 47.238a9.6001 9.6001 0 00-9.091 6.515 9.6001 9.6001 0 00-1.9078-.19122 9.6001 9.6001 0 00-9.6002 9.6001 9.6001 9.6001 0 009.6002 9.6001 9.6001 9.6001 0 005.4955-1.7555 9.6001 9.6001 0 001.7811.9917v-4.2848l-5.1764-.15009 8.7496-8.1904 8.2694 8.2694h-4.6138v4.4438a9.6001 9.6001 0 002.0001-1.0829 9.6001 9.6001 0 005.4988 1.7588 9.6001 9.6001 0 009.6001-9.6001 9.6001 9.6001 0 00-9.6001-9.6001 9.6001 9.6001 0 00-1.9145.19345 9.6001 9.6001 0 00-9.091-6.5172z" fill="url(#f)" style="paint-order:stroke fill markers"/></g></svg>
+                        <a class="Card_Text">Click the "Upload File" button above to get started</a>
                     </div>
                 <?php
             }

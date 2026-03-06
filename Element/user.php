@@ -3,7 +3,7 @@
     <?php
     // Check if someone direct URL without index.php
     if (!defined('NETE_INTEGRITY_CHECK')) {
-        header('location: /Index.php');
+        header('location: ../Index.php');
         die;
     }
     $get_user_list = $getuserinfo->user_list();
