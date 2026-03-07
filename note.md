@@ -47,6 +47,7 @@ pass = null
 
 ## 👤 User Management
 Users can be managed via the **Admin GUI** inside the app.
+New users added by admin will have the default password `ilovenete`. Click the edit button on the user to change it.
 
 > ⚠️ **User deletion requires manual action:**
 1. Delete all associated file references in the database
