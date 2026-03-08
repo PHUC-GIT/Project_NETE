@@ -102,7 +102,7 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             </div>
             <div class="Card">
                 <h4><b>DuckDuckGo</b></h4>
-                <p>If you preference to set out independence tab for browser</p>
+                <p>If you prefer to set out independence tab for browser</p>
                 <button class="btnsmall" onclick=" window.open('https://duckduckgo.com/','_blank')"><img src="Resource/Go_Link.png"></button>
             </div>
         </div>

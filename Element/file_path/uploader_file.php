@@ -129,7 +129,7 @@
                 <p>INFO: Maximum 1GB per upload.</p>
                 <p></p>
                 <p>Card Name  *Can leave empty*</p>
-                <input type="text" maxlength="30" name="file_name" id="file_name"/>
+                <input type="text" maxlength="100" name="file_name" id="file_name"/>
                 <p></p>
                 <p>Upload</p>
                 <input id="key_upload_font" type="file" name="file_value" id="file_value" style="margin-left: 84px; cursor: pointer;"/>

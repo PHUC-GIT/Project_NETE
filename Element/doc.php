@@ -211,6 +211,7 @@
             font-size: 25px;
             font-weight: bold;
             margin-bottom: 15px;
+            cursor: default;
         }
 
         .outline {

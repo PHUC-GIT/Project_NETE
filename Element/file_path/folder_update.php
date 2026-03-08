@@ -116,7 +116,7 @@
                 <p></p>
                 <input type="hidden" name="id_get" value="<?php echo $get_info->id ?? '';?>">
                 <p>Folder Name</p>
-                <input type="text" maxlength="30" name="folder_name" id="folder_name" value="<?php echo XSS($get_info->file_name ?? '');?>"/>
+                <input type="text" maxlength="100" name="folder_name" id="folder_name" value="<?php echo XSS($get_info->file_name ?? '');?>"/>
                 <?php
                 $folder_ext_id = array_column($get_folder, 'id');
                 // Cound down for same current folder

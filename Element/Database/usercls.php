@@ -17,14 +17,14 @@
             $get_value->execute(array($Get_ID));
             return $get_value->fetch(PDO::FETCH_OBJ);
         }
-        public function update_user_withpassword($password, $comment, $storage, $Get_ID){
-            $update_value=$this->connect->prepare("UPDATE user SET password=?, comment=?, storage_allocated=? WHERE iduser=?");
-            $update_value->execute(array($password, $comment, $storage, $Get_ID));
+        public function update_user_withpassword($username, $password, $comment, $storage, $Get_ID){
+            $update_value=$this->connect->prepare("UPDATE user SET username=?, password=?, comment=?, storage_allocated=? WHERE iduser=?");
+            $update_value->execute(array($username, $password, $comment, $storage, $Get_ID));
             return $update_value->rowCount() > 0;
         }
-        public function update_user_notpassword($comment, $storage, $Get_ID){
-            $update_value=$this->connect->prepare("UPDATE user SET comment=?, storage_allocated=? WHERE iduser=?");
-            $update_value->execute(array($comment, $storage, $Get_ID));
+        public function update_user_notpassword($username, $comment, $storage, $Get_ID){
+            $update_value=$this->connect->prepare("UPDATE user SET username=?, comment=?, storage_allocated=? WHERE iduser=?");
+            $update_value->execute(array($username, $comment, $storage, $Get_ID));
             return $update_value->rowCount() > 0;
         }
         public function add_user($username, $password, $salt, $comment, $storage){

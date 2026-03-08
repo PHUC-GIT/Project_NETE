@@ -38,6 +38,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         header('location:../../index.php?req=preference');
                         break;
                     }
+                    die;
+
+                case 'updatepasswordonly':
+                    $password = isset($_POST['new_password']) ? $_POST['new_password'] : '';
+                    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+                    $requestupdate = new preference();
+                    $result = $requestupdate->update_user_passwordonly($hashed_password);
+                    if ($result) {
+                        header('location:../../index.php?req=preference');
+                        break;
+                    } else {
+                        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Can't update password! Please try again.");
+                        header('location:../../index.php?req=preference');
+                        break;
+                    }
+                    die;
             }
         }
         // Tail

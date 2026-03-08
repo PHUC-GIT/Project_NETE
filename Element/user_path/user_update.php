@@ -89,6 +89,9 @@
                 <input type="hidden" name="user_id" value="<?php echo XSS($get_info->iduser);?>"/>              
                 <h1>Current Selected User: <?php echo XSS($get_info->username);?></h1>
                 <p></p>
+                <p>Change current Username</p>
+                <input type="text" name="edit_username" id="edit_username" placeholder="Do not leave empty" value="<?php echo XSS($get_info->username);?>" required/>
+                <p></p>
                 <p>New Password [If not change, please don't touch]</p>
                 <input type="text" name="new_password" id="new_password" placeholder="New Password"/>
                 <p></p>

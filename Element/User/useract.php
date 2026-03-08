@@ -24,18 +24,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $password = isset($_POST['new_password']) ? $_POST['new_password'] : '';
                     $comment = isset($_POST['row_comment']) ? $_POST['row_comment'] : '';
                     $storage_allocated = isset($_POST['storage']) ? $_POST['storage'] : '';
+                    $editusername = isset($_POST['edit_username']) ? $_POST['edit_username'] : '';
                     $requestupdate = new user();
+                    if (empty($editusername)) {
+                        echo "<script>alert('You can not leave username empty.');
+                        window.location.href='../../index.php?req=user';
+                        </script>";
+                        die;
+                    }
                     if (empty($password)) {
-                        $result = $requestupdate->update_user_notpassword($comment, $storage_allocated, $ID_USER);
+                        $result = $requestupdate->update_user_notpassword($editusername, $comment, $storage_allocated, $ID_USER);
                     } else {
                         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-                        $result = $requestupdate->update_user_withpassword($hashed_password, $comment, $storage_allocated, $ID_USER);
+                        $result = $requestupdate->update_user_withpassword($editusername, $hashed_password, $comment, $storage_allocated, $ID_USER);
                     }
                     if ($result) {
                         header('location:../../index.php?req=user');
                         break;
                     } else {
-                        echo "<script>alert('Couldn't update user');
+                        echo "<script>alert('Could not update user');
                         window.location.href='../../index.php?req=user';
                         </script>";
                         die;
@@ -48,6 +55,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $username = isset($_POST['new_username']) ? $_POST['new_username'] : '';
                     $comment = isset($_POST['new_comment']) ? $_POST['new_comment'] : '';
                     $storage_allocated = isset($_POST['new_storage']) ? $_POST['new_storage'] : '';
+                    if (empty($username)) {
+                        echo "<script>alert('You can not leave username empty.');
+                        window.location.href='../../index.php?req=user';
+                        </script>";
+                        die;
+                    }
                     if (is_numeric($storage_allocated)) {
                         if ($storage_allocated < 0) {
                             echo "<script>alert('Storage allocated cant be negative.');

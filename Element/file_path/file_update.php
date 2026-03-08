@@ -133,7 +133,7 @@
                 <p></p>
                 <input type="hidden" name="id_get" value="<?php echo $get_info->id;?>">
                 <p>Card Name *Change card name or leave it be*</p>
-                <input type="text" maxlength="30" name="file_name" id="file_name" value="<?php echo XSS($get_info->file_name);?>"/>
+                <input type="text" maxlength="100" name="file_name" id="file_name" value="<?php echo XSS($get_info->file_name);?>"/>
                 <p>Share *So other user can read*</p>
                 <select name="is_share" style="cursor: pointer;">
                     <option value="0" <?php echo $is_no?>>NO</option>

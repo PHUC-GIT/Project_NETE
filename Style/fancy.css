@@ -941,6 +941,34 @@ h4, h3, h2, h1, p {
     left: 50%;
 }
 
+#folder_name {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 200px;
+    border: 2px solid gray;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 15px;
+    transition: 0.1s;
+    outline: none;
+}
+
+#file_name {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 200px;
+    border: 2px solid gray;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 15px;
+    transition: 0.1s;
+    outline: none;
+}
+
 input[type=text], [type=password], [type=number], select{
     background-color: #585858;
     border: none;

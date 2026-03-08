@@ -132,4 +132,17 @@
             <input id="btn_submit" type="submit" value="Save Change"/></td>
             </form>
         </div>
+
+        <div align="center" class="text_container" style="margin-top: 20px;">
+            <form name="change_password" id="actionform" method="post" action="Element/Preference/preferact.php">
+            <input type="hidden" name="reqact" value="updatepasswordonly"/>
+            <input type="hidden" name="csrf_token" value="<?php echo XSS($_SESSION['CSRF_TOKEN'] ?? '');?>"/>        
+            <h1>USER PASSWORD UPDATE</h1>
+            <p></p>
+            <p>New Password [You should use something that you can remember]</p>
+            <input type="text" name="new_password" id="new_password" placeholder="New Password"/>
+            <p></p>
+            <input id="btn_submit" type="submit" value="Update Your Password"/></td>
+            </form>
+        </div>
 </html>

@@ -19,5 +19,11 @@
             $getprefer->execute([$_SESSION['AUTHENTICATE_USER']]);
             return $getprefer->fetchColumn();
         }
+
+        public function update_user_passwordonly($password){
+            $update_value=$this->connect->prepare("UPDATE user SET password=? WHERE iduser=?");
+            $update_value->execute(array($password, $_SESSION['AUTHENTICATE_USER']));
+            return $update_value->rowCount() > 0;
+        }
     }
 ?>

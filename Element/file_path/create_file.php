@@ -110,7 +110,7 @@
             <h1>NEW FILE</h1>
             <p></p>
             <p>File Name</p>
-            <input type="text" maxlength="30" name="file_name" id="file_name" placeholder="Your file name" required/>
+            <input type="text" maxlength="100" name="file_name" id="file_name" placeholder="Your file name" required/>
             <p>File Type</p>
             <select name="file_mime_type" style="cursor: pointer;">
                 <option value="text/plain">TXT File</option>

@@ -110,7 +110,7 @@
             <h1>NEW FOLDER</h1>
             <p></p>
             <p>Folder Name</p>
-            <input type="text" maxlength="30" name="folder_name" id="folder_name" placeholder="Your folder name" required/>
+            <input type="text" maxlength="100" name="folder_name" id="folder_name" placeholder="Your folder name" required/>
             <p></p>
             <input id="btn_upload" type="submit" value="Create"/></td>
             </form>
