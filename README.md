@@ -56,7 +56,7 @@ Fun little built-ins:
 
 ### ⚙️ User Preferences
 - Change background  
-- More coming once I stop breaking things
+- Change password
 
 ---
 
