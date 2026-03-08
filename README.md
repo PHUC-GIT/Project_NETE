@@ -1,4 +1,6 @@
-<img width="900" height="585" alt="Netscape-redesign-RE-VER2" src="https://github.com/user-attachments/assets/2b3a2e0d-bddb-4ebf-8571-cd0d6b04a3a6" />
+<div align="center">
+  <img width="600" height="585" alt="Project_NETE_Logo" src="https://github.com/user-attachments/assets/2b3a2e0d-bddb-4ebf-8571-cd0d6b04a3a6" />
+</div>
 
 # NET.E: Crystal Gems  
 ### The Ultimate Low-Quality File Server (That shouldn't work, yet it is.)
@@ -11,6 +13,19 @@ No frameworks. No Composer. No CDN. No vendor folder.
 Just raw PHP, HTML/CSS, and less than 120 lines of JavaScript that hold everything together with duct tape.
 
 ---
+
+## 📸 Screenshots
+
+<div align="center">
+  <img width="800" alt="login_screen" src="https://github.com/user-attachments/assets/924b2a2b-eb7e-4aa8-83bc-e689b5d5db01" />
+  <p><em>Login</em></p>
+  <img width="800" alt="empty_main" src="https://github.com/user-attachments/assets/f7268a83-e095-4299-8a71-0dc1e24e296e" />
+  <p><em>Main Landing</em></p>
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/a2f5a57b-3df4-47e4-84b7-a0a488250056" />
+  <p><em>My Files — manage your uploaded and created files</em></p>
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/adebc523-7226-4022-ac73-25ab0426bf63" />
+  <p><em>Memory Notes — quick notes with 6 color options</em></p>
+</div>
 
 ## ✨ Features
 
