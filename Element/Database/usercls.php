@@ -65,7 +65,7 @@
             return $get_value->fetchAll(PDO::FETCH_OBJ);
         }
         public function UserCheckLogin($username, $password) {
-            $select = $this->connect->prepare("SELECT iduser, password, salt FROM user WHERE username COLLATE utf8_bin = ?");
+            $select = $this->connect->prepare("SELECT password FROM user WHERE username COLLATE utf8_bin = ?");
             $select->execute(array($username));
             // Fetch the result
             if (!$user_data = $select->fetch(PDO::FETCH_OBJ)) {

@@ -25,5 +25,20 @@
             $update_value->execute(array($password, $_SESSION['AUTHENTICATE_USER']));
             return $update_value->rowCount() > 0;
         }
+
+        public function recheckpassword($password) {
+            $select = $this->connect->prepare("SELECT password FROM user WHERE iduser=?");
+            $select->execute(array($_SESSION['AUTHENTICATE_USER']));
+            // Fetch the result
+            if (!$user_data = $select->fetch(PDO::FETCH_OBJ)) {
+                return FALSE; 
+            }
+            $stored_hash = $user_data->password;
+            if (password_verify($password, $stored_hash)) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
     }
 ?>

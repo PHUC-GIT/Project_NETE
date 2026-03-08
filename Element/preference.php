@@ -139,8 +139,11 @@
             <input type="hidden" name="csrf_token" value="<?php echo XSS($_SESSION['CSRF_TOKEN'] ?? '');?>"/>        
             <h1>USER PASSWORD UPDATE</h1>
             <p></p>
+            <p>Your Current Password</p>
+            <input type="password" name="old_password" id="old_password" placeholder="Old Password" required/>
+            <p></p>
             <p>New Password [You should use something that you can remember]</p>
-            <input type="text" name="new_password" id="new_password" placeholder="New Password"/>
+            <input type="text" name="new_password" id="new_password" placeholder="New Password" required/>
             <p></p>
             <input id="btn_submit" type="submit" value="Update Your Password"/></td>
             </form>

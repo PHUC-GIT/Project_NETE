@@ -32,26 +32,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $result = $requestupdate->updateprefer($backgroundvalue);
                     if ($result) {
                         header('location:../../index.php?req=preference');
-                        break;
+                        die;
                     } else {
                         $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "There is something wrong! Please try again.");
                         header('location:../../index.php?req=preference');
-                        break;
+                        die;
                     }
                     die;
 
                 case 'updatepasswordonly':
-                    $password = isset($_POST['new_password']) ? $_POST['new_password'] : '';
+                    $oldpassword = isset($_POST['old_password']) ? $_POST['old_password'] : '';
+                    $password = isset($_POST['new_password']) ? $_POST['new_password'] : 'ilovenete';
+                    if (empty($password)) {
+                        $password = 'ilovenete';
+                    }
                     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
                     $requestupdate = new preference();
-                    $result = $requestupdate->update_user_passwordonly($hashed_password);
-                    if ($result) {
-                        header('location:../../index.php?req=preference');
-                        break;
+                    $check = $requestupdate->recheckpassword($oldpassword);
+                    if ($check) {
+                        $result = $requestupdate->update_user_passwordonly($hashed_password);
+                        if ($result) {
+                            header('location:../../index.php?req=preference');
+                            die;
+                        } else {
+                            $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Can't update password! Please try again.");
+                            header('location:../../index.php?req=preference');
+                            die;
+                        }
                     } else {
-                        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Can't update password! Please try again.");
+                        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Your old password is not correct. Please try again.");
                         header('location:../../index.php?req=preference');
-                        break;
+                        die;
                     }
                     die;
             }
