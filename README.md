@@ -86,23 +86,26 @@ Place in:
 `Element/Database/Database_Config/config.ini`  
 
 config.ini for example
-"
+```
 [section]
 servername = 127.0.0.1
 dbname = your_db << It's your DB name when import the DB.
 username = root
 pass = null << if you don't have password
-"
+```
 
 
 ### 3. Set Apache/PHP Hardening (optional but recommended)
 Apache
+```
 ServerTokens Prod
 ServerSignature Off
+```
 
 PHP
+```
 expose_php = Off
-
+```
 
 ### 4. Access As Admin (It's done!)
 To find the admin login page you need to access by `https://[yoursite]/login_admin.php`
