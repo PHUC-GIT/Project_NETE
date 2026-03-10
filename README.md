@@ -61,6 +61,7 @@ Fun little built-ins:
 ---
 
 ## 🛠️ Tech Stack (if you squint)
+- Apache 2.4
 - PHP 8+
 - MySQL 8+
 - HTML + CSS (global + inline + local, the holy trinity)
