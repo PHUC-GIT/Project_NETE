@@ -125,11 +125,12 @@ Please refer to [note](https://github.com/PHUC-GIT/Project_NETE/blob/main/note.m
 
 ---
 
-## 🔒 Security
+## 🔒 Security Audit
 
 <div align="center">
-  <img width="500" alt="proof top" src="https://github.com/user-attachments/assets/d34895bd-3806-4bae-b829-9270af8c4cd5" /><img width="500" alt="proof bottom" src="https://github.com/user-attachments/assets/4c3233a9-4873-4abf-8963-7d571fd6d531" />
-  <p><em>Tested with OWASP ZAP 2.17.0 on `ATTACK mode` and `Pen Test` policy</em></p>
+  <img width="350" alt="ZAP result top" src="https://github.com/user-attachments/assets/217dbb98-bd20-4c1b-8b45-9ce72c13b24e" /><img width="350" alt="ZAP result bottom" src="https://github.com/user-attachments/assets/832824a4-e426-45da-8030-a492ce961184" />
+
+  <p><em>Active scan with OWASP ZAP 2.17.0 using `ATTACK mode` and Authenticated attack base</em></p>
 </div>
 
 ---
