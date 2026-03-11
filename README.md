@@ -125,6 +125,15 @@ Please refer to [note](https://github.com/PHUC-GIT/Project_NETE/blob/main/note.m
 
 ---
 
+## 🔒 Security
+
+<div align="center">
+  <img width="500" alt="proof top" src="https://github.com/user-attachments/assets/d34895bd-3806-4bae-b829-9270af8c4cd5" /><img width="500" alt="proof bottom" src="https://github.com/user-attachments/assets/4c3233a9-4873-4abf-8963-7d571fd6d531" />
+  <p><em>Tested with OWASP ZAP 2.17.0 on `ATTACK mode` and `Pen Test` policy</em></p>
+</div>
+
+---
+
 ## 📜 License
 MIT — meaning you can use, modify, and fork NET.E freely.  
 If something explodes, corrupts, disappears, or becomes self-aware,  
