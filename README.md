@@ -113,7 +113,7 @@ To find the admin login page you need to access by `https://[yoursite]/login_adm
 and verify your key file here. The default key can be find in the Extra folder. Changing default admin key is recommended.
 
 ### 5. Additional Setup
-Please reference to "note" in this repo if you want to learn how to manage user and extra configure.
+Please refer to [note](https://github.com/PHUC-GIT/Project_NETE/blob/main/note.md) in this repo if you want to learn how to manage user and extra configure.
 
 ---
 
