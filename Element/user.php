@@ -104,6 +104,12 @@
                         <td><p><?php echo XSS($list->storage_allocated);?></p></td>
                         <td>
                             <button type="button" class="btn_in_list" title="Edit" onclick="window.location.href='index.php?req=useredit&userid=<?php echo XSS($list->iduser);?>';">Edit</button>
+                            <form name="del_user_<?php echo XSS($list->iduser);?>" id="del_user_<?php echo XSS($list->iduser);?>" method="post" action="Element/User/useract.php" style="display: inline;">
+                                <input type="hidden" name="reqact" value="userdel"/>
+                                <input type="hidden" name="csrf_token" value="<?php echo XSS($_SESSION['CSRF_TOKEN'] ?? '');?>"/>
+                                <input type="hidden" name="user_id" value="<?php echo XSS($list->iduser);?>"/>
+                                <button type="button" class="btn_in_list" onclick="if(confirm('Do you want to delete this user? It is also clean up this user data.')){document.getElementById('del_user_<?php echo XSS($list->iduser);?>').submit();}">Delete User</button>
+                            </form>
                         </td>
                     </tr>
                         <?php

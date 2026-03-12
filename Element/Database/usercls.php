@@ -78,5 +78,36 @@
                 return FALSE;
             }
         }
+
+        // Queue to delete user 
+        private function userdelqueue($Get_ID) {
+            // Delete queue
+            $SQL_QUEUE = array("DELETE FROM files WHERE Uploader = ?", "DELETE FROM note WHERE Whois = ?", "DELETE FROM preference WHERE userid = ?", "DELETE FROM user WHERE iduser = ?");
+            foreach ($SQL_QUEUE as $SQL) {
+                $deletequeue = $this->connect->prepare($SQL);
+                if (!$deletequeue->execute(array($Get_ID))) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public function deleteuser($Get_ID) {
+            $this->connect->beginTransaction();
+            try {
+                // Start delete user
+                $result = $this->userdelqueue($Get_ID);
+                if ($result) {
+                    $this->connect->commit();
+                    return true;
+                } else {
+                    $this->connect->rollBack();
+                    return false;
+                }
+            } catch (PDOException $e) {
+                $this->connect->rollBack();
+                return false;
+            }
+        }
     }
 ?>

@@ -15,6 +15,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $regen_csrf = bin2hex(random_bytes(64 / 2));
         $_SESSION['CSRF_TOKEN'] = $regen_csrf;
         // Head
+
+        // Function For Reuse
+        function deleteDirectory($targetdir) {
+            // If the folder dont exist.
+            if (!is_dir($targetdir)) {
+                return true;
+            }
+            $files = new RecursiveIteratorIterator(
+                new RecursiveDirectoryIterator(
+                    $targetdir,
+                    RecursiveDirectoryIterator::SKIP_DOTS
+                ),
+                RecursiveIteratorIterator::CHILD_FIRST
+            );
+            foreach ($files as $file) {
+                $file->isDir() ? rmdir($file) : unlink($file);
+            }
+            return rmdir($targetdir);
+        }
+
         require '../../Element/Database/usercls.php';
         if (isset($_POST['reqact'])) {
             $requestaction = $_POST['reqact'];
@@ -40,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
                     if ($result) {
                         header('location:../../index.php?req=user');
-                        break;
+                        die;
                     } else {
                         echo "<script>alert('Could not update user');
                         window.location.href='../../index.php?req=user';
@@ -78,15 +98,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $result = $requestadd->add_user($username, $hashed_password, $salt, $comment, $storage_allocated);
                     if ($result) {
                         header('location:../../index.php?req=user');
-                        break;
+                        die;
                     } else {
-                        echo "<script>alert('Couldn't make new user');
+                        echo "<script>alert('Could not make new user');
                         window.location.href='../../index.php?req=user';
                         </script>";
                         die;
                     }
                     die;
 
+                case 'userdel':
+                    $ID_USER = isset($_POST['user_id']) ? $_POST['user_id'] : '';
+                    $requestinfo = new user();
+                    $userinfo = $requestinfo->user_Name($ID_USER)->username;
+                    $getsalt = $requestinfo->user_salt($ID_USER)->salt;
+                    $getuserdir = $userinfo . $getsalt;
+                    $hashfinder = sha1($getuserdir);
+                    $targetdir = "../../User_Data/" . $hashfinder . "/";
+                    if (!$userinfo || !$getsalt) {
+                        echo "<script>alert('User do not exist.');
+                        window.location.href='../../index.php?req=user';
+                        </script>";
+                        die;
+                    }
+                    $result = $requestinfo->deleteuser($ID_USER);
+                    if ($result) {
+                        deleteDirectory($targetdir);
+                        echo "<script>alert('User deleted success!');
+                        window.location.href='../../index.php?req=user';
+                        </script>";
+                        die;
+                    } else {
+                        echo "<script>alert('Could not delete user');
+                        window.location.href='../../index.php?req=user';
+                        </script>";
+                        die;
+                    }
+                    die;
             }
         }
 

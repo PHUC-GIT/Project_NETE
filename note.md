@@ -51,7 +51,7 @@ New users added by admin will have the default password `ilovenete`.
 Click the edit button on the user to change it.
 Users can also change their password in Preferences.
 
-> ⚠️ **User deletion requires manual action:**
+> ⚠️ **User deletion requires manual action:** (From build 114 - v0.1.4 onward, you don't need to manual delete user anymore.)
 1. Delete all associated file references in the database
 2. Delete all associated notes in the database
 3. Delete all user preference database entries
