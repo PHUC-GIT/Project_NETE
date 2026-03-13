@@ -17,6 +17,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Head
         require '../../Element/Database/trackcls.php';
+        require '../../Element/Database/usercls.php';
+        // Get SESSION user, And verify one also.
+        if (isset($_SESSION['AUTHENTICATE_USER'])) {
+            $getuserinfo = new user();
+            $resultget = $getuserinfo->user_Name($_SESSION['AUTHENTICATE_USER']);
+            $session_user = $resultget->username ?? null;
+            if (!$session_user) {
+                // Destroy the session if user don't found
+                if (session_status() === PHP_SESSION_ACTIVE) {
+                  session_unset();
+                  session_destroy();
+                }
+                session_start();
+                session_regenerate_id(true);
+                if (!headers_sent()) {
+                    $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "System unable to processe your info.");
+                    header('location:../../login.php');
+                }
+                die;
+            }
+        }
         if(isset($_POST['reqact'])) {
             $requestaction = $_POST['reqact'];
             switch ($requestaction) {

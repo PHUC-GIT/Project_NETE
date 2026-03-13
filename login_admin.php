@@ -54,7 +54,7 @@ header("X-Content-Type-Options: nosniff");
             <div id="loginbody" align="center">
                 <h4>LOGIN SYSTEM ADMIN</h4>
                 <div class="img_inside"><img src="./Resource/logo_white.png"></div>
-                <form name="formlogin" method="post" enctype="multipart/form-data" action="Element/Admin/adminact.php">
+                <form name="formlogin" method="post" enctype="multipart/form-data" action="Element/Admin/adminverifyact.php">
                     <input type="hidden" name="reqact" value="checkkey"> 
                     <p></p>
                     <a class="Brand">NET.E CRYSTAL GEMS</a>
