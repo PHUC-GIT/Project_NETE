@@ -109,7 +109,7 @@ expose_php = Off
 ```
 
 ### 4. Access As Admin (It's done!)
-To find the admin login page you need to access by `https://[yoursite]/login_admin.php`
+To find the admin login page you need to access to `login_admin.php` in the project root 
 and verify your key file here. The default key can be find in the Extra folder. Changing default admin key is recommended.
 
 ### 5. Additional Setup
