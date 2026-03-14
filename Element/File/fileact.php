@@ -59,7 +59,7 @@
                             // This open finfo
                             $finfo = finfo_open(FILEINFO_MIME_TYPE);
                             $getuserdir = $session_user . $_SESSION['SALT_VALUE'];
-                            $hashfolder = sha1($getuserdir);
+                            $hashfolder = hash('sha256', $getuserdir);
                             $targetdir = "../../User_Data/" . $hashfolder . "/";
                             $targetfile = $targetdir . basename($_FILES["file_value"]["name"]);
                             $filetype = strtolower(pathinfo($targetfile,PATHINFO_EXTENSION));
@@ -174,7 +174,7 @@
                                 EOT;
                                 if (file_put_contents($tothefolder, $htaccesscontent) !== false) {
                                 } else {
-                                    $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Failed to secured container!" . $tothefolder);
+                                    $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Failed to secured container!");
                                     echo "<script>window.location.href='../../index.php?req=doc';</script>";
                                     $oktoupload = 0;
                                     die;
@@ -335,7 +335,7 @@
                     case 'createfile':
                         // Prepare director
                         $getuserdir = $session_user . $_SESSION['SALT_VALUE'];
-                        $hashfolder = sha1($getuserdir);
+                        $hashfolder = hash('sha256', $getuserdir);
                         $targetdir = "../../User_Data/" . $hashfolder . "/";
                         $parent_folder_id = $_SESSION['Current_Folder'];
                         // Check if files is in folder.
@@ -392,7 +392,7 @@
                             EOT;
                             if (file_put_contents($tothefolder, $htaccesscontent) !== false) {
                             } else {
-                                $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Failed to secured container!" . $tothefolder);
+                                $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Failed to secured container!");
                                 header('location:../../index.php?req=doc');
                                 die;
                             }

@@ -1,7 +1,8 @@
 # NET.E — Deployment & Management Notes
-> **PHP 8.0+ | MySQL 8.0+**
+> **PHP 8.0+ | MySQL 8.0+ | Apache 2.4+**
 
 ---
+> ⚠️ **Noticed! from v0.2.0 the system change it store path that different from v0.1.6**
 
 ## 🗑️ When Deploying To Server
 Delete the following as they are not needed in production:

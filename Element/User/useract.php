@@ -133,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $userinfo = $requestinfo->user_Name($ID_USER)->username;
                     $getsalt = $requestinfo->user_salt($ID_USER)->salt;
                     $getuserdir = $userinfo . $getsalt;
-                    $hashfinder = sha1($getuserdir);
+                    $hashfinder = hash('sha256', $getuserdir);
                     $targetdir = "../../User_Data/" . $hashfinder . "/";
                     if (!$userinfo || !$getsalt) {
                         echo "<script>alert('User do not exist.');

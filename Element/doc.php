@@ -702,7 +702,7 @@
                                     <input type="hidden" name="csrf_token" value="<?php echo XSS($_SESSION['CSRF_TOKEN'] ?? '');?>"/>
                                     <input type="hidden" name="reqact" value="deletefile"/>
                                     <input type="hidden" name="idfile" value="<?php echo urlencode($show->id);?>"/>
-                                    <button type="button" class="btnsmall" title="Delete" onclick="showModalConfirm('Are you sure you want to delete this file? It will also delete your file on server.', function() {document.getElementById('fileDelete_<?php echo XSS($show->id);?>').submit();});"><img src="Resource/Delete.png"></button>
+                                    <button type="button" class="btnsmall" title="Delete" onclick="showModalConfirm('Are you sure you want to delete this file? You will not able to recover it afterward.', function() {document.getElementById('fileDelete_<?php echo XSS($show->id);?>').submit();});"><img src="Resource/Delete.png"></button>
                                 </form>
                                 <p></p>
                             </div>
