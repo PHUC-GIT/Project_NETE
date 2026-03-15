@@ -19,11 +19,11 @@ Just raw PHP, HTML/CSS, and less than 120 lines of JavaScript that hold everythi
 <div align="center">
   <img width="800" alt="login_screen" src="https://github.com/user-attachments/assets/924b2a2b-eb7e-4aa8-83bc-e689b5d5db01" />
   <p><em>Login</em></p>
-  <img width="800" alt="empty_main" src="https://github.com/user-attachments/assets/f7268a83-e095-4299-8a71-0dc1e24e296e" />
+  <img width="800" alt="empty_main" alt="Image" src="https://github.com/user-attachments/assets/ebb17810-5c97-4397-b620-34813e0c422c" />
   <p><em>Main Landing</em></p>
-  <img width="800" alt="image" src="https://github.com/user-attachments/assets/a2f5a57b-3df4-47e4-84b7-a0a488250056" />
+  <img width="800" alt="file_manager" src="https://github.com/user-attachments/assets/d8f07aca-806e-49a2-9906-7d33155be19e" />
   <p><em>My Files — manage your uploaded and created files</em></p>
-  <img width="800" alt="image" src="https://github.com/user-attachments/assets/adebc523-7226-4022-ac73-25ab0426bf63" />
+  <img width="800" alt="memory_note" src="https://github.com/user-attachments/assets/77b0158d-1435-42c0-9ef3-b896a970c0fc" />
   <p><em>Memory Notes — quick notes with 6 color options</em></p>
 </div>
 
@@ -128,9 +128,9 @@ Please refer to [note](https://github.com/PHUC-GIT/Project_NETE/blob/main/note.m
 ## 🔒 Security Audit
 
 <div align="center">
-  <img width="350" alt="ZAP result top" src="https://github.com/user-attachments/assets/217dbb98-bd20-4c1b-8b45-9ce72c13b24e" /><img width="350" alt="ZAP result bottom" src="https://github.com/user-attachments/assets/832824a4-e426-45da-8030-a492ce961184" />
+  <img width="350" alt="ZAP result top" src="https://github.com/user-attachments/assets/5ff0b091-3d2f-4d83-bee8-a60dd7f1c669" /><img width="350" alt="ZAP result bottom" src="https://github.com/user-attachments/assets/4202c6d7-a2b4-452d-b14e-d68ba291687b" />
 
-  <p><em>Active scan with OWASP ZAP 2.17.0 using `ATTACK mode` and Authenticated attack base</em></p>
+  <p><em>Active scan with OWASP ZAP 2.17.0 using `ATTACK mode` and authenticated attack base</em></p>
 </div>
 
 ---
