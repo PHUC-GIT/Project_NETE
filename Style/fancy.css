@@ -16,63 +16,63 @@
 
 /* Unique Colored */
 .Main {
-    --uniquecolor: #545cbbb3;
+    --uniquecolor: #545cbb80;
 }
 .Main:hover {
     --uniquehover: #545dbb;
 }
 
 .Home {
-    --uniquecolor: #616165b3;
+    --uniquecolor: #61616580;
 }
 .Home:hover {
     --uniquehover: #616165;
 }
 
 .Preference {
-    --uniquecolor: #616165b3;
+    --uniquecolor: #61616580;
 }
 .Preference:hover {
     --uniquehover: #616165;
 }
 
 .Utility {
-    --uniquecolor: #3e30ffb3;
+    --uniquecolor: #3e30ff80;
 }
 .Utility:hover {
     --uniquehover: #3e30ff;
 }
 
 .Help {
-    --uniquecolor: #9441e3b3;
+    --uniquecolor: #9441e380;
 }
 .Help:hover {
     --uniquehover: #9541e3;
 }
 
 .Track {
-    --uniquecolor: #ff0062b3;
+    --uniquecolor: #ff006280;
 }
 .Track:hover {
     --uniquehover: #ff0062;
 }
 
 .Key {
-    --uniquecolor: #ff0062b3;
+    --uniquecolor: #ff006280;
 }
 .Key:hover {
     --uniquehover: #ff0062;
 }
 
 .Doc {
-    --uniquecolor: #0080d6b3;
+    --uniquecolor: #0080d680;
 }
 .Doc:hover {
     --uniquehover: #0080d6;
 }
 
 .Note {
-    --uniquecolor: #ff9900b3;
+    --uniquecolor: #ff990080;
 }
 .Note:hover {
     --uniquehover: #ff9900;
@@ -261,7 +261,6 @@ h4, h3, h2, h1, p {
     border-radius: 8px; 
     max-width: 100%; 
     position: fixed;
-    bottom: 0;
     left: 4px;
     bottom: 4px;
     right: 4px;
@@ -530,42 +529,42 @@ h4, h3, h2, h1, p {
 
 .Home.active {
     border: 3px solid #626267;
-    animation: homeBorderWave 1.5s cubic-bezier(0.4,0,0.2,1) infinite;
+    animation: homeBorderWave 5s cubic-bezier(0.4,0,0.2,1) infinite;
 }
 
 .Preference.active {
     border: 3px solid #626267;
-    animation: cogBorderWave 1.5s cubic-bezier(0.4,0,0.2,1) infinite;
+    animation: cogBorderWave 5s cubic-bezier(0.4,0,0.2,1) infinite;
 }
 
 .Utility.active {
     border: 3px solid #3e30ff;
-    animation: utilityBorderWave 1.5s cubic-bezier(0.4,0,0.2,1) infinite;
+    animation: utilityBorderWave 5s cubic-bezier(0.4,0,0.2,1) infinite;
 }
 
 .Help.active {
     border: 3px solid #9441e3;
-    animation: helpBorderWave 1.5s cubic-bezier(0.4,0,0.2,1) infinite;
+    animation: helpBorderWave 5s cubic-bezier(0.4,0,0.2,1) infinite;
 }
 
 .Track.active {
     border: 3px solid #ff0062;
-    animation: trackBorderWave 1.5s cubic-bezier(0.4,0,0.2,1) infinite;
+    animation: trackBorderWave 5s cubic-bezier(0.4,0,0.2,1) infinite;
 }
 
 .Key.active {
     border: 3px solid #ff0062;
-    animation: trackBorderWave 1.5s cubic-bezier(0.4,0,0.2,1) infinite;
+    animation: trackBorderWave 5s cubic-bezier(0.4,0,0.2,1) infinite;
 }
 
 .Doc.active {
     border: 3px solid #0081d6;
-    animation: docBorderWave 1.5s cubic-bezier(0.4,0,0.2,1) infinite;
+    animation: docBorderWave 5s cubic-bezier(0.4,0,0.2,1) infinite;
 }
 
 .Note.active {
     border: 3px solid #ff9900;
-    animation: noteBorderWave 1.5s cubic-bezier(0.4,0,0.2,1) infinite;
+    animation: noteBorderWave 5s cubic-bezier(0.4,0,0.2,1) infinite;
 }
 
 .Home.active,

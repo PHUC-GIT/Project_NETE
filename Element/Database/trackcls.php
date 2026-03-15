@@ -36,9 +36,11 @@
             return $getList->fetchAll(PDO::FETCH_OBJ);
         }
         public function reportfile_search($search_query){
-            $search_query = '%' . $search_query . '%';
+            $search_query = trim($search_query);
+            $search_query = str_replace(['\\', '%', '_'], ['\\\\', '\%', '\_'], $search_query);
+            $final_query = '%' . $search_query . '%';
             $getList=$this->connect->prepare("SELECT files.*, user.username FROM files JOIN user_report ON files.id = user_report.ITEM_ID JOIN user ON files.Uploader = user.iduser WHERE user_report.ITEM_TYPE = 'file' AND LOWER(files.file_name) LIKE LOWER(?) GROUP BY files.id ORDER BY MAX(user_report.DATE) DESC");
-            $getList->execute((array($search_query)));
+            $getList->execute((array($final_query)));
             return $getList->fetchAll(PDO::FETCH_OBJ);
         }
         public function getreported_note(){
@@ -47,9 +49,11 @@
             return $getList->fetchAll(PDO::FETCH_OBJ);
         }
         public function reportnote_search($search_query){
-            $search_query = '%' . $search_query . '%';
+            $search_query = trim($search_query);
+            $search_query = str_replace(['\\', '%', '_'], ['\\\\', '\%', '\_'], $search_query);
+            $final_query = '%' . $search_query . '%';
             $getList=$this->connect->prepare("SELECT note.*, user.username FROM note JOIN user_report ON note.id = user_report.ITEM_ID JOIN user ON note.Whois = user.iduser WHERE user_report.ITEM_TYPE = 'note' AND LOWER(user.username) LIKE LOWER(?) GROUP BY note.id ORDER BY MAX(user_report.DATE) DESC");
-            $getList->execute(array($search_query));
+            $getList->execute(array($final_query));
             return $getList->fetchAll(PDO::FETCH_OBJ);
         }
         public function delete_report($item_type, $item_id){

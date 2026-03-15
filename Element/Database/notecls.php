@@ -18,9 +18,11 @@
             return $getList->fetchAll(PDO::FETCH_OBJ);
         }
         public function listpublic_search($search_query){
-            $search_query = '%' . $search_query . '%';
+            $search_query = trim($search_query);
+            $search_query = str_replace(['\\', '%', '_'], ['\\\\', '\%', '\_'], $search_query);
+            $final_query = '%' . $search_query . '%';
             $getList=$this->connect->prepare("SELECT note.*, user.username, user.iduser FROM note JOIN user ON note.Whois = user.iduser WHERE note.public_value=1 AND LOWER(user.username) LIKE LOWER(?)");
-            $getList->execute(array($search_query));
+            $getList->execute(array($final_query));
             return $getList->fetchAll(PDO::FETCH_OBJ);
         }
         public function countnote(){

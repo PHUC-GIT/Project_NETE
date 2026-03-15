@@ -15,9 +15,11 @@
             return $getList->fetchAll(PDO::FETCH_OBJ);
         }
         public function listfile_search($get_id, $search_query, $mime_type="nete/folder"){
-            $search_query = '%' . $search_query . '%';
+            $search_query = trim($search_query);
+            $search_query = str_replace(['\\', '%', '_'], ['\\\\', '\%', '\_'], $search_query);
+            $final_query = '%' . $search_query . '%';
             $getList=$this->connect->prepare("SELECT * FROM files WHERE Uploader = ? AND LOWER(file_name) LIKE LOWER(?) AND mime_type != ?");
-            $getList->execute(array($get_id, $search_query, $mime_type));
+            $getList->execute(array($get_id, $final_query, $mime_type));
             return $getList->fetchAll(PDO::FETCH_OBJ);
         }
         public function get_folder_by_id($id) {
@@ -69,9 +71,11 @@
             return $getShare->fetchAll(PDO::FETCH_OBJ);
         }
         public function sharefile_search($search_query){
-            $search_query = '%' . $search_query . '%';
+            $search_query = trim($search_query);
+            $search_query = str_replace(['\\', '%', '_'], ['\\\\', '\%', '\_'], $search_query);
+            $final_query = '%' . $search_query . '%';
             $getList=$this->connect->prepare("SELECT files.*, user.username, user.iduser FROM files JOIN user ON files.Uploader = user.iduser WHERE files.share=1 AND LOWER(files.file_name) LIKE LOWER(?)");
-            $getList->execute(array($search_query));
+            $getList->execute(array($final_query));
             return $getList->fetchAll(PDO::FETCH_OBJ);
         }
 
