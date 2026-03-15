@@ -86,6 +86,12 @@ ServerSignature Off
 expose_php = Off
 ```
 
+### Disable PHP error display
+**`php.ini`**
+```ini
+display_errors=Off
+```
+
 ### Disable Directory Indexing
 In `httpd.conf` find the `Options` line and remove `Indexes`:
 ```apache
