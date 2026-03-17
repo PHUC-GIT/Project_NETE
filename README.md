@@ -21,7 +21,7 @@ Just raw PHP, HTML/CSS, and less than 120 lines of JavaScript that hold everythi
   <p><em>Login</em></p>
   <img width="800" alt="empty_main" alt="Image" src="https://github.com/user-attachments/assets/ebb17810-5c97-4397-b620-34813e0c422c" />
   <p><em>Main Landing</em></p>
-  <img width="800" alt="file_manager" src="https://github.com/user-attachments/assets/d8f07aca-806e-49a2-9906-7d33155be19e" />
+  <img width="800" alt="file_manager" src="https://github.com/user-attachments/assets/be2c6a68-3228-4e38-a5f3-253fef42b210" />
   <p><em>My Files — manage your uploaded and created files</em></p>
   <img width="800" alt="memory_note" src="https://github.com/user-attachments/assets/77b0158d-1435-42c0-9ef3-b896a970c0fc" />
   <p><em>Memory Notes — quick notes with 6 color options</em></p>
