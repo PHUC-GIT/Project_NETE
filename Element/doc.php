@@ -790,7 +790,7 @@
                     <?php
                 } else {
                     ?>
-                        <h1 align="center" class="text_container">THIS FOLDER IS EMPTY, LET'S UPLOAD SOMETHING! </h1>
+                        <h1 align="center" class="text_container">THIS FOLDER IS EMPTY, LET'S UPLOAD SOMETHING!</h1>
                     <?php
                 }
                 ?>

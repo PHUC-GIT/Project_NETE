@@ -206,7 +206,11 @@ $size_show = formatBytes($total_size);
             }
             ?>
         </div>
-        <div class="flex-div-bar">
+        <?php
+        if (!isset($_SESSION['AUTHENTICATE_ADMIN'])) {
+            ?>
+            <!-- Start of the quota bar -->
+            <div class="flex-div-bar">
             <div class="Card_Storage_Bar">
                     <div class="storage-center">
                         <h1 class="Info_Style_Bar"><?php echo XSS($Get_Name)?> Drive</h1>
@@ -233,5 +237,13 @@ $size_show = formatBytes($total_size);
                     <div style="width: 20px; height: 20px; background: #eee; border-radius: 5px;"></div><div class="Small_Info_Style"><?php echo $space_left?> Free</div>
                 </div>
             </div>
+            <!-- End of the quota bar -->
+            <?php
+        } else {
+            ?>
+            <h1 align="center" class="text_container">SORRY! ONLY AVAILABLE FOR USERS!</h1>
+            <?php
+        }
+        ?>
         </div>
 </html>
