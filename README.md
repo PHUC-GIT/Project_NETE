@@ -19,11 +19,11 @@ Just raw PHP, HTML/CSS, and less than 120 lines of JavaScript that hold everythi
 <div align="center">
   <img width="800" alt="login_screen" src="https://github.com/user-attachments/assets/924b2a2b-eb7e-4aa8-83bc-e689b5d5db01" />
   <p><em>Login</em></p>
-  <img width="800" alt="empty_main" alt="Image" src="https://github.com/user-attachments/assets/ebb17810-5c97-4397-b620-34813e0c422c" />
+  <img width="800" alt="empty_main" src="https://github.com/user-attachments/assets/25d19101-9bb2-43fd-8798-e9670ea34589" />
   <p><em>Main Landing</em></p>
-  <img width="800" alt="file_manager" src="https://github.com/user-attachments/assets/be2c6a68-3228-4e38-a5f3-253fef42b210" />
+  <img width="800" alt="file_manager" src="https://github.com/user-attachments/assets/b396cbec-409e-4812-9674-1650f45452a9" />
   <p><em>My Files — manage your uploaded and created files</em></p>
-  <img width="800" alt="memory_note" src="https://github.com/user-attachments/assets/77b0158d-1435-42c0-9ef3-b896a970c0fc" />
+  <img width="800" alt="memory_note" src="https://github.com/user-attachments/assets/9f6f5512-0b65-4ab6-a75f-c0c436ec4001" />
   <p><em>Memory Notes — quick notes with 6 color options</em></p>
 </div>
 
@@ -38,6 +38,7 @@ Just raw PHP, HTML/CSS, and less than 120 lines of JavaScript that hold everythi
 - Integrity check (Tamper Shield)  
 - Delete files & folders permanently — no trash bin (we respect commitment)
 - Live text file content editable so you can write your ultimate sit-con in here. (Only save if content size is lower than 50MB, If it's larger than that then it's the DB dump, not a ordinary text file.)
+- Quick access sidebar for recently viewed files — session-based, stores up to 10 unique recently accessed files (Most useless feature you'll ever need.)
 
 ### 📝 Memory Notes
 - Create notes instantly  
