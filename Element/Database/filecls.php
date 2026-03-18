@@ -164,6 +164,10 @@
                         }
                     }
                     // Delete the database record for the file
+                    // Delete quick access entry from the sidebar if it exist.
+                    if (isset($_SESSION['QUICK_ACCESS_FILE'][$item->id])) {
+                        unset($_SESSION['QUICK_ACCESS_FILE'][$item->id]);
+                    }
                     $delFile = $this->connect->prepare("DELETE FROM files WHERE id = ? AND Uploader = ?");
                     if (!$delFile->execute(array($item->id, $userId))) {
                         return false;

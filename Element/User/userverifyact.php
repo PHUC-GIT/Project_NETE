@@ -58,6 +58,7 @@
                         $_SESSION['USER_ADDR_IP'] = $ip;
                         $_SESSION['SALT_VALUE'] = $user->user_ID($username)->salt;
                         $_SESSION['WELCOME_POPUP'] = true;
+                        $_SESSION['QUICK_ACCESS_FILE'] = array();
                         header('location:../../index.php');
                     } else {
                         $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Your login info is incorrect.");

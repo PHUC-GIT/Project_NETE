@@ -217,7 +217,7 @@ function streamTextToOutput($filepath) {
                 <a><?php echo XSS($get_info->file_name);?></a>
             </div>
             <div style="display: flex; justify-content: right; align-items: center;">
-                <button class="cross_button_header" onclick="history.back()"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"/></svg></button>
+                <button class="cross_button_header" onclick="window.location.href='index.php?req=report_eye_file';"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"/></svg></button>
             </div>
        </div>
        <div class="subframe">

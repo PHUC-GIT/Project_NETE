@@ -23,8 +23,28 @@ $audio_type = array("audio/mpeg", "audio/ogg");
 $PDF_type = array("application/pdf");
 $text_type = array("text/plain");
 $actual_path = $get_info->file_link ?? '';
+
+// Add File to quick access
+// If the list already have one? Delete that right there and readd later
+if (isset($_SESSION['QUICK_ACCESS_FILE'][$getidfile])) {
+    unset($_SESSION['QUICK_ACCESS_FILE'][$getidfile]);
+}
+$_SESSION['QUICK_ACCESS_FILE'][$getidfile] = [
+    "File_Name" => $get_info->file_name,
+    "ID" => $getidfile,
+    "Mime_Type" => $get_type
+];
+// If the list over 10 then remove the oldest one.
+if (count($_SESSION['QUICK_ACCESS_FILE']) > 10) {
+    array_shift($_SESSION['QUICK_ACCESS_FILE']);
+}
+
 // Check if it exist
 if (!file_exists($actual_path)) {
+    // Delete quick access entry from the sidebar
+    if (isset($_SESSION['QUICK_ACCESS_FILE'][$getidfile])) {
+        unset($_SESSION['QUICK_ACCESS_FILE'][$getidfile]);
+    }
     $putitred=$obj->redtrigger($getidfile);
     $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Error! Can not access file!");
     echo "<script>window.location.href='index.php?req=doc';</script>";
@@ -32,6 +52,10 @@ if (!file_exists($actual_path)) {
 }
 // If not public or owned files
 if (!$get_info) {
+    // Delete quick access entry from the sidebar
+    if (isset($_SESSION['QUICK_ACCESS_FILE'][$getidfile])) {
+        unset($_SESSION['QUICK_ACCESS_FILE'][$getidfile]);
+    }
     $user = $name_login ?? '';
     $cause = "Unauthorized access ID files!";
     $report->report_in($cause, $user);
@@ -228,7 +252,7 @@ function streamTextToOutput($filepath) {
                 <a><?php echo XSS($get_info->file_name);?></a>
             </div>
             <div style="display: flex; justify-content: right; align-items: center;">
-                <button class="cross_button_header" onclick="history.back()"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"/></svg></button>
+                <button class="cross_button_header" onclick="window.location.href='index.php?req=doc';"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"/></svg></button>
             </div>
        </div>
        <div class="subframe">

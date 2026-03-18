@@ -239,20 +239,36 @@ h4, h3, h2, h1, p {
     cursor: default;
 }
 
-.Sidebar {
-    width: 85px;
-    float: left;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 15px;
-    border: 1px solid gray;
+/* Side Bar Warpper and control [Head]*/
+.Sidebar-Wrapper {
     position: fixed;
     top: 4px;
     left: 4px;
-    /* Glassy Effect! */
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
+    width: 85px;
+    height: calc(90vh - 8px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     z-index: 100;
 }
+.Sidebar, .Sidebar_QuickAccess {
+    width: 100%;
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    border: 1px solid gray;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.Sidebar::-webkit-scrollbar, 
+.Sidebar_QuickAccess::-webkit-scrollbar {
+    display: none;
+}
+/* Side Bar Warpper and control [Tail]*/
 
 .Bottombar {
     border: 1px solid gray; 

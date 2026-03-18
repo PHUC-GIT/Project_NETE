@@ -13,45 +13,6 @@
     $obj = new index();
     $get_ID = $_SESSION['AUTHENTICATE_USER'];
     $search_value = '';
-    // The array with short tag assign.
-    $file_icons_mime = array(
-        'application/pdf' => './Resource/FormatIcons/PDF.png', // .pdf
-        'text/plain' => './Resource/FormatIcons/Txt.png', // .txt
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document' => './Resource/FormatIcons/Word.png', // .docx
-        'application/msword' => './Resource/FormatIcons/Word.png', // .doc
-        'application/vnd.openxmlformats-officedocument.presentationml.presentation' => './Resource/FormatIcons/Powerpoint.png', // .pptx
-        'application/vnd.ms-powerpoint' => './Resource/FormatIcons/Powerpoint.png', // .pot, .ppa, .pps, .ppt, .pwz
-        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' => './Resource/FormatIcons/Xls.png', // .xlsx
-        'application/vnd.ms-excel' => './Resource/FormatIcons/Xls.png', // .xla, .xlb, .xlc, .xlm, .xls, .xlt, .xlw
-        'application/x-zip-compressed' => './Resource/FormatIcons/Zip.png', // .zip
-        'application/zip' => './Resource/FormatIcons/Zip.png', // .zip
-        'application/x-7z-compressed' => './Resource/FormatIcons/Zip.png', // .7z
-        'application/x-rar-compressed' => './Resource/FormatIcons/Zip.png', // .rar
-        'application/x-rar' => './Resource/FormatIcons/Zip.png', // .rar rare?
-        'image/png' => './Resource/FormatIcons/Image.png', // .png
-        'image/svg+xml' => './Resource/FormatIcons/Image.png', // .svg, .svgz
-        'image/jpeg' => './Resource/FormatIcons/Image.png', // jpe, .jpeg, .jpg, .pjpg, .jfif, .jfif-tbnl, .jif
-        'image/x-icon' => './Resource/FormatIcons/Image.png', // .ico
-        'image/vnd.microsoft.icon' => './Resource/FormatIcons/Image.png', // .ico
-        'application/vnd.sqlite3' => './Resource/FormatIcons/Sql.png', // .db, .sqlite, .sqlite3, .db-wal, .sqlite-wal, .db-shm, .sqlite-shm
-        'audio/mpeg' => './Resource/FormatIcons/Music.png', // .m2a, .m3a, .mp2, .mp2a, .mp3, .mpga
-        'audio/ogg' => './Resource/FormatIcons/Music.png', // .oga, .ogg, .spx
-        'video/mp4' => './Resource/FormatIcons/Video.png', // .mp4, .mp4v, .mpg4
-        'application/vnd.android.package-archive' => './Resource/FormatIcons/Apk.png', // .apk, ".xapk"
-        'nete/folder' => './Resource/FormatIcons/Folder_Files.png', //This one is system specialist mime
-    );
-
-    $view_format_type = array(
-        "application/pdf",
-        "text/plain", 
-        "audio/mpeg",
-        "audio/ogg", 
-        "video/mp4", 
-        "image/jpeg", 
-        "image/png", 
-        "image/x-icon",
-        "image/vnd.microsoft.icon",
-    );
 
     // Folder and direction awareness.
     if (isset($_GET['direct'])) {

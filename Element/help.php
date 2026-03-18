@@ -72,7 +72,7 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
         <span>
             <h2>WELCOME TO NET.E: Crystal Gems</h2><br>
             <br>
-            Getting Started: Side dock is the main navigation that help you moving around the system, Bottom Dock show you quick action and basic information.<br>
+            Getting Started: Side dock (Above) is the main navigation that help you moving around the system and it's scrollable. Side dock (Below) is your quick access to all the files you have been access to that include public and your own file! Maximum can hold 10 unique file! Bottom Dock show you quick action and basic information.<br>
             <br>
             FEATURE:<br>
             <br>

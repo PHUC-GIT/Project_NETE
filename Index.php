@@ -204,6 +204,45 @@ if (isset($_GET['req'])) {
 } else {
     regen_section();
 }
+// File Array Start >> Use in doc.php, file_share, reviewreportfile also use for quick access right below! 
+$file_icons_mime = array(
+    'application/pdf' => './Resource/FormatIcons/PDF.png', // .pdf
+    'text/plain' => './Resource/FormatIcons/Txt.png', // .txt
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document' => './Resource/FormatIcons/Word.png', // .docx
+    'application/msword' => './Resource/FormatIcons/Word.png', // .doc
+    'application/vnd.openxmlformats-officedocument.presentationml.presentation' => './Resource/FormatIcons/Powerpoint.png', // .pptx
+    'application/vnd.ms-powerpoint' => './Resource/FormatIcons/Powerpoint.png', // .pot, .ppa, .pps, .ppt, .pwz
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' => './Resource/FormatIcons/Xls.png', // .xlsx
+    'application/vnd.ms-excel' => './Resource/FormatIcons/Xls.png', // .xla, .xlb, .xlc, .xlm, .xls, .xlt, .xlw
+    'application/x-zip-compressed' => './Resource/FormatIcons/Zip.png', // .zip
+    'application/zip' => './Resource/FormatIcons/Zip.png', // .zip
+    'application/x-7z-compressed' => './Resource/FormatIcons/Zip.png', // .7z
+    'application/x-rar-compressed' => './Resource/FormatIcons/Zip.png', // .rar
+    'application/x-rar' => './Resource/FormatIcons/Zip.png', // .rar rare?
+    'image/png' => './Resource/FormatIcons/Image.png', // .png
+    'image/svg+xml' => './Resource/FormatIcons/Image.png', // .svg, .svgz
+    'image/jpeg' => './Resource/FormatIcons/Image.png', // jpe, .jpeg, .jpg, .pjpg, .jfif, .jfif-tbnl, .jif
+    'image/x-icon' => './Resource/FormatIcons/Image.png', // .ico
+    'image/vnd.microsoft.icon' => './Resource/FormatIcons/Image.png', // .ico
+    'application/vnd.sqlite3' => './Resource/FormatIcons/Sql.png', // .db, .sqlite, .sqlite3, .db-wal, .sqlite-wal, .db-shm, .sqlite-shm
+    'audio/mpeg' => './Resource/FormatIcons/Music.png', // .m2a, .m3a, .mp2, .mp2a, .mp3, .mpga
+    'audio/ogg' => './Resource/FormatIcons/Music.png', // .oga, .ogg, .spx
+    'video/mp4' => './Resource/FormatIcons/Video.png', // .mp4, .mp4v, .mpg4
+    'application/vnd.android.package-archive' => './Resource/FormatIcons/Apk.png', // .apk, ".xapk"
+    'nete/folder' => './Resource/FormatIcons/Folder_Files.png', //This one is system specialist mime
+);
+$view_format_type = array(
+    "application/pdf",
+    "text/plain", 
+    "audio/mpeg",
+    "audio/ogg", 
+    "video/mp4", 
+    "image/jpeg", 
+    "image/png", 
+    "image/x-icon",
+    "image/vnd.microsoft.icon",
+);
+// File Array End
 ?>
 <html lang="en">
     <head>
@@ -261,30 +300,52 @@ if (isset($_GET['req'])) {
           </div>
         </div>
         <script src="JS/RealTime.js" type="text/javascript"></script>
-        <header>    
-            <div class="Sidebar">
-                <button class="btn pointer SidebarItem Home <?php echo XSS($_SESSION['Section_Status']['Home']);?>" onclick="window.location.href='index.php?req=home';" <?php echo XSS($_SESSION['Section_Status']['Home_Disable']);?>><img src="<?php echo XSS($_SESSION['Predefined_Icons_State']['Home']);?>"></button>
-                <button class="btn pointer SidebarItem Utility <?php echo XSS($_SESSION['Section_Status']['Utility']);?>" onclick="window.location.href='index.php?req=utility';" <?php echo XSS($_SESSION['Section_Status']['Utility_Disable']);?>><img src="<?php echo XSS($_SESSION['Predefined_Icons_State']['Utility']);?>"></button>
-                <?php
-                if (!isset($_SESSION['AUTHENTICATE_ADMIN'])) {
-                    ?>
-                    <button class="btn pointer SidebarItem Doc <?php echo XSS($_SESSION['Section_Status']['Doc']);?>" onclick="window.location.href='index.php?req=doc';" <?php echo XSS($_SESSION['Section_Status']['Doc_Disable']);?>><img src="<?php echo XSS($_SESSION['Predefined_Icons_State']['Doc']);?>"></button>
-                    <button class="btn pointer SidebarItem Note <?php echo XSS($_SESSION['Section_Status']['Note']);?>" onclick="window.location.href='index.php?req=note';" <?php echo XSS($_SESSION['Section_Status']['Note_Disable']);?>><img src="<?php echo XSS($_SESSION['Predefined_Icons_State']['Note']);?>"></button>
-                    <button class="btn pointer SidebarItem Preference <?php echo XSS($_SESSION['Section_Status']['Preference']);?>" onclick="window.location.href='index.php?req=preference';" <?php echo XSS($_SESSION['Section_Status']['Preference_Disable']);?>><img src="<?php echo XSS($_SESSION['Predefined_Icons_State']['Preference']);?>"></button>
+        <header>
+            <div class="Sidebar-Wrapper">
+                <!-- Side Bar -->
+                <div class="Sidebar">
+                    <button title="Home" class="btn pointer SidebarItem Home <?php echo XSS($_SESSION['Section_Status']['Home']);?>" onclick="window.location.href='index.php?req=home';" <?php echo XSS($_SESSION['Section_Status']['Home_Disable']);?>><img src="<?php echo XSS($_SESSION['Predefined_Icons_State']['Home']);?>"></button>
+                    <button title="Utility" class="btn pointer SidebarItem Utility <?php echo XSS($_SESSION['Section_Status']['Utility']);?>" onclick="window.location.href='index.php?req=utility';" <?php echo XSS($_SESSION['Section_Status']['Utility_Disable']);?>><img src="<?php echo XSS($_SESSION['Predefined_Icons_State']['Utility']);?>"></button>
                     <?php
-                }
-                ?>
-                <button class="btn pointer SidebarItem Help <?php echo XSS($_SESSION['Section_Status']['Help']);?>" onclick="window.location.href='index.php?req=help';" <?php echo XSS($_SESSION['Section_Status']['Help_Disable']);?>><img src="<?php echo XSS($_SESSION['Predefined_Icons_State']['Help']);?>"></button>
-                <?php
-                if (isset($_SESSION['AUTHENTICATE_ADMIN'])) {
+                    if (!isset($_SESSION['AUTHENTICATE_ADMIN'])) {
+                        ?>
+                        <button title="My Files" class="btn pointer SidebarItem Doc <?php echo XSS($_SESSION['Section_Status']['Doc']);?>" onclick="window.location.href='index.php?req=doc';" <?php echo XSS($_SESSION['Section_Status']['Doc_Disable']);?>><img src="<?php echo XSS($_SESSION['Predefined_Icons_State']['Doc']);?>"></button>
+                        <button title="Memory Notes" class="btn pointer SidebarItem Note <?php echo XSS($_SESSION['Section_Status']['Note']);?>" onclick="window.location.href='index.php?req=note';" <?php echo XSS($_SESSION['Section_Status']['Note_Disable']);?>><img src="<?php echo XSS($_SESSION['Predefined_Icons_State']['Note']);?>"></button>
+                        <button title="User Prefrence" class="btn pointer SidebarItem Preference <?php echo XSS($_SESSION['Section_Status']['Preference']);?>" onclick="window.location.href='index.php?req=preference';" <?php echo XSS($_SESSION['Section_Status']['Preference_Disable']);?>><img src="<?php echo XSS($_SESSION['Predefined_Icons_State']['Preference']);?>"></button>
+                        <?php
+                    }
                     ?>
-                    <button class="btn pointer SidebarItem Track <?php echo XSS($_SESSION['Section_Status']['Track']);?>" onclick="window.location.href='index.php?req=track';" <?php echo XSS($_SESSION['Section_Status']['Track_Disable']);?>><img src="<?php echo XSS($_SESSION['Predefined_Icons_State']['Track']);?>"></button>
-                    <button class="btn pointer SidebarItem Key <?php echo XSS($_SESSION['Section_Status']['Key']);?>" onclick="window.location.href='index.php?req=user';" <?php echo XSS($_SESSION['Section_Status']['Key_Disable']);?>><img src="<?php echo XSS($_SESSION['Predefined_Icons_State']['Key']);?>"></button>
+                    <button title="Help" class="btn pointer SidebarItem Help <?php echo XSS($_SESSION['Section_Status']['Help']);?>" onclick="window.location.href='index.php?req=help';" <?php echo XSS($_SESSION['Section_Status']['Help_Disable']);?>><img src="<?php echo XSS($_SESSION['Predefined_Icons_State']['Help']);?>"></button>
                     <?php
-                }
-                ?>
-                <p></p>
+                    if (isset($_SESSION['AUTHENTICATE_ADMIN'])) {
+                        ?>
+                        <button title="Tracking Report Case" class="btn pointer SidebarItem Track <?php echo XSS($_SESSION['Section_Status']['Track']);?>" onclick="window.location.href='index.php?req=track';" <?php echo XSS($_SESSION['Section_Status']['Track_Disable']);?>><img src="<?php echo XSS($_SESSION['Predefined_Icons_State']['Track']);?>"></button>
+                        <button title="User Manager" class="btn pointer SidebarItem Key <?php echo XSS($_SESSION['Section_Status']['Key']);?>" onclick="window.location.href='index.php?req=user';" <?php echo XSS($_SESSION['Section_Status']['Key_Disable']);?>><img src="<?php echo XSS($_SESSION['Predefined_Icons_State']['Key']);?>"></button>
+                        <?php
+                    }
+                    ?>
+                    <p></p>
+                </div>
+                <!-- Side Bar Quick Access [Available for users only.] -->
+                 <?php
+                 if (!isset($_SESSION['AUTHENTICATE_ADMIN'])) {
+                        ?>
+                        <div class="Sidebar_QuickAccess">
+                            <?php
+                            $displayArray = array_reverse($_SESSION['QUICK_ACCESS_FILE'], true); // Reverse because newest should be on top, not bottom!
+                            foreach($displayArray as $showquickaccess) {
+                                $image_src = $file_icons_mime[$showquickaccess["Mime_Type"]] ?? './Resource/FormatIcons/Unknow.png';
+                                ?>
+                                <button title="<?php echo XSS($showquickaccess["File_Name"])?>" class="btn pointer SidebarItem" onclick="window.location.href='index.php?req=view&idview=<?php echo urlencode($showquickaccess['ID']);?>';"><img src="<?php echo XSS($image_src);?>"></button>
+                                <?php
+                            }
+                            ?>
+                        </div>
+                        <?php
+                    }
+                 ?>
             </div>
+            <!-- Bottom Bar -->
             <div class="Bottombar">
                 <div style="display: flex;">
                     <a class="btn_gems_buttom MAIN_Q" onclick="showModalMenu()"><svg width="63.733mm" height="62.145mm" version="1.1" viewBox="0 0 63.733 62.145" xmlns="http://www.w3.org/2000/svg"><g transform="translate(-81.24 -80.998)"><path d="m113.11 80.998c-17.57 0-31.865 13.908-31.865 31.072 0 17.164 14.295 31.073 31.865 31.073 17.57 0 31.867-13.909 31.867-31.073 0-17.164-14.297-31.072-31.867-31.072zm-2.3874 19.855c-.039.33031.0766.76435-.0563 1.0315-.98186.38617-2.1894.44525-2.9383 1.2625-.2364.3544-.0516.81899-.10749 1.2144.0107 2.4982.13695 4.9932.24495 7.4884.12331 3.5882.17594 7.178.20981 10.768-.60825.023-1.2165.046-1.8247.0692-4.4457-4.2995-8.8374-8.6527-13.336-12.901-1.4339-1.3022-2.8663-2.6143-4.3811-3.8256-.14656.13236-.03314.43313-.07493.61856.07043 3.4996.09772 7.0012.23978 10.499.10113 1.0877.04977 2.2064.3421 3.2675.16838.47344.80108.36697 1.2004.45165.74103.0876 1.5062.10884 2.2293.26406.04302.4316.0618.86503.09147 1.2976-2.0639-.0782-4.1221-.33399-6.1908-.22944-.33435.0206-.67606.0213-1.0154.032-.23336-.60848-.44615-1.227-.63769-1.8542.73705.0837 1.494.0424 2.2252-.0667.56044-.1814.52508-.877.56689-1.3415.17372-4.0548.09685-8.1153.07235-12.172-.0537-.97645.05876-1.9942-.26665-2.9347-.34138-.7758-1.1495-1.2574-1.9249-1.5555-.027-.006-.05488-.008-.08268-.007-.01909.005-.03691.0104-.05374.0176.15878-.42698.3278-.84928.50643-1.2666.28743.004.58161-.005.85938.0124 1.1135.0398 2.2326-.0652 3.3409-.003.65025.33611 1.1254.9244 1.6702 1.3963 4.9225 4.6774 9.7451 9.4541 14.692 14.107.17956.11913.0737-.27016.10386-.34726-.036-2.7126-.2615-5.4179-.33951-8.1292-.0919-1.5794-.18919-3.1624-.38706-4.7325-.0737-.56472-.78186-.6695-1.2413-.7984-.63271-.13062-1.2684-.24821-1.8826-.44338.0717-.28619-.14626-.82858.11989-.94258 2.6701-.14675 5.3513-.16236 8.0259-.24753zm10.566.0284c1.8778.19061 3.7635.3913 5.656.30851 4.3313-.14099 8.6657-.27558 12.999-.21549.17236-.003.35311.0221.53175.0388.59477 1.3941 1.0803 2.8437 1.4464 4.3382-.008.0295-.007.0623.009.094-.007.19589.16414.58307-.16019.59842-.32821.0169-.66274-.0121-.99477-.015-.49722-1.246-1.1848-2.4316-2.0541-3.4664-.25912-.28077-.713-.14216-1.0516-.23255-1.8796-.21329-3.7717-.1924-5.6606-.1912-.79688.0127-1.5979-.0112-2.3921.047-.088.78213-.0278 1.6002-.0517 2.3952.008 1.858-.0208 3.7187.0491 5.5748.47381.11781 1.0082.0434 1.5028.0729 1.5533-.0196 3.1281.0115 4.6571-.29042.75483-.16093.95351-.98933 1.1193-1.6138.13338-.51401.24268-1.0331.36225-1.5503.35613-.0104.71203-.0211 1.0682-.0315.13437 1.7023.0368 3.4148.077 5.1211.005 1.0247.0325 2.0487.0713 3.0727-.36825-.0104-.73659-.0211-1.1048-.0315-.25704-.93968-.37408-1.9337-.81028-2.8164-.36074-.62367-1.1993-.56202-1.8299-.61443-1.7044-.0335-3.4124-.023-5.1134.0971-.0647 1.1144-.008 2.2752-.0258 3.4075.0158 1.4184-.0231 2.842.0631 4.2571.18714.57094.88498.67121 1.4113.71261 2.0455.2108 4.1192.17359 6.1619-.0517.94686-.0829 1.8936-.37688 2.6071-1.0108 1.0262-.85248 1.7192-2.0258 2.1668-3.2525.15659-.0371.34515-.0176.51263-.0408-.2881 2.3051-.85538 4.5265-1.6681 6.6306-.69087-.0153-1.3867.002-2.0764-.0393-4.9589-.19434-9.9254-.20312-14.886-.0837-.90463.0377-1.8115.0428-2.714.11627.0463-.34479-.0865-.75055.0713-1.064 1.1841-.23069 2.4361-.23447 3.5688-.67386.31964-.22382.19519-.69509.25476-1.0232.0596-4.1852-.0244-8.3713-.0248-12.557.0133-1.3628-.0748-2.7293-.20981-4.0824-.22417-.35773-.75546-.3038-1.1193-.42013-.82962-.16376-1.6808-.18642-2.5156-.29508.0195-.40801.0376-.81569.0971-1.2196zm-5.5986 17.004c.0752-.004.15191-.001.22996.007 1.0205-.0593 2.0772.53886 2.4303 1.4795.15644.67302.1289 1.436-.21962 2.049-.6983 1.0898-2.3165 1.4216-3.4148.71417-.66714-.40399-1.1038-1.1588-1.0036-1.928-.0712-.60606.16768-1.2113.63097-1.6242.36556-.36978.82039-.67148 1.3467-.69712zm5.5893 7.3768c2.4875.004 5.0303.65005 7.3334 1.5234 3.2148 1.2191 5.9138 2.8656 7.2512 3.7491-5.4285 6.3314-13.599 10.361-22.754 10.361-6.3794 0-12.28-1.9564-17.109-5.285 1.0464.10994 2.1018.0348 3.1393-.14521 3.6687-.46494 8.6101-2.5547 15.136-7.8708 2.0829-1.6968 4.5152-2.3359 7.0027-2.3322z" fill-rule="evenodd" stop-color="#000000" stroke-linecap="round" stroke-linejoin="round" style="paint-order:markers fill stroke"/></g></svg>NET.E</a>
@@ -298,7 +359,7 @@ if (isset($_GET['req'])) {
                     ?>
                 </div>
                 <div style="display: flex;">
-                    <a class="info_bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: white;"><path d="m21.484 7.125-9.022-5a1.003 1.003 0 0 0-.968 0l-8.978 4.96a1 1 0 0 0-.003 1.748l9.022 5.04a.995.995 0 0 0 .973.001l8.978-5a1 1 0 0 0-.002-1.749z"/><path d="m12 15.856-8.515-4.73-.971 1.748 9 5a1 1 0 0 0 .971 0l9-5-.971-1.748L12 15.856z"/><path d="m12 19.856-8.515-4.73-.971 1.748 9 5a1 1 0 0 0 .971 0l9-5-.971-1.748L12 19.856z"/></svg> 120.17032026</a>
+                    <a class="info_bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: white;"><path d="m21.484 7.125-9.022-5a1.003 1.003 0 0 0-.968 0l-8.978 4.96a1 1 0 0 0-.003 1.748l9.022 5.04a.995.995 0 0 0 .973.001l8.978-5a1 1 0 0 0-.002-1.749z"/><path d="m12 15.856-8.515-4.73-.971 1.748 9 5a1 1 0 0 0 .971 0l9-5-.971-1.748L12 15.856z"/><path d="m12 19.856-8.515-4.73-.971 1.748 9 5a1 1 0 0 0 .971 0l9-5-.971-1.748L12 19.856z"/></svg> 121.18032026</a>
                     <a class="info_bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: white;"><path d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2 7.5 4.019 7.5 6.5zM20 21h1v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h17z"></path></svg><?php echo XSS($name_login ?? '')?></a>
                     <a class="info_bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: white;"><circle cx="12" cy="12" r="4"></circle><path d="M13 4.069V2h-2v2.069A8.01 8.01 0 0 0 4.069 11H2v2h2.069A8.008 8.008 0 0 0 11 19.931V22h2v-2.069A8.007 8.007 0 0 0 19.931 13H22v-2h-2.069A8.008 8.008 0 0 0 13 4.069zM12 18c-3.309 0-6-2.691-6-6s2.691-6 6-6 6 2.691 6 6-2.691 6-6 6z"></path></svg> <?php echo XSS($user_ip)?></a>
                     <a class="info_bottom" id="timeDisplay" style="margin-right: 5px;">00/00/0000 | 0:00 ?M</a>
@@ -364,7 +425,7 @@ if (isset($_GET['req'])) {
                 <br><br>
                 <span>Welcome, </span><a style="font-family: 'Roboto', sans-serif; font-weight: bold;"><?php echo XSS($name_login ?? '')?>!</a>
                 <br><br>
-                <span>Current Build: 120.17032026</span>
+                <span>Current Build: 121.18032026</span>
                 <br><br>
                 <button class="normal_button" onclick="closeModalWelcome()">Ok</button>
             </div>

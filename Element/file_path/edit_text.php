@@ -21,6 +21,20 @@ $ediable_content_type = array("text/plain");
 $actual_path = $get_info->file_link ?? '';
 $file_size = $get_info->size ?? 0;
 
+// Add File to quick access
+if (isset($_SESSION['QUICK_ACCESS_FILE'][$getidfile])) {
+    unset($_SESSION['QUICK_ACCESS_FILE'][$getidfile]);
+}
+$_SESSION['QUICK_ACCESS_FILE'][$getidfile] = [
+    "File_Name" => $get_info->file_name,
+    "ID" => $getidfile,
+    "Mime_Type" => $get_type
+];
+// If the list over 10 then remove the oldest one.
+if (count($_SESSION['QUICK_ACCESS_FILE']) > 10) {
+    array_shift($_SESSION['QUICK_ACCESS_FILE']);
+}
+
 // Check if file is editable.
 if (!in_array($get_type, $ediable_content_type)) {
     $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Error! Given content can't be editable!");
@@ -37,6 +51,10 @@ if ($file_size >= 52428800) {
 
 // Check if file exist?
 if (!file_exists($actual_path)) {
+    // Delete quick access entry from the sidebar
+    if (isset($_SESSION['QUICK_ACCESS_FILE'][$getidfile])) {
+        unset($_SESSION['QUICK_ACCESS_FILE'][$getidfile]);
+    }
     $putitred=$obj->redtrigger($getidfile);
     $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Error! Can not access file!");
     echo "<script>window.location.href='index.php?req=doc';</script>";
@@ -61,6 +79,10 @@ function streamTextToOutput($filepath) {
 
 // If not public or owned files
 if (!$get_info) {
+    // Delete quick access entry from the sidebar
+    if (isset($_SESSION['QUICK_ACCESS_FILE'][$getidfile])) {
+        unset($_SESSION['QUICK_ACCESS_FILE'][$getidfile]);
+    }
     $user = $name_login ?? '';
     $cause = "Unauthorized access ID files!";
     $report->report_in($cause, $user);
