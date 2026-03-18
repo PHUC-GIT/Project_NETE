@@ -436,10 +436,6 @@
                         $result = $delete_file->deletefolder($getidfile);
                         if ($result) {
                             // All files and records are gone.
-                            // Delete quick access entry from the sidebar (Because file is gone so you don't need to access it anymore.)
-                            if (isset($_SESSION['QUICK_ACCESS_FILE'][$getidfile])) {
-                                unset($_SESSION['QUICK_ACCESS_FILE'][$getidfile]);
-                            }
                             header('location:../../index.php?req=doc');
                         } else {
                             // An error occurred during deletion (physical or database).
@@ -468,6 +464,11 @@
                         } else {
                             // File ID not found or not owned by the user.
                             $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "File not found or access denied.");
+                        }
+                        
+                        // Delete quick access entry from the sidebar (Because file is gone so you don't need to access it anymore.)
+                        if (isset($_SESSION['QUICK_ACCESS_FILE'][$getidfile])) {
+                            unset($_SESSION['QUICK_ACCESS_FILE'][$getidfile]);
                         }
                         header('location:../../index.php?req=doc');
                         die;
