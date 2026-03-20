@@ -229,7 +229,7 @@
         #Unique_search {
             padding-left: 10px;
             padding-right: 10px;
-            border: 3px solid rgba(0, 128, 214, 0);
+            border: 3px solid transparent;
             background-color: rgba(0, 128, 214, 0.5);
             border-radius: 5px 0px 0px 5px;
             font-family: 'Roboto', sans-serif;

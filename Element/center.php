@@ -69,6 +69,9 @@
             case 'draw':
                 require "./Element/Utility_path/draw.php";
                 break;
+            case 'AI':
+                require "./Element/Utility_path/DUMBAI/dumb.php";
+                break;
 
             // file_fun_path
             case 'upload_file':

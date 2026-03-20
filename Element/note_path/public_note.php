@@ -123,7 +123,7 @@
         #Unique_search_user_note {
             padding-left: 10px;
             padding-right: 10px;
-            border: 3px solid rgba(255, 153, 0, 0);
+            border: 3px solid transparent;
             background-color: rgba(255, 153, 0, 0.5);
             border-radius: 5px 0px 0px 5px;
             color: white;
