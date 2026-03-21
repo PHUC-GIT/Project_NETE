@@ -143,8 +143,8 @@ if (!$get_info) {
             align-items: center;
             overflow: hidden;
             /* Glassy Effect! */
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
             z-index: 100;
         }
 
@@ -187,8 +187,8 @@ if (!$get_info) {
             outline: none;
             resize: none;
             /* Glassy Effect! */
-            -webkit-backdrop-filter: blur(7px);
-            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
         }
 
         .file_view {
@@ -227,8 +227,8 @@ if (!$get_info) {
             align-items: center;
             overflow: hidden;
             /* Glassy Effect! */
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
             z-index: 100;
         }
 
@@ -271,7 +271,7 @@ if (!$get_info) {
        </div>
     </div>
     <div align="center" class="file_view">
-        <textarea class="view_value_text" name="file_content"><?php echo streamTextToOutput($actual_path);?></textarea>
+        <textarea id="text_form" class="view_value_text" name="file_content"><?php echo streamTextToOutput($actual_path);?></textarea>
     </div>
     </form>
     <script>
@@ -282,4 +282,16 @@ if (!$get_info) {
             saveBtn.disabled = true;
         });
     </script>
+    <?php
+    // Temporary solution. This will get one time use $_Session value from the save and will put current user scroll to the bottom.
+    if (isset($_SESSION['SCROLLTOBOTTOM'])) {
+        ?>
+        <script>
+            const textform = document.getElementById('text_form');
+            textform.scrollTop = textform.scrollHeight;
+        </script>
+        <?php
+        unset($_SESSION['SCROLLTOBOTTOM']);
+    }
+    ?>
 </html>

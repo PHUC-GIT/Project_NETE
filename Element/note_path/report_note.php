@@ -47,8 +47,8 @@
             align-items: center;
             overflow: hidden;
             /* Glassy Effect! */
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
             z-index: 100;
         }
 

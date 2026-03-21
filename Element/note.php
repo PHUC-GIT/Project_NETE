@@ -93,8 +93,8 @@
             align-items: center;
             overflow: hidden;
             /* Glassy Effect! */
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
             z-index: 100;
         }
 
@@ -158,8 +158,8 @@
             cursor: pointer;
             transition: 0.1s;
             /* Glassy Effect! */
-            -webkit-backdrop-filter: blur(7px);
-            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
         }
 
         .Card_Note_Add:hover {
@@ -169,8 +169,8 @@
             border: 3px solid white;
             display: inline-block;
             /* Glassy Effect! */
-            -webkit-backdrop-filter: blur(7px);
-            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
         }
     </style>
     <div align="center">

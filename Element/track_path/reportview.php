@@ -96,8 +96,8 @@ function streamTextToOutput($filepath) {
             align-items: center;
             overflow: hidden;
             /* Glassy Effect! */
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
             z-index: 100;
         }
 
@@ -149,8 +149,8 @@ function streamTextToOutput($filepath) {
             outline: none;
             resize: none;
             /* Glassy Effect! */
-            -webkit-backdrop-filter: blur(7px);
-            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
         }
 
         .file_view {
@@ -188,8 +188,8 @@ function streamTextToOutput($filepath) {
             align-items: center;
             overflow: hidden;
             /* Glassy Effect! */
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
             z-index: 100;
         }
 

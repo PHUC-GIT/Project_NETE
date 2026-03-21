@@ -54,6 +54,7 @@ Fun little built-ins:
 - Quick hardcoded links  
 - YouTube “no-cookie” viewer  
 - Tiny drawing canvas for masterpieces nobody asked for
+- D.U.M.B "AI" with existential crisis to anwser your daily life advice
 
 ### ⚙️ User Preferences
 - Change background  

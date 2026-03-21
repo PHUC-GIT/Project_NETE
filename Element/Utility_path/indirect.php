@@ -55,8 +55,8 @@ if (isset($_GET['in_search'])) {
             align-items: center;
             overflow: hidden;
             /* Glassy Effect! */
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
             z-index: 100;
         }
 
@@ -109,8 +109,8 @@ if (isset($_GET['in_search'])) {
             transition: 0.1s;
             outline: none;
             /* Glassy Effect! */
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
         }
 
         #Unique_search::placeholder {
@@ -227,7 +227,7 @@ if (isset($_GET['in_search'])) {
         </style>
         <!-- History Modal -->
         <div id="modalhistory" style="display:none; position:fixed; z-index:102; left:0; top:0; width:100vw; height:100vh; align-items:center; justify-content:center;">
-            <div style="background-color: rgba(0, 0, 0, 0.5);border: 1px solid gray;color: white;padding:15px 15px;border-radius:10px;width:500px;height:500px;text-align:center;position:relative;font-family: 'Roboto', sans-serif; -webkit-backdrop-filter: blur(7px); backdrop-filter: blur(7px); fill: white;">
+            <div style="background-color: rgba(0, 0, 0, 0.5);border: 1px solid gray;color: white;padding:15px 15px;border-radius:10px;width:500px;height:500px;text-align:center;position:relative;font-family: 'Roboto', sans-serif; -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); fill: white;">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
                         <span style="font-weight: bold; font-size: 30px; cursor: default;">Indirect History</span>
@@ -236,7 +236,7 @@ if (isset($_GET['in_search'])) {
                         <button class="cross_button" onclick="closeModalHistory()"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"/></svg></button>
                     </div>
                 </div>
-                <br><br>
+                <br>
                 <div class="List_Container">
                 <?php
                 foreach($_SESSION['INDIRECT_History'] as $showlist) {
@@ -249,7 +249,7 @@ if (isset($_GET['in_search'])) {
                 }
                 ?>
                 </div>
-                <br><br>
+                <br>
             </div>
         </div>
         <script>

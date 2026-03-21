@@ -41,8 +41,8 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             align-items: center;
             overflow: hidden;
             /* Glassy Effect! */
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
             z-index: 100;
         }
 
@@ -86,8 +86,8 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             outline: none;
             resize: none;
             /* Glassy Effect! */
-            -webkit-backdrop-filter: blur(7px);
-            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
         }
 
         #userinput {
@@ -99,13 +99,13 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             border-radius: 5px 0px 0px 5px;
             font-family: 'Roboto', sans-serif;
             color: white;
-            font-size: 15px;
+            font-size: 20px;
             font-weight: bold;
             transition: 0.1s;
             outline: none;
             /* Glassy Effect! */
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
         }
 
         #userinput::placeholder {
@@ -132,13 +132,16 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
         }
 
         .msg-spirit   { 
-            color: #ff4444; 
+            color: #ff4444;
+            font-size: 20px; 
         }
         .msg-error    { 
-            color: #484848; 
+            color: #484848;
+            font-size: 20px; 
         }
         .msg-user     { 
-            color: white; 
+            color: white;
+            font-size: 20px; 
         }
     </style>
     <div align="center">
@@ -161,7 +164,7 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
                        placeholder="Ask D.U.M.B AI anything...">
                 <button class="btn_card_send" 
                         onclick="askDUMB()">
-                        <svg width="32" height="32" version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g><path transform="matrix(.74784 0 0 .74784 4.0345 4.0345)" d="m30.469 16-11.348 3.1204-3.1204 11.348-3.1204-11.348-11.348-3.1204 11.348-3.1204 3.1204-11.348 3.1204 11.348z" style="paint-order:stroke fill markers"/><path d="m10.157 12.745 2.584-2.4976-5.8311-3.4474z" style="paint-order:stroke fill markers"/><path d="m19.255 10.157 2.4976 2.584 3.4474-5.8311z" style="paint-order:stroke fill markers"/><path d="m21.843 19.255-2.584 2.4976 5.8311 3.4474z" style="paint-order:stroke fill markers"/><path d="m12.745 21.843-2.4976-2.584-3.4474 5.8311z" style="paint-order:stroke fill markers"/></g></svg>
+                        <svg width="40" height="40" version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g><path transform="matrix(.74784 0 0 .74784 4.0345 4.0345)" d="m30.469 16-11.348 3.1204-3.1204 11.348-3.1204-11.348-11.348-3.1204 11.348-3.1204 3.1204-11.348 3.1204 11.348z" style="paint-order:stroke fill markers"/><path d="m10.157 12.745 2.584-2.4976-5.8311-3.4474z" style="paint-order:stroke fill markers"/><path d="m19.255 10.157 2.4976 2.584 3.4474-5.8311z" style="paint-order:stroke fill markers"/><path d="m21.843 19.255-2.584 2.4976 5.8311 3.4474z" style="paint-order:stroke fill markers"/><path d="m12.745 21.843-2.4976-2.584-3.4474 5.8311z" style="paint-order:stroke fill markers"/></g></svg>
                 </button>
             </div>
         </div>

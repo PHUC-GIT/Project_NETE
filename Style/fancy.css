@@ -185,8 +185,8 @@ body.dead_card_active {
     display: flex;
     justify-content: space-between;
     /* Glassy Effect! */
-    -webkit-backdrop-filter: blur(7px);
-    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 }
 
 .Card_Storage_Bar_Info {
@@ -198,8 +198,8 @@ body.dead_card_active {
     justify-content: space-between;
     margin-top: -25px;
     /* Glassy Effect! */
-    -webkit-backdrop-filter: blur(7px);
-    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 }
 
 .img_inside_file_bar {
@@ -257,8 +257,8 @@ h4, h3, h2, h1, p {
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 15px;
     border: 1px solid gray;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-width: none;
@@ -286,8 +286,8 @@ h4, h3, h2, h1, p {
     text-align: center;
     overflow: hidden;
     /* Glassy Effect! */
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     z-index: 100;
 }
 
@@ -607,8 +607,8 @@ h4, h3, h2, h1, p {
     border: 1px solid gray;
     display: inline-block;
     /* Glassy Effect! */
-    -webkit-backdrop-filter: blur(7px);
-    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 }
 
 .Card_note {
@@ -617,8 +617,8 @@ h4, h3, h2, h1, p {
     border: 1px solid gray;
     display: inline-block;
     /* Glassy Effect! */
-    -webkit-backdrop-filter: blur(7px);
-    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 }
 
 /* Dynamic Card Selector */
@@ -892,8 +892,8 @@ h4, h3, h2, h1, p {
     border: 1px solid white;
     border-radius: 10px;
     /* Glassy Effect! */
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 
 }
 
@@ -913,8 +913,8 @@ h4, h3, h2, h1, p {
     border-radius: 5px;
     margin: auto auto;
     /* Glassy Effect! */
-    -webkit-backdrop-filter: blur(7px);
-    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 }
 
 .img_inside {
@@ -1137,8 +1137,8 @@ input[type=checkbox] {
     margin-left: auto;
     margin-right: auto;
     /* Glassy Effect! */
-    -webkit-backdrop-filter: blur(7px);
-    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 }
 
 .span_container {
@@ -1147,8 +1147,8 @@ input[type=checkbox] {
     border: 1px solid gray;
     border-radius: 10px;
     /* Glassy Effect! */
-    -webkit-backdrop-filter: blur(7px);
-    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 }
 
 /* Centered Sub Frame */

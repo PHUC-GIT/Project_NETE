@@ -575,6 +575,8 @@
                         }
                         $result = $update_content->updatefilecontent($getfilesize, $get_file_hash256, $getidfile);
                         if ($result) {
+                            // Set value that will trigger in fileact. One time use to scroll to bottom.
+                            $_SESSION['SCROLLTOBOTTOM'] = true;
                             header('location:../../index.php?req=edittext_file&idview='.$getidfile); // Return to edit area
                             die;
                         } else {

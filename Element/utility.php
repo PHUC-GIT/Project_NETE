@@ -34,8 +34,8 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             align-items: center;
             overflow: hidden;
             /* Glassy Effect! */
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
             z-index: 100;
         }
 
@@ -63,8 +63,8 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             display: block;
             cursor: pointer;
             /* Glassy Effect! */
-            -webkit-backdrop-filter: blur(7px);
-            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
         }
 
         .App:hover {
