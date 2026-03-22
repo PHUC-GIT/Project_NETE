@@ -114,7 +114,7 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
                 </div>
                 <h4><b>Tiny Art</b></h4>
             </div>
-            <div class="App" onclick="window.location.href='index.php?req=AI';">
+            <div class="App" onclick="window.location.href='index.php?req=ORACLE';">
                 <div>
                     <div class="img_app"><img src="./Resource/DUMB.png"></div>
                 </div>

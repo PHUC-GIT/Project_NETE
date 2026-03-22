@@ -69,7 +69,7 @@
             case 'draw':
                 require "./Element/Utility_path/draw.php";
                 break;
-            case 'AI':
+            case 'ORACLE':
                 require "./Element/Utility_path/DUMBAI/dumb.php";
                 break;
 

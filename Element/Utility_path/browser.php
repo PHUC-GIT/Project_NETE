@@ -217,7 +217,7 @@ if (isset($_GET['in_search'])) {
                 font-size: 15px;
                 min-height: 50px;
                 cursor: pointer;
-                transition: 0.3s;
+                transition: 0.1s;
             }
 
             .HistoryRecord:hover {

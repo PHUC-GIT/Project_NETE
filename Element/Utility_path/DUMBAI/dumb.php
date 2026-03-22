@@ -20,6 +20,12 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             font-size: 1.5rem;
         }
 
+        option {
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
         .warn_text {
             color: white;
             font-family: 'Roboto', sans-serif;
@@ -143,11 +149,33 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             color: white;
             font-size: 20px; 
         }
+
+        #model_sel {
+            background: #b20000ff;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            color: white;
+            transition: 0.1s;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        #model_sel:hover{
+            background-color: white;
+            color: #b20000ff;
+        }
     </style>
     <div align="center">
         <div class="outline">
-            <div>
-                <h1 title="DEGRADE UNINTELLIGIBLE MADNESS BRAIN">D.U.M.B AI SYSTEM</h1>
+            <div style="display: flex;">
+                <h1 title="Divine Unfiltered Manifestation Beyond">D.U.M.B AI SYSTEM</h1>
+                <select id="model_sel" class="dropdown_control"> 
+                    <option value="M1" selected>CPU SPIRIT</option>
+                    <option value="M2">CPU SPIRIT SEAL</option>
+                    <option value="M3">CPU SPIRIT V2</option>
+                </select>
             </div>
             <div>
                 <a class="warn_text">Warning: This "AI" is about existential crisis. Please use it at your own risk!</a>
@@ -172,6 +200,7 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
         async function askDUMB() {
         const inputEl  = document.getElementById('userinput');
         const chatbox  = document.getElementById('view_value_text');
+        const modelsel = document.getElementById('model_sel').value;
         const input    = inputEl.value.trim();
         if (!input) return;
 
@@ -182,6 +211,7 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
         // Fetch
         const formData = new FormData();
         formData.append('input', input);
+        formData.append('model', modelsel);
 
         try {
             const response = await fetch('./Element/Utility_path/DUMBAI/respond.php', {

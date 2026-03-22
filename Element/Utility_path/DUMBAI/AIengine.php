@@ -26,8 +26,39 @@ function load_grammar() {
     ];
 }
 
-// MODE 1: CPU SPIRIT
-function spirit_mode($words) {
+// MODE: CPU SPIRIT
+function spirit_mode($words, $input) {
+    $input_number = array_sum(
+        array_map('ord', str_split($input))
+    );
+
+    // Dynamic min/max from input
+    $min = ($input_number % 5) + 3;
+    $max = ($input_number % 10) + 10;
+
+    $length   = rand($min, $max);
+    $response = [];
+    $count    = count($words) - 1;
+    for ($i = 0; $i < $length; $i++) {
+        $response[] = $words[rand(0, $count)];
+    }
+    return implode(" ", $response) . ".";
+}
+
+// MODE: CPU SPIRIT SEAL
+function spirit_mode_seal($words, $input) {
+    // Normalize input
+    $normalized = strtolower(trim($input));
+    $normalized = preg_replace('/[^a-z0-9]/', '', $normalized);
+    
+    // Generate seed from input
+    $seed = array_sum(
+        array_map('ord', str_split($normalized))
+    );
+    
+    // Set seed that will use by rand right below.
+    srand($seed);
+
     $length   = rand(5, 15);
     $response = [];
     $count    = count($words) - 1;
@@ -37,9 +68,9 @@ function spirit_mode($words) {
     return implode(" ", $response) . ".";
 }
 
-// MODE 2: CPU SPIRIT V2
-function grammar_mode($lang) {
-    if (!$lang) return spirit_mode(load_words());
+// MODE: CPU SPIRIT V2
+function grammar_mode($lang, $input) {
+    if (!$lang) return spirit_mode(load_words(), $input);
 
     $nouns      = $lang['nouns'];
     $verbs      = $lang['verbs'];
@@ -66,18 +97,27 @@ function grammar_mode($lang) {
 }
 
 // MAIN BRAIN
-function DUMB_respond($words, $lang) {
-    if (rand(0, 1) === 0 || !$lang) {
+function DUMB_respond($words, $lang, $input, $model) {
+    if ($model == "M1") {
         return [
             "mode"     => "spirit",
             "label"    => "CPU SPIRIT",
-            "response" => spirit_mode($words)
+            "response" => spirit_mode($words, $input)
         ];
-    } else {
+    }
+
+    if ($model == "M2") {
+        return [
+            "mode"     => "spirit",
+            "label"    => "CPU SPIRIT SEAL",
+            "response" => spirit_mode_seal($words, $input)
+        ];
+    }
+    if ($model == "M3") {
         return [
             "mode"     => "spirit",
             "label"    => "CPU SPIRIT V2",
-            "response" => grammar_mode($lang)
+            "response" => grammar_mode($lang, $input)
         ];
     }
 }

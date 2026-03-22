@@ -84,7 +84,7 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             + Indirect: Feed Youtube Video by video ID and using youtube no cookie embeded link.<br>
             + Tiny Art: A simple Art tool that you can draw and save your art work.<br>
             + History in Indirect, Home Browser: This will stored your input data but it's short life and will gone once you log off.<br>
-            + D.U.M.B (DEGRADE UNINTELLIGIBLE MADNESS BRAIN) AI: Your slop spitting AI that has existential crisis if you ask it long enough.<br>
+            + D.U.M.B (Divine Unfiltered Manifestation Beyond) AI: Your AI that has existential crisis if you ask it long enough.<br>
             <br>
             File Manager (My Files): The storage of this self-host system that you can upload, download, review (Base on file that support by browser codec).<br>
             <br>
