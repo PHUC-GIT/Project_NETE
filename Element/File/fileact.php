@@ -203,13 +203,6 @@
                             }
                             if ($oktoupload == 1) {
                                 $requestupload = new index();
-                                // Check for file with same content.
-                                $Request_Hash256 = $requestupload->checkfilehash($get_file_hash256);
-                                if ($Request_Hash256) {
-                                    $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "You have this file already!");
-                                    echo "<script>window.location.href='../../index.php?req=doc';</script>";
-                                    die;
-                                }
 
                                 // Check if file is more than 100 for each user.
                                 $Get_FIle_Num = $requestupload->countfile();
@@ -534,6 +527,8 @@
                         $getidfile = isset($_POST['id_get']) ? $_POST['id_get'] : '';
                         $getcontent = isset($_POST['file_content']) ? $_POST['file_content'] : '';
                         $allow_mime = array('text/plain');
+                        $getfilesize = 0;
+                        $get_file_hash256 = '';
                         $update_content = new index();
                         $get_file_info = $update_content->getinfo_edit($getidfile);
                         $actual_path = "../." . $get_file_info->file_link;
@@ -557,7 +552,12 @@
                         }
                         // Update File Content
                         if (file_exists($actual_path)) {
-                            $old_content = file_get_contents($actual_path) ?? 'FATAL ERROR! CONTENT RETRIVE FAILURE!';
+                            $get_content_size = mb_strlen($getcontent, '8bit');
+                            if ($get_content_size > $session_storage_left || $get_content_size >= 52428800) {
+                                $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Quota limit or maximum file size exceeded! Save cancelled!");
+                                header('location:../../index.php?req=doc');
+                                die;
+                            }
                             if (file_put_contents($actual_path, $getcontent) === false) {
                                 $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Failed to save your edit content file!");
                                 header('location:../../index.php?req=doc');
@@ -566,16 +566,10 @@
                             $getfilesize = filesize($actual_path);
                             $get_file_hash256 = hash_file('sha256', $actual_path);
                         }
-                        if ($getfilesize > $session_storage_left || $getfilesize >= 52428800) {
-                            // Rollback
-                            file_put_contents($actual_path, $old_content);
-                            $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Quota limit or maximum file size exceeded! Changes reverted and file content restored.");
-                            header('location:../../index.php?req=doc');
-                            die;
-                        }
                         $result = $update_content->updatefilecontent($getfilesize, $get_file_hash256, $getidfile);
                         if ($result) {
                             // Set value that will trigger in fileact. One time use to scroll to bottom.
+                            $_SESSION['USER_CURRENT_STORAGE'] = $session_storage_left + $get_size - $getfilesize; // Update new storage metric to user session
                             $_SESSION['SCROLLTOBOTTOM'] = true;
                             header('location:../../index.php?req=edittext_file&idview='.$getidfile); // Return to edit area
                             die;

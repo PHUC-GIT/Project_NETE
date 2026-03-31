@@ -23,7 +23,7 @@ $text_type = array("text/plain");
 $actual_path = $get_info->file_link ?? '';
 // Check if it exist
 if (!file_exists($actual_path)) {
-    $putitred=$obj->redtrigger($getidfile);
+    $obj->redtrigger($getidfile);
     $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Error! Can not access file!");
     echo "<script>window.location.href='index.php?req=report_eye_file';</script>";
     die;

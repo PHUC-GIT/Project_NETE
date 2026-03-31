@@ -6,7 +6,6 @@
 
 ## 🗑️ When Deploying To Server
 Delete the following as they are not needed in production:
-- `3RDPARTY_LICENSES/` folder
 - `Backup/` folder
 - `Extra/` folder
 - `.gitignore`

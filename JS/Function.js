@@ -39,3 +39,14 @@ jQuery(document).ready(function($) {
     }
   });
 });
+
+window.addEventListener('load', () => {
+    const activeItem = document.querySelector('.Sidebar .active');
+    
+    if (activeItem) {
+        activeItem.scrollIntoView({ 
+            behavior: 'auto',
+            block: 'nearest' 
+        });
+    }
+});

@@ -61,7 +61,7 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
     </style>
     <div>
         <div class="outline">
-            <h1>HELP / INFORMATION</h1>
+            <h1>HELP & INFORMATION</h1>
             <div>
                 <button class="btn_card pointer" onclick="window.location.href='index.php?req=privacy';">Privacy</button>
                 <button class="btn_card pointer" onclick="window.location.href='index.php?req=about';">About</button>

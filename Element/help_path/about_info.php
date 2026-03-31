@@ -42,8 +42,8 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             align-items: center;
             overflow: hidden;
             /* Glassy Effect! */
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
             z-index: 100;
         }
 
@@ -71,7 +71,7 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
     </style>
     <div>
         <div class="outline">
-            <h1>ABOUT / APPLICATION VERSION</h1>
+            <h1>ABOUT & APPLICATION VERSION</h1>
             <div>
                 <button class="btn_card pointer" onclick="history.back()">Return</button>
             </div>
@@ -82,20 +82,20 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             ABOUT<br>
             Made By: <a class="Custom_Link" href="https://github.com/PHUC-GIT" target="_blank">PHUC-GIT</a><br>
             <br>
-            NET.ESCAPE CRYSTAL GEMS © 2024-2026 ALL RIGHT RESERVED<br>
-            Release: v0.4.2 - Build: 126.22032026<br> <!-- Away remember to changing this when you mess something in source. -->
+            NET.ESCAPE CRYSTAL GEMS © 2024-2026 by Duy Phuc. All Rights Reserved.<br>
+            Version: v0.4.3 - Build: 129.31032026<br> <!-- Away remember to changing this when you mess something in source. -->
             <br>
-            GitHub Page: <a class="Custom_Link" href="https://github.com/PHUC-GIT/Project_NETE" target="_blank">Project_NET.E</a>
+            GitHub Page: <a class="Custom_Link" href="https://github.com/PHUC-GIT/Project_NETE" target="_blank">Project_NETE</a>
             <br>
             <details>
             <summary>
-                Attribute & Credit
+                Attributes & Credits
             </summary>
-            <a>Library: <a class="Custom_Link" href="https://blog.jquery.com/2022/12/20/jquery-3-6-3-released-a-quick-selector-fix/" target="_blank">Jquery-3.6.3.min</a> - <a class="Custom_Link" href="https://code.jquery.com/jquery-3.6.3.min.js"> Download</a></a> (MIT License)</a></a><br>
-            <a>Interactive Icons (Inline SVG, Icons image): <a class="Custom_Link" href="https://github.com/atisawd/boxicons" target="_blank">Boxicons V2</a> (MIT License)</a><br>
-            <a>Interactive Icons (Icons image): <a class="Custom_Link" href="https://github.com/feathericons/feather" target="_blank">Feathericons</a> (MIT License)</a><br>
-            <a>Fonts: <a class="Custom_Link" href="https://github.com/googlefonts/roboto-3-classic" target="_blank">Roboto Fonts</a> (OLF-1.1 License)</a><br>
-            <a>Blocky Crystal Image: <a class="Custom_Link" href="https://unsplash.com/@pawel_czerwinski" target="_blank">Pawel Czerwinski</a> - <a class="Custom_Link" href="https://unsplash.com/license"> Unsplash</a></a><br>
+            <a>Library: <a class="Custom_Link" href="https://blog.jquery.com/2022/12/20/jquery-3-6-3-released-a-quick-selector-fix/" target="_blank">Jquery-3.6.3.min </a>-<a class="Custom_Link" href="https://code.jquery.com/jquery-3.6.3.min.js"> Download</a></a><a class="Custom_Link" href="3rdParty_Licenses/Jquery-MIT/License" target="_blank"> (MIT License)</a></a></a><br>
+            <a>Interactive Icons (Inline SVG, Icons image): <a class="Custom_Link" href="https://github.com/atisawd/boxicons" target="_blank">Boxicons V2</a><a class="Custom_Link" href="3rdParty_Licenses/Boxicons-MIT/License" target="_blank"> (MIT License)</a></a><br>
+            <a>Interactive Icons (Icons image): <a class="Custom_Link" href="https://github.com/feathericons/feather" target="_blank">Feathericons</a><a class="Custom_Link" href="3rdParty_Licenses/Feathericons-MIT/License" target="_blank"> (MIT License)</a></a><br>
+            <a>Fonts: <a class="Custom_Link" href="https://github.com/googlefonts/roboto-3-classic" target="_blank">Roboto Fonts</a><a class="Custom_Link" href="3rdParty_Licenses/Roboto-OFL-11/License" target="_blank"> (OLF-1.1 License)</a></a><br>
+            <a>Blocky Crystal Image: <a class="Custom_Link" href="https://unsplash.com/@pawel_czerwinski" target="_blank">Pawel Czerwinski </a>-<a class="Custom_Link" href="https://unsplash.com/photos/a-black-and-blue-abstract-background-with-squares-and-rectangles-O_lLr6e8NtQ" target="_blank"> Link to Image </a>-<a class="Custom_Link" href="https://unsplash.com/license" target="_blank"> Unsplash</a></a><br>
             <a>2 People On The Boat Image: <a class="Custom_Link" href="https://www.pexels.com/photo/2-people-on-the-boat-2166711/" target="_blank">Quang Nguyen Vinh</a><br>
             <a>Aurora Borealis Image: <a class="Custom_Link" href="https://www.pexels.com/photo/aurora-borealis-1933239/" target="_blank">Stein Egil Liland</a><br>
             <a>Purple and pink diamond on blue background Image: <a class="Custom_Link" href="https://www.pexels.com/photo/purple-and-pink-diamond-on-blue-background-5011647/" target="_blank">Rostislav Uzunov</a><br>

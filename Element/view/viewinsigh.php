@@ -33,7 +33,7 @@
                 $actual_path = "../." . $get_info->file_link;
                 if (!file_exists($actual_path)) {
                     http_response_code(404);
-                    $putitred=$obj->redtrigger($getidfile);
+                    $obj->redtrigger($getidfile);
                     die('File not found.');
                 }
                 header("Content-Type: ". $get_info->mime_type);
@@ -62,7 +62,7 @@
                 $actual_path = "../." . $get_info->file_link;
                 if (!file_exists($actual_path)) {
                     http_response_code(404);
-                    $putitred=$obj->redtrigger($getidfile);
+                    $obj->redtrigger($getidfile);
                     die('File not found.');
                 }
                 

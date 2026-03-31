@@ -17,8 +17,6 @@ Just raw PHP, HTML/CSS, and less than 120 lines of JavaScript that hold everythi
 ## 📸 Screenshots
 
 <div align="center">
-  <img width="800" alt="login_screen" src="https://github.com/user-attachments/assets/924b2a2b-eb7e-4aa8-83bc-e689b5d5db01" />
-  <p><em>Login</em></p>
   <img width="800" alt="empty_main" src="https://github.com/user-attachments/assets/25d19101-9bb2-43fd-8798-e9670ea34589" />
   <p><em>Main Landing</em></p>
   <img width="800" alt="file_manager" src="https://github.com/user-attachments/assets/b396cbec-409e-4812-9674-1650f45452a9" />
@@ -165,4 +163,6 @@ Because I like knowing every screw, wire, and duct tape inside my system.
 - [Rostislav Uzunov](https://www.pexels.com/photo/purple-and-pink-diamond-on-blue-background-5011647/) - Pexels
 - [Lev Strelchenko](https://www.pexels.com/photo/trees-and-fern-in-forest-17893049/) - Pexels
 
-If this project sparks joy for you too — welcome aboard.
+If this project sparks joy for you too — welcome aboard!
+Please ⭐ it so I know someone touched my project! 🤣
+Made with true passion and ❤!

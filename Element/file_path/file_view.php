@@ -45,7 +45,7 @@ if (!file_exists($actual_path)) {
     if (isset($_SESSION['QUICK_ACCESS_FILE'][$getidfile])) {
         unset($_SESSION['QUICK_ACCESS_FILE'][$getidfile]);
     }
-    $putitred=$obj->redtrigger($getidfile);
+    $obj->redtrigger($getidfile);
     $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Error! Can not access file!");
     echo "<script>window.location.href='index.php?req=doc';</script>";
     die;
