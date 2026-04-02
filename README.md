@@ -157,7 +157,7 @@ Because I like knowing every screw, wire, and duct tape inside my system.
 - [Roboto Fonts](https://fonts.google.com/specimen/Roboto) - OFL-1.1 License
 
 **Wallpapers:**
-- [Pawel Czerwinski](https://unsplash.com/@pawel_czerwinski) - Unsplash
+- [Pawel Czerwinski](https://unsplash.com/@pawel_czerwinski) - [Link to image](https://unsplash.com/photos/a-black-and-blue-abstract-background-with-squares-and-rectangles-O_lLr6e8NtQ) - [Unsplash](https://unsplash.com/license)
 - [Quang Nguyen Vinh](https://www.pexels.com/photo/2-people-on-the-boat-2166711/) - Pexels
 - [Stein Egil Liland](https://www.pexels.com/photo/aurora-borealis-1933239/) - Pexels
 - [Rostislav Uzunov](https://www.pexels.com/photo/purple-and-pink-diamond-on-blue-background-5011647/) - Pexels
