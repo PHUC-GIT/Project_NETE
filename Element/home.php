@@ -55,7 +55,7 @@ $size_show = formatBytes($total_size);
     $doc_type = array('application/pdf', 'text/plain', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/msword', 'application/vnd.openxmlformats-officedocument.presentationml.presentation', 'application/vnd.ms-powerpoint', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.ms-excel', 'application/vnd.sqlite3');
     $img_type = array('image/png', 'image/svg+xml', 'image/jpeg', 'image/vnd.microsoft.icon');
     $audioandvideo_type = array('audio/mpeg', 'video/mp4', 'audio/ogg');
-    $archive_type = array('application/zip', 'application/x-7z-compressed', 'application/x-rar-compressed', 'application/vnd.android.package-archive');
+    $archive_type = array('application/zip', 'application/x-7z-compressed', 'application/x-rar-compressed', 'application/x-rar', 'application/vnd.android.package-archive');
 
     $space_left = formatBytes($maximum_allowed - $total_size);
 

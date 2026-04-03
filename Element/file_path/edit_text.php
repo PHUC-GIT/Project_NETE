@@ -242,7 +242,8 @@ if (!$get_info) {
             cursor: pointer;
         }
         .cross_button_header:hover {
-            background: rgba(0, 128, 214, 0.5);
+            background: white;
+            fill: #0081d6;
         }
     </style>
     <form name="update_file_edit" id="actionform_EDITTXT" method="post" action="Element/File/fileact.php">

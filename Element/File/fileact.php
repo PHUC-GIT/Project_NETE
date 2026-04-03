@@ -393,7 +393,6 @@
                         // Create empty file.
                         $randomvaluefile = bin2hex(random_bytes(64 / 2));
                         $savetodir = $targetdir.$randomvaluefile;
-                        $target_permission = 0600; // This one only use for Linux. Windows will ignore. But may it cause fatal error?
                         $filecontent = ''; // This file content away be empty!
                         if (file_put_contents($savetodir, $filecontent) === false) {
                             $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Failed to created new file");
@@ -401,7 +400,7 @@
                             die;
                         }
 
-                        if (!chmod($savetodir, $target_permission)) {
+                        if (!chmod($savetodir, 0600)) {
                             error_log("NETE_REPORT -> failed to secured file: $savetodir");
                         }
                         $getfilesize = filesize($savetodir);

@@ -16,8 +16,14 @@
             switch ($requestaction) {
                 case 'checkkey':
                     $get_pre_ip = isset($_POST['show_ip']) ? $_POST['show_ip'] : 'null';
-                    if ($_FILES['idkey']['error'] == UPLOAD_ERR_OK               //checks for errors
-                            && is_uploaded_file($_FILES['idkey']['tmp_name'])) { //checks if file is uploaded
+                    if ($_FILES['idkey']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['idkey']['tmp_name'])) { //checks if file is uploaded
+                        $getkeysize = $_FILES['idkey']['size'];
+                        if ($getkeysize > 5242880){
+                            // Exacly 5MB allowed uploaded key before get hash.
+                            $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Key too big to scan.");
+                            echo "<script>window.location.href='../../login_admin.php';</script>";
+                            die;
+                        }
                         $uploadedfile = hash_file('sha256', $_FILES['idkey']['tmp_name']);
                         $admin = new admin_user();
                         $result = $admin->AdminCheckKey($uploadedfile);
@@ -71,7 +77,7 @@
                     }
                     $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Upload key please?");
                     echo "<script>window.location.href='../../login_admin.php';</script>";
-                    break;    
+                    die;    
             }
         }
         // Tail

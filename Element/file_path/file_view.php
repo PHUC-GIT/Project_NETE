@@ -174,6 +174,7 @@ function streamTextToOutput($filepath) {
             overflow-y: auto;
             overflow-x: hidden;
             text-wrap: auto;
+            word-wrap: break-word;
             background-color: rgba(0, 0, 0, 0.5);
             scrollbar-color: #0081d6 transparent;
             border: 1px solid gray;
@@ -239,7 +240,8 @@ function streamTextToOutput($filepath) {
         }
 
         .cross_button_header:hover {
-            background: rgba(0, 128, 214, 0.5);
+            background: white;
+            fill: #0081d6;
         }
 
     </style>
