@@ -17,6 +17,13 @@
             $get_value->execute(array($Get_ID));
             return $get_value->fetch(PDO::FETCH_OBJ);
         }
+        // Master Storage Awarness
+        public function get_totalallocated(){
+            $get_size = $this->connect->prepare("SELECT SUM(storage_allocated) as total_size FROM user");
+            $get_size->execute();
+            $result = $get_size->fetch(PDO::FETCH_OBJ);
+            return $result->total_size ?? 0;
+        }
         public function update_user_withpassword($username, $password, $comment, $storage, $Get_ID){
             $update_value=$this->connect->prepare("UPDATE user SET username=?, password=?, comment=?, storage_allocated=? WHERE iduser=?");
             $update_value->execute(array($username, $password, $comment, $storage, $Get_ID));
@@ -54,15 +61,15 @@
             $get_value->execute(array($Get_ID));
             return $get_value->fetch(PDO::FETCH_OBJ);
         }
-        public function alluser_file($Get_ID, $mime_type="nete/folder"){
+        public function user_file($Get_ID, $mime_type="nete/folder"){
             $get_value=$this->connect->prepare("SELECT * FROM files WHERE Uploader = ? AND mime_type != ?");
             $get_value->execute(array($Get_ID, $mime_type));
             return $get_value->fetchAll(PDO::FETCH_OBJ);
         }
-        public function alluser_NOTE($Get_ID){
-            $get_value=$this->connect->prepare("SELECT * FROM note WHERE Whois = ?");
+        public function user_NOTE($Get_ID){
+            $get_value=$this->connect->prepare("SELECT COUNT(*) FROM note WHERE Whois = ?");
             $get_value->execute(array($Get_ID));
-            return $get_value->fetchAll(PDO::FETCH_OBJ);
+            return $get_value->fetchColumn();
         }
         public function UserCheckLogin($username, $password) {
             $select = $this->connect->prepare("SELECT password FROM user WHERE username COLLATE utf8_bin = ?");

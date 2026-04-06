@@ -92,32 +92,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if ($get_type_item === 'file') {
                         $getidlink = $locdir->get_file_link($get_item_id);
                         if (!$getidlink) {
-                            echo "<script>alert('File Not Found! Clean List Instead Please?');
-                                window.location.href='../../index.php?req=track';
-                                </script>";
+                            $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "File Not Found! Clean List Instead Please?");
+                            header('location:../../index.php?req=track');
                             die;
                         }
                         $todir = $getidlink->file_link;
                         $delete_dir = "../." . $todir;
                         if (file_exists($delete_dir) && !unlink($delete_dir)) {
                             // Deletion failure
-                            echo "<script>alert('!ERROR!: Could not delete the file!');
-                                window.location.href='../../index.php?req=track';
-                                </script>";
-                                die;
+                            $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Could not delete the file!");
+                            header('location:../../index.php?req=track');
+                            die;
                         } else {
                             // File delete or already deleted, Proceed to remove report list!
                             $del = new track();
                             $result = $del->delete_report_gulity($get_type_item, $get_item_id);
                             if ($result) {
-                                echo "<script>alert('Gulity file deleted and clean up duplicate report!');
-                                window.location.href='../../index.php?req=track';
-                                </script>";
+                                $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "[SUCCESS] Gulity file deleted and clean up duplicate report!");
+                                header('location:../../index.php?req=track');
                                 die;
                             } else {
-                                echo "<script>alert('Fail to delete list!');
-                                window.location.href='../../index.php?req=track';
-                                </script>";
+                                $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Fail to delete list!");
+                                header('location:../../index.php?req=track');
                                 die;
                             }
                         }
@@ -126,56 +122,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $del = new track();
                         $result = $del->delete_report_gulity($get_type_item, $get_item_id);
                         if ($result) {
-                            echo "<script>alert('Gulity note deleted and clean up duplicate report!');
-                            window.location.href='../../index.php?req=track';
-                            </script>";
+                            $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "[SUCCESS] Gulity note deleted and clean up duplicate report!");
+                            header('location:../../index.php?req=track');
                             die;
                         } else {
-                            echo "<script>alert('Fail to delete list!');
-                            window.location.href='../../index.php?req=track';
-                            </script>";
+                            $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Fail to delete list!");
+                            header('location:../../index.php?req=track');
                             die;
                         }
                     }
                     die;
-
-                    // THIS ONE BELOW IS OLD MODEL
-                //     $del = new track();
-                //     $result = $del->delete_report_gulity($get_type_item, $get_item_id);
-                //     if ($result) {
-                //         if ($get_type_item == 'file') {
-                //             $addstring = "../.";
-                //             $delete_dir = "{$addstring}" . "{$todir}";
-                //             if (!file_exists($delete_dir)) {
-                //                 echo "<script>alert('!ERROR!: Ehhh... This file do not exist!');
-                //                 window.location.href='../../index.php?req=track';
-                //                 </script>";
-                //                 break;
-                //             }
-                //             if(!unlink($delete_dir)) {
-                //                 echo "<script>alert('!ERROR!: Entry deleted but file can not!');
-                //                 window.location.href='../../index.php?req=track';
-                //                 </script>";
-                //                 break; 
-                //             } else {
-                //                 echo "<script>alert('Successfully delete file and clear up report!');
-                //                 window.location.href='../../index.php?req=track';
-                //                 </script>";
-                //                 break; 
-                //             }
-                //         } else {
-                //             echo "<script>alert('Successfully delete note and clear up report!');
-                //                 window.location.href='../../index.php?req=track';
-                //                 </script>";
-                //                 break; 
-                //         }
-                //     } else {
-                //         echo "<script>alert('!FATAL ERROR!: Can't delete the guilty files or it report!');
-                //         window.location.href='../../index.php?req=track';
-                //         </script>";
-                //         break;
-                //     }
-                // die;
                     
                 case 'deletelist':
                     $get_type_item = isset($_POST['item_type']) ? $_POST['item_type'] : '';
@@ -186,9 +142,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         header('location:../../index.php?req=track');
                         break;
                     } else {
-                        echo "<script>alert('!FATAL ERROR!: Can't delete the report list!');
-                        window.location.href='../../index.php?req=track';
-                        </script>";
+                        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Can't delete the report list!");
+                        header('location:../../index.php?req=track');
                         break;
                     }
                 die;

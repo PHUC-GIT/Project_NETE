@@ -167,6 +167,7 @@ if (isset($_GET['req'])) {
             break;
         case 'doc':
         case 'upload_file':
+        case 'view':
             regen_section();
             $_SESSION['Section_Status']['Doc'] = 'active';
             $_SESSION['Section_Status']['Doc_Disable'] = 'disabled';
@@ -204,7 +205,7 @@ if (isset($_GET['req'])) {
 } else {
     regen_section();
 }
-// File Array Start >> Use in doc.php, file_share, reviewreportfile also use for quick access right below! 
+// File Array Start >> Use doc.php, file_share.php, reviewreportfile.php, home.php also use for quick access right below! 
 $file_icons_mime = array(
     'application/pdf' => './Resource/FormatIcons/PDF.png', // .pdf
     'text/plain' => './Resource/FormatIcons/Txt.png', // .txt
@@ -243,6 +244,10 @@ $view_format_type = array(
     "image/vnd.microsoft.icon",
 );
 // File Array End
+// Tamper Timer Start >> Use in doc.php, file_share.php, reviewreportfile.php, home.php!
+define('RECHECK_FILE_STATUS_TIMER', 30 * 24 * 60 * 60);
+$get_current_time = time();
+// Tamper Timer End
 ?>
 <html lang="en">
     <head>
@@ -359,7 +364,6 @@ $view_format_type = array(
                     ?>
                 </div>
                 <div style="display: flex;">
-                    <a class="info_bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: white;"><path d="m21.484 7.125-9.022-5a1.003 1.003 0 0 0-.968 0l-8.978 4.96a1 1 0 0 0-.003 1.748l9.022 5.04a.995.995 0 0 0 .973.001l8.978-5a1 1 0 0 0-.002-1.749z"/><path d="m12 15.856-8.515-4.73-.971 1.748 9 5a1 1 0 0 0 .971 0l9-5-.971-1.748L12 15.856z"/><path d="m12 19.856-8.515-4.73-.971 1.748 9 5a1 1 0 0 0 .971 0l9-5-.971-1.748L12 19.856z"/></svg> 130.03042026</a>
                     <a class="info_bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: white;"><path d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2 7.5 4.019 7.5 6.5zM20 21h1v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h17z"></path></svg><?php echo XSS($name_login ?? '')?></a>
                     <a class="info_bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: white;"><circle cx="12" cy="12" r="4"></circle><path d="M13 4.069V2h-2v2.069A8.01 8.01 0 0 0 4.069 11H2v2h2.069A8.008 8.008 0 0 0 11 19.931V22h2v-2.069A8.007 8.007 0 0 0 19.931 13H22v-2h-2.069A8.008 8.008 0 0 0 13 4.069zM12 18c-3.309 0-6-2.691-6-6s2.691-6 6-6 6 2.691 6 6-2.691 6-6 6z"></path></svg> <?php echo XSS($user_ip)?></a>
                     <a class="info_bottom" id="timeDisplay" style="margin-right: 5px;">00/00/0000 | 0:00 ?M</a>
@@ -425,7 +429,7 @@ $view_format_type = array(
                 <br><br>
                 <span>Welcome, </span><a style="font-family: 'Roboto', sans-serif; font-weight: bold;"><?php echo XSS($name_login ?? '')?>!</a>
                 <br><br>
-                <span>Current Build: 130.03042026</span>
+                <span>Current Build: 135.06042026</span>
                 <br><br>
                 <button class="normal_button" onclick="closeModalWelcome()">Close</button>
             </div>

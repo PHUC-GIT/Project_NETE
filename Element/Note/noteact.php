@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $tag = "card_default";
                     $requestadd = new index();
                     $Get_Note_Num = $requestadd->countnote();
-                    if ($Get_Note_Num >= 100) {
+                    if ($Get_Note_Num >= 500) {
                         $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Maximum note capacity reached! Please remove some unimportant note.");
                         header('location:../../index.php?req=note');
                         die;

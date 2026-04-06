@@ -12,6 +12,11 @@
     }
     $getiduser = urldecode($_GET['userid'] ?? '');
     $get_info = $getuserinfo->get_user_info($getiduser);
+    if (!$get_info) {
+        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "This user not exist.");
+        echo "<script>window.location.href='index.php?req=user';</script>";
+        die;
+    }
 ?>
 <html lang="en">
     <style>

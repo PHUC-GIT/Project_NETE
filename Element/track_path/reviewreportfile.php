@@ -8,8 +8,6 @@
         header('location: ../../Index.php');
         die;
     }
-    define('RECHECK_FILE_STATUS_TIMER', 30 * 24 * 60 * 60);
-    $get_current_time = time();
     require "./Element/Database/trackcls.php";
     $search_value = '';
     $obj = new track();

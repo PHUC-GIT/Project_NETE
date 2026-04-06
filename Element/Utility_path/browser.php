@@ -195,7 +195,7 @@ if (isset($_GET['in_search'])) {
         <!-- Modal System (Experimental) -->
         <style>
             .List_Container {
-                max-height: 391px;
+                max-height: 440px;
                 overflow-y: auto;
                 overflow-x: hidden;
                 scrollbar-color: #009519 transparent;

@@ -204,9 +204,9 @@
                             if ($oktoupload == 1) {
                                 $requestupload = new index();
 
-                                // Check if file is more than 100 for each user.
+                                // Check if file is more than 500 for each user.
                                 $Get_FIle_Num = $requestupload->countfile();
-                                if ($Get_FIle_Num >= 100) {
+                                if ($Get_FIle_Num >= 500) {
                                     $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Maximum file capacity reached! Please clean up some space.");
                                     echo "<script>window.location.href='../../index.php?req=doc';</script>";
                                     die;
@@ -305,9 +305,9 @@
                         $file_size = 0;
                         $uploader = $session_user;
                         $requestfolder = new index();
-                        // Check if user have more than 100 folder.
+                        // Check if user have more than 500 folder.
                         $Get_Folder_Num = $requestfolder->countfolder();
-                        if ($Get_Folder_Num >= 100) {
+                        if ($Get_Folder_Num >= 500) {
                             $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Maximum folder capacity reached! Please management your space.");
                             echo "<script>window.location.href='../../index.php?req=doc';</script>";
                             die;
@@ -349,7 +349,7 @@
                         $get_file_hash256 = "NULL";
                         $requestcreation = new index();
                         $Get_FIle_Num = $requestcreation->countfile();
-                        if ($Get_FIle_Num >= 100) {
+                        if ($Get_FIle_Num >= 500) {
                             $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Maximum file capacity reached! Please clean up some space.");
                             header('location:../../index.php?req=doc');
                             die;

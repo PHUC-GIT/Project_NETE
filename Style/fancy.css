@@ -99,7 +99,7 @@ body.dead_card_active {
 
 /* Index Menu Modal */
 .List_Container_Menu {
-    max-height: 391px;
+    max-height: 440px;
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-color: #555DBB transparent;
@@ -128,8 +128,6 @@ body.dead_card_active {
     background: var(--uniquehover);
 }
 
-
-
 .cross_button {
     display: flex;
     border: none;
@@ -142,6 +140,51 @@ body.dead_card_active {
 .cross_button:hover {
     background: rgba(145, 29, 29, 0.5);
     fill: #d62828;
+}
+
+/* Portal Menu */
+/* Special button */
+.Stale {
+    --portalborder: #8f8f8f;
+}
+.Flagged {
+    --portalborder: #870000;
+}
+.Stale:hover {
+    --uniquehover: #8f8f8f;
+}
+.Flagged:hover {
+    --uniquehover: #870000;
+}
+
+.List_Container_Portal {
+    max-height: 440px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-color: #ffffff transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.PortalList {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border: solid 1px var(--portalborder);
+    border-radius: 10px;
+    background: transparent;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    min-height: 50px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.PortalList:hover {
+    background: var(--uniquehover);
 }
 
 /* Metter Styling */
@@ -164,7 +207,7 @@ body.dead_card_active {
 
 .warning {
     background: #ae0000;
-    animation: warningBorderWave 1s cubic-bezier(0.4,0,0.2,1) infinite;
+    animation: warningBorderWave 3s cubic-bezier(0.4,0,0.2,1) infinite;
 }
 
 .custom-meter-fill {
@@ -197,6 +240,7 @@ body.dead_card_active {
     display: flex;
     justify-content: space-between;
     margin-top: -25px;
+    margin-bottom: 25px;
     /* Glassy Effect! */
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);

@@ -55,7 +55,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 die;
             }
         }
-
+        // Get Master Drive value information
+        $requestalluserstorage = new user();
+        $Alluserstorage = $requestalluserstorage->get_totalallocated(); // This will get all user current allocated space by SUM all binary bytes.
+        $redzone_diskspace = 10737418240; // Set as Free Space banned zone to keep safety free space
+        $path = __DIR__;
+        $free_bytes = @disk_free_space($path);
+        if ($free_bytes === false) {
+            $session_master_left = 0;
+        } else {
+            $final_bytes = $free_bytes - $redzone_diskspace - $Alluserstorage;
+            if ($final_bytes < 0) $final_bytes = 0; // If thing goes minus, make it zero.
+            $session_master_left = $final_bytes;
+        }
         if (isset($_POST['reqact'])) {
             $requestaction = $_POST['reqact'];
             switch ($requestaction){
@@ -66,10 +78,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $storage_allocated = isset($_POST['storage']) ? $_POST['storage'] : '';
                     $editusername = isset($_POST['edit_username']) ? $_POST['edit_username'] : '';
                     $requestupdate = new user();
+                    $currentuserquota = $requestupdate->get_user_info($ID_USER)->storage_allocated;
+                    $realavailiable = $session_master_left + $currentuserquota; // Refund value
                     if (empty($editusername)) {
-                        echo "<script>alert('You can not leave username empty.');
-                        window.location.href='../../index.php?req=user';
-                        </script>";
+                        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "You can not leave username empty.");
+                        header('location:../../index.php?req=user');
+                        die;
+                    }
+                    if (is_numeric($storage_allocated)) {
+                        if ($storage_allocated < 0) {
+                            $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Storage allocated cant be negative.");
+                            header('location:../../index.php?req=user');
+                            die;
+                        }
+                        if ($storage_allocated > $realavailiable) {
+                            $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "You dont have enough space in master space.");
+                            header('location:../../index.php?req=user');
+                            die;
+                        }
+                    } else {
+                        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Storage allocated must be number value.");
+                        header('location:../../index.php?req=user');
                         die;
                     }
                     if (empty($password)) {
@@ -82,9 +111,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         header('location:../../index.php?req=user');
                         die;
                     } else {
-                        echo "<script>alert('Could not update user');
-                        window.location.href='../../index.php?req=user';
-                        </script>";
+                        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Could not update user.");
+                        header('location:../../index.php?req=user');
                         die;
                     }
                     die;
@@ -96,22 +124,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $comment = isset($_POST['new_comment']) ? $_POST['new_comment'] : '';
                     $storage_allocated = isset($_POST['new_storage']) ? $_POST['new_storage'] : '';
                     if (empty($username)) {
-                        echo "<script>alert('You can not leave username empty.');
-                        window.location.href='../../index.php?req=user';
-                        </script>";
+                        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "You can not leave username empty.");
+                        header('location:../../index.php?req=user');
                         die;
                     }
                     if (is_numeric($storage_allocated)) {
                         if ($storage_allocated < 0) {
-                            echo "<script>alert('Storage allocated cant be negative.');
-                            window.location.href='../../index.php?req=user';
-                            </script>";
+                            $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Storage allocated cant be negative.");
+                            header('location:../../index.php?req=user');
+                            die;
+                        }
+                        if ($storage_allocated > $session_master_left) {
+                            $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "You dont have enough space in master space.");
+                            header('location:../../index.php?req=user');
                             die;
                         }
                     } else {
-                        echo "<script>alert('Storage allocated must be number value.');
-                        window.location.href='../../index.php?req=user';
-                        </script>";
+                        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Storage allocated must be number value.");
+                        header('location:../../index.php?req=user');
                         die;
                     }
                     $requestadd = new user();
@@ -120,9 +150,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         header('location:../../index.php?req=user');
                         die;
                     } else {
-                        echo "<script>alert('Could not make new user');
-                        window.location.href='../../index.php?req=user';
-                        </script>";
+                        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Could not make new user.");
+                        header('location:../../index.php?req=user');
                         die;
                     }
                     die;
@@ -136,22 +165,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $hashfinder = hash('sha256', $getuserdir);
                     $targetdir = "../../User_Data/" . $hashfinder . "/";
                     if (!$userinfo || !$getsalt) {
-                        echo "<script>alert('User do not exist.');
-                        window.location.href='../../index.php?req=user';
-                        </script>";
+                        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "User dont exist.");
+                        header('location:../../index.php?req=user');
                         die;
                     }
                     $result = $requestinfo->deleteuser($ID_USER);
                     if ($result) {
                         deleteDirectory($targetdir);
-                        echo "<script>alert('User deleted success!');
-                        window.location.href='../../index.php?req=user';
-                        </script>";
+                        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "User deleted success!"); // Exception of using modal for success info :)
+                        header('location:../../index.php?req=user');
                         die;
                     } else {
-                        echo "<script>alert('Could not delete user');
-                        window.location.href='../../index.php?req=user';
-                        </script>";
+                        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Could not delete user."); // Exception of using modal for success info :)
+                        header('location:../../index.php?req=user');
                         die;
                     }
                     die;

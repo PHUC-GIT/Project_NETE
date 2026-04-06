@@ -7,6 +7,28 @@
         die;
     }
     $get_user_list = $getuserinfo->user_list();
+    // get master drive information.
+    function formatBytes($bytes, $precision = 2) {
+        $units = array('B', 'KB', 'MB', 'GB', 'TB');
+        $bytes = max($bytes, 0);
+        $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
+        $pow = min($pow, count($units) - 1);
+        $bytes /= pow(1024, $pow);
+        return round($bytes, $precision) . ' ' . $units[$pow];
+    }
+    $userallocated = 0;
+    $mastervalue = 0;
+    $redzone_diskspace = 10737418240; // Set as Free Space banned zone to keep safety free space
+    $path = __DIR__;
+    $free_bytes = @disk_free_space($path);
+    if ($free_bytes === false) {
+        $mastervalue = 'Could not retrieve disk information';
+    } else {
+        $final_bytes = $free_bytes - $redzone_diskspace;
+        if ($final_bytes < 0) $final_bytes = 0; // If thing goes minus, make it zero.
+        $mastervalue = $final_bytes;
+    }
+    $Storagedisplay = formatBytes($mastervalue);
     ?>
     <style>
         h1, h4, p {
@@ -87,7 +109,8 @@
     </div>
         <div align="center" class="span_container">
             <table border="1">
-                <p class="bolder_text">Currently Active User</p>
+                <p class="bolder_text">Current Active User</p>
+                <p class="bolder_text">Master Storage Free Space: <?php echo XSS($Storagedisplay)?></p>
                 <thead>
                     <th><p>Username</p></th>
                     <th><p>Comment</p></th>
@@ -101,7 +124,7 @@
                     <tr align="center">
                         <td><p><?php echo XSS($list->username);?></p></td>
                         <td><p><textarea class="report_panel" rows="2" disabled><?php echo XSS($list->comment);?></textarea></p></td>
-                        <td><p><?php echo XSS($list->storage_allocated);?></p></td>
+                        <td><p><?php echo XSS($list->storage_allocated); $userallocated = $userallocated + $list->storage_allocated;?></p></td>
                         <td>
                             <button type="button" class="btn_in_list" title="Edit" onclick="window.location.href='index.php?req=useredit&userid=<?php echo XSS($list->iduser);?>';">Edit</button>
                             <form name="del_user_<?php echo XSS($list->iduser);?>" id="del_user_<?php echo XSS($list->iduser);?>" method="post" action="Element/User/useract.php" style="display: inline;">
@@ -124,6 +147,8 @@
                         <td><input class="btn_in_list" type="submit" value="Add New User"/></td></td>
                     </form>
                 </tbody>
+                <p class="bolder_text">Total of space allocated to user: <?php $userusespacedisplay = $userallocated; echo XSS(formatBytes($userusespacedisplay));?></p>
+                <p class="bolder_text">Actually space left allow to allocate: <?php $RealMasterStorage = max(0, $mastervalue - $userusespacedisplay);  echo XSS(formatBytes($RealMasterStorage));?></p>
             </table>
         </div>
 </html>
