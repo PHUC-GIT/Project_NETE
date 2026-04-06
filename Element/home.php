@@ -280,7 +280,7 @@ $size_show = formatBytes($total_size);
                         <div style="width: 20px; height: 20px; background: #0AC963; border-radius: 5px;"></div><div class="Small_Info_Style"><?php echo $size_img?> Image</div>
                         <div style="width: 20px; height: 20px; background: #6700d6; border-radius: 5px;"></div><div class="Small_Info_Style"><?php echo $size_audioandvideo?> Audio&Video</div>
                         <div style="width: 20px; height: 20px; background: #d60000; border-radius: 5px;"></div><div class="Small_Info_Style"><?php echo $size_archive?> Archive</div>
-                        <div style="width: 20px; height: 20px; background: #5a5a5a; border-radius: 5px;"></div><div class="Small_Info_Style"><?php echo $size_unknow?> Unknow</div>
+                        <div style="width: 20px; height: 20px; background: #5a5a5a; border-radius: 5px;"></div><div class="Small_Info_Style"><?php echo $size_unknow?> Unknown</div>
                         <div style="width: 20px; height: 20px; background: #eee; border-radius: 5px;"></div><div class="Small_Info_Style"><?php echo $space_left?> Free</div>
                     </div>
                 </div>

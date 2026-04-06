@@ -144,7 +144,7 @@
                         <td><p><input type="text" name="new_username" id="new_username" placeholder="New Username" required/></p></td>
                         <td><p><textarea class="report_panel" name="new_comment" placeholder="New Comment..." rows="2"></textarea></p></td>
                         <td><p><input type="number" name="new_storage" id="new_storage" value="0"/></p></td>
-                        <td><input class="btn_in_list" type="submit" value="Add New User"/></td></td>
+                        <td><input class="btn_in_list" type="submit" value="Add New User"/></td>
                     </form>
                 </tbody>
                 <p class="bolder_text">Total of space allocated to user: <?php $userusespacedisplay = $userallocated; echo XSS(formatBytes($userusespacedisplay));?></p>
