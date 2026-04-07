@@ -128,9 +128,8 @@ Please refer to [note](https://github.com/PHUC-GIT/Project_NETE/blob/main/note.m
 ## 🔒 Security Audit
 
 <div align="center">
-  <img width="350" alt="ZAP result top" src="https://github.com/user-attachments/assets/5ff0b091-3d2f-4d83-bee8-a60dd7f1c669" /><img width="350" alt="ZAP result bottom" src="https://github.com/user-attachments/assets/4202c6d7-a2b4-452d-b14e-d68ba291687b" />
-
-  <p><em>Active scan with OWASP ZAP 2.17.0 using `ATTACK mode` and authenticated attack base</em></p>
+  <img width="350" alt="ZAP result top" src="https://github.com/user-attachments/assets/d47fb977-4c10-44d3-a884-31df777cefc0" /><img width="350" alt="ZAP result bottom" src="https://github.com/user-attachments/assets/1fc005c3-7be0-48e5-bf78-1c15e32d737c" />
+  <p><em>Active scan with OWASP ZAP 2.17.0 using `ATTACK mode` and user authenticated attack base</em></p>
 </div>
 
 ---
