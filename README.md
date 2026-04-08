@@ -10,7 +10,7 @@ and a handful of tiny internet utilities — all written *entirely from scratch*
 in pure PHP.  
 
 No frameworks. No Composer. No CDN. No vendor folder.  
-Just raw PHP, HTML/CSS, and less than 120 lines of JavaScript that hold everything together with duct tape.
+Just raw PHP, HTML/CSS, JavaScript that hold everything together with duct tape.
 
 ---
 
