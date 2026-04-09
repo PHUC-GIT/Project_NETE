@@ -33,9 +33,8 @@ Just raw PHP, HTML/CSS, JavaScript that hold everything together with duct tape.
 - Folder system with recursion-safe move logic  
   → prevents dropping a folder into its own descendants (anti–time paradox system)
 - Internal file sharing
-- Integrity check (Tamper Shield)  
-- Delete files & folders permanently — no trash bin (we respect commitment)
-- Live text file content editable so you can write your ultimate sit-con in here. (Only save if content size is lower than 50MB, If it's larger than that then it's the DB dump, not a ordinary text file.)
+- Integrity check + monitor system (Tamper Shield, Tamper sentinel)
+- Live text file content editable so you can write your ultimate sitcom in here. (Only save if content size is lower than 50MB, If it's larger than that then it's the DB dump, not a ordinary text file.)
 - Quick access sidebar for recently viewed files — session-based, stores up to 10 unique recently accessed files (Most useless feature you'll ever need.)
 
 ### 📝 Memory Notes
