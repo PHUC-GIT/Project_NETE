@@ -134,9 +134,9 @@ Please refer to [note](https://github.com/PHUC-GIT/Project_NETE/blob/main/note.m
 ---
 
 ## 📜 License
-MIT — meaning you can use, modify, and fork NET.E freely.  
-If something explodes, corrupts, disappears, or becomes self-aware,  
-that’s on you (it works on my machine™).
+AGPL-3.0 Meaning you can use, modify, and fork NET.E freely.
+But if you host this on the web, you must share your source code too. No hiding your duct tape.
+If something explodes, corrupts, disappears, or becomes self-aware, that’s on you (it works on my machine™).
 
 ---
 
