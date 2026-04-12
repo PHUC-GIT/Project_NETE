@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="600" height="585" alt="Project_NETE_Logo" src="https://github.com/user-attachments/assets/2b3a2e0d-bddb-4ebf-8571-cd0d6b04a3a6" />
+  <img width="600" height="585" alt="NETEORIGIN" src="https://github.com/user-attachments/assets/fb3c0922-bdcf-4f74-bfa6-9b0f6f63d93e" />
 </div>
 
 # NET.E
