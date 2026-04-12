@@ -37,12 +37,6 @@ header("X-Content-Type-Options: nosniff");
         }
     </style>
     <head>
-        <!-- Meta Data -->
-        <meta charset="UTF-8">
-        <meta name="description" content="A self-host NET.E files server that offer top tier privacy because their is no external API.">
-        <meta name="keywords" content="tech, app, cloud, files">
-        <meta name="author" content="Duy Phuc">
-
         <!-- Resource Link and Script -->
         <title>Login for Admin</title>
         <link rel="icon" type="image/x-icon" href="Resource/Web_ICO.png">
