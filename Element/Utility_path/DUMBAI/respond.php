@@ -1,4 +1,6 @@
 <?php
+// NET.ESCAPE | (C) 2024-2026 PHUC-GIT | GNU AGPLv3 (See /LICENSE)
+
 error_reporting(0);
 ini_set('display_errors', 0);
 ob_start();

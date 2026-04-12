@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php
+// NET.ESCAPE | (C) 2024-2026 PHUC-GIT | GNU AGPLv3 (See /LICENSE)
+
 // Check if someone direct URL without index.php
 if (!defined('NETE_INTEGRITY_CHECK')) {
     header('location: ../../Index.php');
@@ -82,10 +84,10 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             ABOUT<br>
             Made By: <a class="Custom_Link" href="https://github.com/PHUC-GIT" target="_blank">PHUC-GIT </a>-<a class="Custom_Link" href="./LICENSE" target="_blank"> LICENSE</a><br>
             <br>
-            NET.ESCAPE © 2024-2026 by PHUC-GIT. All Rights Reserved.<br>
-            Version: v0.6.0 - Build: 145.12042026<br> <!-- Always remember to changing this when you mess something in source. -->
+            Copyright © 2024-2026 PHUC-GIT. Licensed under the GNU Affero General Public License v3.0.<br>
+            Version: 0.6.0 - Build: 147.12042026<br> <!-- Always remember to changing this when you mess something in source. -->
             <br>
-            GitHub Page: <a class="Custom_Link" href="https://github.com/PHUC-GIT/Project_NETE" target="_blank">Project_NETE</a><br>
+            <a class="Custom_Link" href="https://github.com/PHUC-GIT/Project_NETE" target="_blank">Project_NETE</a><br>
             <br>
             <details>
             <summary>

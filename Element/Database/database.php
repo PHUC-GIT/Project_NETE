@@ -1,5 +1,7 @@
 <?php
 
+// NET.ESCAPE | (C) 2024-2026 PHUC-GIT | GNU AGPLv3 (See /LICENSE)
+
 class database {
     
     public $connect;

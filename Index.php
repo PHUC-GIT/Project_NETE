@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php
+// NET.ESCAPE | (C) 2024-2026 PHUC-GIT | GNU AGPLv3 (See /LICENSE)
+
 ini_set('session.cookie_httponly', '1'); 
 ini_set('session.cookie_samesite', 'Lax');
 ini_set('session.cookie_secure', '1'); // Change it to '0' if you're run it on http localhost or without secured HTTPS but only if something unexpect happened.
@@ -440,7 +442,7 @@ $get_current_time = time();
                 <br><br>
                 <span>Welcome, </span><a style="font-family: 'Roboto', sans-serif; font-weight: bold;"><?php echo XSS($name_login ?? '')?>!</a>
                 <br><br>
-                <span>Current Build: 145.12042026</span>
+                <span>Current Build: 147.12042026</span>
                 <br><br>
                 <button class="normal_button" onclick="closeModalWelcome()">Close</button>
             </div>

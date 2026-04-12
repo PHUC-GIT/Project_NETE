@@ -1,4 +1,6 @@
 <?php
+// NET.ESCAPE | (C) 2024-2026 PHUC-GIT | GNU AGPLv3 (See /LICENSE)
+
 function load_words() {
     $path = __DIR__ . "/langdata/common_english_words.txt";
     if (!file_exists($path)) return false;

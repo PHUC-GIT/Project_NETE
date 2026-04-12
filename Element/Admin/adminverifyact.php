@@ -1,4 +1,6 @@
 <?php
+// NET.ESCAPE | (C) 2024-2026 PHUC-GIT | GNU AGPLv3 (See /LICENSE)
+
     ini_set('session.cookie_httponly', '1'); 
     ini_set('session.cookie_samesite', 'Lax');
     ini_set('session.cookie_secure', '1'); // Change it to '0' if you're run it on http localhost or without secured HTTPS but only if something unexpect happened. 

@@ -1,4 +1,6 @@
 <?php
+// NET.ESCAPE | (C) 2024-2026 PHUC-GIT | GNU AGPLv3 (See /LICENSE)
+
     session_start();
     set_time_limit(0);
     ignore_user_abort(true);
