@@ -17,11 +17,11 @@ Just raw PHP, HTML/CSS, JavaScript that hold everything together with duct tape.
 ## 📸 Screenshots
 
 <div align="center">
-  <img width="800" alt="empty_main" src="https://github.com/user-attachments/assets/ba798460-29a3-465d-ad44-99ed7e89d3a0" />
+  <img width="800" alt="empty_main"  src="https://github.com/user-attachments/assets/ecb55d37-6364-4d55-a229-d01a4b980acb" />
   <p><em>Main Landing</em></p>
-  <img width="800" alt="file_manager" src="https://github.com/user-attachments/assets/04920e8e-62c1-4cbf-bc92-fc3c5b0c6828" />
+  <img width="800" alt="file_manager" src="https://github.com/user-attachments/assets/8054bd60-0d95-4179-b1ef-d924d15adf0c" />
   <p><em>My Files — manage your uploaded and created files</em></p>
-  <img width="800" alt="memory_note" src="https://github.com/user-attachments/assets/4cec0f69-60fb-4364-864b-398ed7cc4544" />
+  <img width="800" alt="memory_note"  src="https://github.com/user-attachments/assets/246b682c-14c0-42e6-a476-4425c20b56db" />
   <p><em>Memory Notes — quick notes with 6 color options</em></p>
 </div>
 
