@@ -40,6 +40,7 @@ jQuery(document).ready(function($) {
   });
 });
 
+// JS that control the active sidebar sector
 window.addEventListener('load', () => {
     const activeItem = document.querySelector('.Sidebar .active');
     

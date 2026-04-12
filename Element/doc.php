@@ -502,14 +502,14 @@
         <div class="outline">
             <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
                 <h1>MY FILES</h1><a title="Your Storage: <?php echo XSS($size_show);?> / <?php echo formatBytes($maximum_allowed);?>" class="Info"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg></a>
-            </div>
-            <?php
-            if ($percent_used > 70) {
-                ?>
-                    <a class="alert_ico" title="Your storage going short! Consider clean up some space?"><img src="Resource\alert.png"></a>
                 <?php
-            }
-            ?>
+                if ($percent_used > 70) {
+                    ?>
+                        <a class="alert_ico" title="Your storage going short! Consider clean up some space?"><img src="Resource\alert.png"></a>
+                    <?php
+                }
+                ?>
+            </div>
             <div>
                 <form method="get" action="index.php" style="display: flex;">
                     <input type="hidden" name="req" value="doc">
@@ -611,7 +611,11 @@
                         <div>
                             <?php
                             $getfiletype = $show->mime_type;
-                            $image_src = $file_icons_mime[$show->mime_type] ?? './Resource/FormatIcons/Unknow.png';
+                            if ($getfiletype != "nete/folder") {
+                                $image_src = $file_icons_mime[$getfiletype] ?? './Resource/FormatIcons/Unknow.png';
+                            } else {
+                                $image_src = $folder_icons_mime[$show->file_link];
+                            }
                             ?>
                             <?php
                             $quickview_img = array("image/jpeg", "image/png");
@@ -634,7 +638,7 @@
                             <?php
                         }
                         ?>
-                        <?php if ($show->mime_type != "nete/folder") {
+                        <?php if ($getfiletype != "nete/folder") {
                             if ($layout_val == 'list-div') {
                                 ?>
                                     <p>Share: <?php echo XSS($share_status)?></p>
@@ -696,7 +700,7 @@
                         }
                         ?>
                         <?php
-                            if ($show->mime_type != "nete/folder") {
+                            if ($getfiletype != "nete/folder") {
                                 $lastchecktime = strtotime($show->last_check);
                                 $time_diff = $get_current_time - $lastchecktime;
                                 $is_outdated = ($time_diff > RECHECK_FILE_STATUS_TIMER);

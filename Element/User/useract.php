@@ -79,6 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $editusername = isset($_POST['edit_username']) ? $_POST['edit_username'] : '';
                     $requestupdate = new user();
                     $currentuserquota = $requestupdate->get_user_info($ID_USER)->storage_allocated;
+                    $userusedquota = $requestupdate->get_useralreadyusedrefund($ID_USER);
                     $realavailiable = $session_master_left + $currentuserquota; // Refund value
                     if (empty($editusername)) {
                         $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "You can not leave username empty.");
@@ -95,6 +96,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "You dont have enough space in master space.");
                             header('location:../../index.php?req=user');
                             die;
+                        }
+                        // Prevent taked user current used byte.
+                        if ($storage_allocated < $userusedquota) {
+                            $storage_allocated = $userusedquota;
                         }
                     } else {
                         $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Storage allocated must be number value.");

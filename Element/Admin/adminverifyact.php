@@ -21,7 +21,7 @@
                         if ($getkeysize > 5242880){
                             // Exacly 5MB allowed uploaded key before get hash.
                             $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Key too big to scan.");
-                            echo "<script>window.location.href='../../login_admin.php';</script>";
+                            header('location:../../login_admin.php');
                             die;
                         }
                         $uploadedfile = hash_file('sha256', $_FILES['idkey']['tmp_name']);
@@ -67,16 +67,16 @@
                             die;
                         } else {
                             $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Wrong key.");
-                            echo "<script>window.location.href='../../login_admin.php';</script>";
+                            header('location:../../login_admin.php');
                             die;
                         }
                     }else{
                         $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Can't read the files");
-                        echo "<script>window.location.href='../../login_admin.php';</script>";
+                        header('location:../../login_admin.php');
                         die;
                     }
                     $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Upload key please?");
-                    echo "<script>window.location.href='../../login_admin.php';</script>";
+                    header('location:../../login_admin.php');
                     die;    
             }
         }

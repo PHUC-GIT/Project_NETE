@@ -32,7 +32,9 @@ if (isset($_SESSION['QUICK_ACCESS_FILE'][$getidfile])) {
 $_SESSION['QUICK_ACCESS_FILE'][$getidfile] = [
     "File_Name" => $get_info->file_name,
     "ID" => $getidfile,
-    "Mime_Type" => $get_type
+    "Mime_Type" => $get_type,
+    "Type" => $get_info->type,
+    "Size" => $get_info->size ?? 0,
 ];
 // If the list over 10 then remove the oldest one.
 if (count($_SESSION['QUICK_ACCESS_FILE']) > 10) {

@@ -290,6 +290,7 @@
                         die;
                     
                     case 'addfolder':
+                        $folder_icons_mime = array('no', 'star', 'music', 'video', 'image', 'doc', 'danger');
                         $parent_folder_id = $_SESSION['Current_Folder'];
                         // Check if files is in folder.
                         if ($parent_folder_id) {
@@ -298,21 +299,27 @@
                             $parent_folder_id = "NULL";
                         }
                         $is_share = 0;
+                        $folder_style = !empty($_POST['is_folder_style']) ? $_POST['is_folder_style'] : "no";
                         $file_name = !empty($_POST['folder_name']) ? $_POST['folder_name'] : "Untitled";
                         $filetype = "folder";
                         $get_mime = "nete/folder"; // <<< This one is unique folder identity. You need use replace option when changing.
-                        $file_link = "no";
+                        $file_link = $folder_style; // <<< Paste from folder style. file_link repurpose!
                         $file_size = 0;
                         $uploader = $session_user;
                         $requestfolder = new index();
                         // Check if user have more than 500 folder.
                         $Get_Folder_Num = $requestfolder->countfolder();
                         if ($Get_Folder_Num >= 500) {
-                            $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Maximum folder capacity reached! Please management your space.");
-                            echo "<script>window.location.href='../../index.php?req=doc';</script>";
+                            $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Maximum folder capacity reached! Please manage your space.");
+                            header('location:../../index.php?req=doc');
                             die;
                         }
-
+                        // Check if something when wrong.
+                        if (!in_array($folder_style, $folder_icons_mime)) {
+                            $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Style Invalid!");
+                            header('location:../../index.php?req=doc');
+                            die;
+                        }
                         $result = $requestfolder->addfile($file_name, $file_link, $file_size, $filetype, $get_file_hash256="NULL", $parent_folder_id, $get_mime , $is_share);
                         if ($result) {
                             header('location:../../index.php?req=doc');
@@ -492,10 +499,18 @@
                         die;
                     
                     case 'updatefolder':
+                        $folder_icons_mime = array('no', 'star', 'music', 'video', 'image', 'doc', 'danger');
                         $getidfile = isset($_POST['id_get']) ? $_POST['id_get'] : '';
                         $moving_file = isset($_POST['moving_file']) ? $_POST['moving_file'] : 'NULL';
                         $folder_name = !empty($_POST['folder_name']) ? $_POST['folder_name'] : bin2hex(random_bytes(10 / 2));
+                        $folder_style = !empty($_POST['is_folder_style']) ? $_POST['is_folder_style'] : "no";
                         $update_file = new index();
+                        // Check if something when wrong.
+                        if (!in_array($folder_style, $folder_icons_mime)) {
+                            $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Style Invalid!");
+                            header('location:../../index.php?req=doc');
+                            die;
+                        }
                         // Skip if moving is have text "NULL".
                         if ($moving_file !== "NULL"){
                             if (!$update_file->checkiffolderexist($moving_file)) {
@@ -510,7 +525,7 @@
                                 die;
                             }
                         }
-                        $result = $update_file->updatefolder($folder_name, $moving_file, $getidfile);
+                        $result = $update_file->updatefolder($folder_name, $folder_style, $moving_file, $getidfile);
                         if ($result) {
                             header('location:../../index.php?req=doc');
                             die;

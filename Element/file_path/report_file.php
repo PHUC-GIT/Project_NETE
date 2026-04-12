@@ -9,7 +9,7 @@
     require "./Element/Database/trackcls.php";
     if (!isset($_GET['reportid'])) {
         $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "No context have been given.");
-        echo "<script>window.location.href='index.php?req=doc';</script>";
+        header('location: Index.php?req=doc');
         die;
     }
     if (isset($_SESSION['AUTHENTICATE_USER'])) {

@@ -61,7 +61,7 @@ header("X-Content-Type-Options: nosniff");
                 <form name="formlogin" method="post" action="Element/User/userverifyact.php">
                     <input type="hidden" name="reqact" value="checklogin">
                     <p></p>
-                    <a class="Brand">NET.E CRYSTAL GEMS</a>
+                    <a class="Brand">NET.E SYSTEM</a>
                     <p></p>
                     <input type="text" name="username" id="username" placeholder="User Name" required/>
                     <p></p>

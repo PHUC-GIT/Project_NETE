@@ -10,6 +10,7 @@ Delete the following as they are not needed in production:
 - `Extra/` folder
 - `.gitignore`
 - `.gitattributes`
+- `README`
 - This note file
 
 ---

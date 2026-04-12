@@ -10,7 +10,7 @@
     require "./Element/Database/reportcls.php";
     if (!isset($_GET['idedit'])) {
         $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "No context have been given.");
-        echo "<script>window.location.href='index.php?req=doc';</script>";
+        echo "<script>window.location.href='index.php?req=doc'; </script>";
         die;
     }
     $Get_Name = $name_login ?? '';
@@ -26,7 +26,8 @@
         $user = $Get_Name;
         $cause = "Unauthorized access ID files to edit!";
         $report->report_in($cause, $user);
-        echo "<script>alert('!WARNING!: File is invalid for access.'); window.location.href='index.php?req=doc'; </script>";
+        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "File is invalid for access.");
+        echo "<script>window.location.href='index.php?req=doc'; </script>";
         die;
     }
     if (!$folder_file_check) {
@@ -146,6 +147,17 @@
                         }
                     }
                     ?>
+                </select>
+                <p></p>
+                <p>Folder style</p>
+                <select name="is_folder_style" style="cursor: pointer;">
+                    <option value="no">Standard Folder</option>
+                    <option value="star">Star Folder</option>
+                    <option value="music">Music Folder</option>
+                    <option value="video">Video Folder</option>
+                    <option value="image">Image Folder</option>
+                    <option value="doc">Document Folder</option>
+                    <option value="danger">Danger Folder</option>
                 </select>
                 <p></p>
                 <input id="btn_upload" type="submit" value="Save"/>

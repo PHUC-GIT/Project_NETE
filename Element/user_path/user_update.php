@@ -102,7 +102,7 @@
                 <p></p>
                 <p>This Account Comment</p>
                 <textarea name="row_comment" id="text_content" placeholder="The account Comment" rows="5" cols="33"><?php echo XSS($get_info->comment);?></textarea>
-                <p>Current User Storage Allocated [Bytes]</p>
+                <p>Current User Storage Allocated [Bytes] | Note: The space will be shrink to user current storage.</p>
                 <input type="number" name="storage" id="storage" value="<?php echo XSS($get_info->storage_allocated);?>"/>
                 <p></p>
                 <input id="btn_upload" type="submit" value="Update"/></td>

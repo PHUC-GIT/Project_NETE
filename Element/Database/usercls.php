@@ -24,6 +24,12 @@
             $result = $get_size->fetch(PDO::FETCH_OBJ);
             return $result->total_size ?? 0;
         }
+        public function get_useralreadyusedrefund($Get_ID){
+            $get_size = $this->connect->prepare("SELECT SUM(size) as total_size FROM files WHERE Uploader=?");
+            $get_size->execute(array($Get_ID));
+            $result = $get_size->fetch(PDO::FETCH_OBJ);
+            return $result->total_size ?? 0;
+        }
         public function update_user_withpassword($username, $password, $comment, $storage, $Get_ID){
             $update_value=$this->connect->prepare("UPDATE user SET username=?, password=?, comment=?, storage_allocated=? WHERE iduser=?");
             $update_value->execute(array($username, $password, $comment, $storage, $Get_ID));

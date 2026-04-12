@@ -31,11 +31,13 @@
         $user = $Get_Name;
         $cause = "Unauthorized access ID files to edit!";
         $report->report_in($cause, $user);
-        echo "<script>alert('!WARNING!: File is invalid for access.'); window.location.href='index.php?req=doc'; </script>";
+        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "File is invalid for access.");
+        echo "<script>window.location.href='index.php?req=doc'; </script>";
         die;
     }
     if ($folder_file_check) {
-        echo "<script>alert('!WARNING!: File type you try to edit is invalid!'); window.location.href='index.php?req=doc'; </script>";
+        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "File type you try to edit is invalid!");
+        echo "<script>window.location.href='index.php?req=doc'; </script>";
         die;
     }
     $selector = $get_info->share;

@@ -2,7 +2,7 @@
   <img width="600" height="585" alt="Project_NETE_Logo" src="https://github.com/user-attachments/assets/2b3a2e0d-bddb-4ebf-8571-cd0d6b04a3a6" />
 </div>
 
-# NET.E: Crystal Gems  
+# NET.E
 ### The Ultimate Low-Quality File Server (That shouldn't work, yet it is.)
 
 NET.E is an experimental self-hosted platform that bundles a file manager, notes,

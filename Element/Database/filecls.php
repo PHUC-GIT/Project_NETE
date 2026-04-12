@@ -215,10 +215,10 @@
             return $update->rowCount() > 0;
         }
 
-        public function updatefolder($folder_name, $moving_file, $getidfile){
+        public function updatefolder($folder_name, $file_link, $moving_file, $getidfile){
             // Main operation
-            $update=$this->connect->prepare("UPDATE files SET file_name=?, parent_folder_id=? WHERE id=? AND Uploader=? AND mime_type='nete/folder'");
-            $update->execute(array($folder_name, $moving_file, $getidfile, $_SESSION['AUTHENTICATE_USER']));
+            $update=$this->connect->prepare("UPDATE files SET file_name=?, file_link=?, parent_folder_id=? WHERE id=? AND Uploader=? AND mime_type='nete/folder'");
+            $update->execute(array($folder_name, $file_link, $moving_file, $getidfile, $_SESSION['AUTHENTICATE_USER']));
             return $update->rowCount() > 0;
         }
         

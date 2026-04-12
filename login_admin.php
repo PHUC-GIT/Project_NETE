@@ -57,7 +57,7 @@ header("X-Content-Type-Options: nosniff");
                 <form name="formlogin" method="post" enctype="multipart/form-data" action="Element/Admin/adminverifyact.php">
                     <input type="hidden" name="reqact" value="checkkey"> 
                     <p></p>
-                    <a class="Brand">NET.E CRYSTAL GEMS</a>
+                    <a class="Brand">NET.E SYSTEM</a>
                     <p></p>
                     <input id="key_upload_font" type="file" name="idkey" id="idkey"/>
                     <p></p>

@@ -208,7 +208,7 @@ $size_show = formatBytes($total_size);
             color: white;
             padding: 15px 15px;
             border-radius: 10px;
-            width: 1000px;
+            width: 650px;
             height: 500px;
             text-align: center;
             position: relative;
@@ -286,12 +286,13 @@ $size_show = formatBytes($total_size);
                 </div>
                 <!-- End of the quota bar -->
             </div>
-        <h1 align="center" class="text_container">TAMPER PORTAL</h1><br>
+        <h1 align="center" class="text_container">TAMPER PORTAL & QUICK ACCESS DETAIL</h1><br>
             <div class="flex-div" align="center">
+                <!-- This is the tamper protal -->
                 <div class="portal_container">
                     <div style="align-items: center;">
                         <div>
-                            <span style="font-size: 15px; cursor: default;"><?php echo XSS($TotalCount)?> items need attention</span>
+                            <span style="font-size: 15px; cursor: default;"><?php echo Dynamic_Items_Counter(XSS($TotalCount));?> need attention</span>
                         </div>
                     </div>
                     <br>
@@ -301,8 +302,28 @@ $size_show = formatBytes($total_size);
                             ?>
                             <a class="PortalList <?php echo XSS($listportal['Flag']);?>" href="index.php?req=doc&files_search=<?php echo XSS($listportal['Target_File']);?>">
                                 <svg style="margin-left: 10px;" width="30" height="30" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m6 2a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2v-12l-6-6h-8zm7 2 5 5h-4-1v-5zm-1.9902 6.4902h1.9805v2.2402l-.46875 4.8438h-1.0352l-.47656-4.8438v-2.2402zm.078125 7.7148h1.8301v1.8301h-1.8301v-1.8301z"/></svg>
-                                <span style="margin-left: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><?php echo XSS($listportal['Target_File']);?></span>
-                                <span style="margin-left: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"> | Status Detected: <?php echo XSS($listportal['Flag']);?></span>
+                                <span style="margin-left: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><?php echo XSS($listportal['Target_File']);?>  | Status Detected: <?php echo XSS($listportal['Flag']);?></span>
+                            </a>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+                <!-- This is the quick access portal -->
+                <div class="portal_container">
+                    <div style="align-items: center;">
+                        <div>
+                            <span style="font-size: 15px; cursor: default;"><?php echo Dynamic_Items_Counter(count($_SESSION['QUICK_ACCESS_FILE']));?> in quick access</span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="List_Container_Portal">
+                        <?php
+                        foreach ($_SESSION['QUICK_ACCESS_FILE'] as $listportal){
+                            ?>
+                            <a class="PortalList QuickAccess" href="index.php?req=view&idview=<?php echo urlencode($listportal['ID']);?>">
+                                <svg style="margin-left: 10px;" width="30" height="30" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m6 2a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2v-12l-6-6h-8zm7 2 5 5h-4-1v-5zm-2.4668 7.6582h5.4668v5.4668l-2.25-2.25-4.7832 4.7832-.9668-.9668 4.7832-4.7832-2.25-2.25z"/></svg>
+                                <span style="margin-left: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><?php echo XSS($listportal["File_Name"]);?> | <?php echo XSS(formatBytes($listportal["Size"]));?> | Type: <?php echo XSS($listportal["Type"]);?></span>
                             </a>
                             <?php
                         }
@@ -311,10 +332,10 @@ $size_show = formatBytes($total_size);
                 </div>
             </div>
         <?php
-    } else {
+        } else {
+            ?>
+            <h1 align="center" class="text_container">SORRY! ONLY AVAILABLE FOR USERS!</h1><br>
+            <?php
+        }
         ?>
-        <h1 align="center" class="text_container">SORRY! ONLY AVAILABLE FOR USERS!</h1><br>
-        <?php
-    }
-    ?>
 </html>

@@ -14,6 +14,46 @@
   font-style: normal;
 }
 
+/* Global Hide Scrollbar */
+/* Target the entire scrollbar area */
+::-webkit-scrollbar {
+    width: 0px;       /* Remove vertical scrollbar width */
+    height: 0px;      /* Remove horizontal scrollbar height */
+    background: transparent; /* Make the track invisible */
+}
+
+/* Target the track (the background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Target the thumb (the moving part) */
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+/* Support for Firefox and IE */
+html, body {
+    scrollbar-width: none;       /* Firefox */
+    -ms-overflow-style: none;    /* IE/Edge */
+}
+
+/* Arrow helper control */
+.scroll_svg {
+    fill: #414141;
+    transition: fill 0.1s;
+}
+
+.scroll_svg.active {
+    fill: #ffffff;
+    cursor: pointer;
+}
+
+.scroll_svg.disabled {
+    fill: #414141;
+    cursor: not-allowed;
+}
+
 /* Unique Colored */
 .Main {
     --uniquecolor: #545cbb80;
@@ -155,6 +195,13 @@ body.dead_card_active {
 }
 .Flagged:hover {
     --uniquehover: #870000;
+}
+/* Special button for quick access in home.php */
+.QuickAccess {
+    --portalborder: #7700ff;
+}
+.QuickAccess:hover {
+    --uniquehover: #7700ff;
 }
 
 .List_Container_Portal {

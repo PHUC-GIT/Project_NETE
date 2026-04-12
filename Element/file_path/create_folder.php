@@ -112,6 +112,17 @@
             <p>Folder Name</p>
             <input type="text" maxlength="100" name="folder_name" id="folder_name" placeholder="Your folder name" required/>
             <p></p>
+            <p>Folder style</p>
+            <select name="is_folder_style" style="cursor: pointer;">
+                <option value="no">Standard Folder</option>
+                <option value="star">Star Folder</option>
+                <option value="music">Music Folder</option>
+                <option value="video">Video Folder</option>
+                <option value="image">Image Folder</option>
+                <option value="doc">Document Folder</option>
+                <option value="danger">Danger Folder</option>
+            </select>
+            <p></p>
             <input id="btn_upload" type="submit" value="Create"/></td>
             </form>
         </div>

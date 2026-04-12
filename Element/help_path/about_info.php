@@ -80,12 +80,12 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
     <div class="flex_div span_container">
         <span>
             ABOUT<br>
-            Made By: <a class="Custom_Link" href="https://github.com/PHUC-GIT" target="_blank">PHUC-GIT</a><br>
+            Made By: <a class="Custom_Link" href="https://github.com/PHUC-GIT" target="_blank">PHUC-GIT </a>-<a class="Custom_Link" href="./LICENSE" target="_blank"> LICENSE</a><br>
             <br>
-            NET.ESCAPE CRYSTAL GEMS © 2024-2026 by PHUC-GIT. All Rights Reserved.<br>
-            Version: v0.5.0 - Build: 136.06042026<br> <!-- Away remember to changing this when you mess something in source. -->
+            NET.ESCAPE © 2024-2026 by PHUC-GIT. All Rights Reserved.<br>
+            Version: v0.6.0 - Build: 145.12042026<br> <!-- Always remember to changing this when you mess something in source. -->
             <br>
-            GitHub Page: <a class="Custom_Link" href="https://github.com/PHUC-GIT/Project_NETE" target="_blank">Project_NETE</a>
+            GitHub Page: <a class="Custom_Link" href="https://github.com/PHUC-GIT/Project_NETE" target="_blank">Project_NETE</a><br>
             <br>
             <details>
             <summary>
@@ -106,7 +106,12 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
     <p></p>
         <h1 align="center">History Of Development Logo</h1>
         <div class="Logo">
-            <img src="Resource/Netscape-redesign-RE-VER2.png">
+            <img src="Resource/NETESCAPEV3.png" style="margin-left: 80px;">
+            <p align="center">NET.E Logo (4/2026)</p>
+        </div>
+        <p></p>
+        <div class="Logo">
+            <img src="Resource/NETESCAPEV2.png">
             <p align="center">NET.E Logo (9/2025)</p>
         </div>
         <p></p>

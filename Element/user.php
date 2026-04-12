@@ -109,8 +109,9 @@
     </div>
         <div align="center" class="span_container">
             <table border="1">
-                <p class="bolder_text">Current Active User</p>
-                <p class="bolder_text">Master Storage Free Space: <?php echo XSS($Storagedisplay)?></p>
+                <p class="bolder_text">Math tips: 1KB = 1024, 1MB = 1024 x 1024, 1GB = 1024 x 1024 x 1024 and so on.</p>
+                <p class="bolder_text">Pro tips: For 55MB for example = 55 x 1024 x 1024, And the rest is the same.</p>
+                <p>Master Storage Free Space: <?php echo XSS($Storagedisplay)?></p>
                 <thead>
                     <th><p>Username</p></th>
                     <th><p>Comment</p></th>
@@ -124,7 +125,7 @@
                     <tr align="center">
                         <td><p><?php echo XSS($list->username);?></p></td>
                         <td><p><textarea class="report_panel" rows="2" disabled><?php echo XSS($list->comment);?></textarea></p></td>
-                        <td><p><?php echo XSS($list->storage_allocated); $userallocated = $userallocated + $list->storage_allocated;?></p></td>
+                        <td><p><?php echo XSS(formatBytes($list->storage_allocated)); $userallocated = $userallocated + $list->storage_allocated;?></p></td>
                         <td>
                             <button type="button" class="btn_in_list" title="Edit" onclick="window.location.href='index.php?req=useredit&userid=<?php echo XSS($list->iduser);?>';">Edit</button>
                             <form name="del_user_<?php echo XSS($list->iduser);?>" id="del_user_<?php echo XSS($list->iduser);?>" method="post" action="Element/User/useract.php" style="display: inline;">
@@ -147,8 +148,9 @@
                         <td><input class="btn_in_list" type="submit" value="Add New User"/></td>
                     </form>
                 </tbody>
-                <p class="bolder_text">Total of space allocated to user: <?php $userusespacedisplay = $userallocated; echo XSS(formatBytes($userusespacedisplay));?></p>
-                <p class="bolder_text">Actually space left allow to allocate: <?php $RealMasterStorage = max(0, $mastervalue - $userusespacedisplay);  echo XSS(formatBytes($RealMasterStorage));?></p>
+                <p>Total of space allocated to user: <?php $userusespacedisplay = $userallocated; echo XSS(formatBytes($userusespacedisplay));?></p>
+                <p>Actually space left allow to allocate: <?php $RealMasterStorage = max(0, $mastervalue - $userusespacedisplay);  echo XSS(formatBytes($RealMasterStorage));?></p>
+                <p class="bolder_text">Current Active User</p>
             </table>
         </div>
 </html>
