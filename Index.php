@@ -442,7 +442,7 @@ $get_current_time = time();
                 <br><br>
                 <span>Welcome, </span><a style="font-family: 'Roboto', sans-serif; font-weight: bold;"><?php echo XSS($name_login ?? '')?>!</a>
                 <br><br>
-                <span>Current Build: 147.12042026</span>
+                <span>Current Build: 148.14042026</span>
                 <br><br>
                 <button class="normal_button" onclick="closeModalWelcome()">Close</button>
             </div>

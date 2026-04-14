@@ -23,6 +23,18 @@
     $get_folder = $obj->getfolderavailable();
     $folder_file_check = $obj->checkiffolderexist($getidfile);
     $count_folder = count($get_folder);
+
+    $selectedlist = array(
+        'no' => '',
+        'star' => '',
+        'music' => '',
+        'video' => '',
+        'image' => '',
+        'doc' => '',
+        'danger' => '',
+    );
+    $selectedlist[$get_info->file_link] = "selected";
+
     // If not owned files
     if (!$get_info) {
         $user = $Get_Name;
@@ -153,13 +165,13 @@
                 <p></p>
                 <p>Folder style</p>
                 <select name="is_folder_style" style="cursor: pointer;">
-                    <option value="no">Standard Folder</option>
-                    <option value="star">Star Folder</option>
-                    <option value="music">Music Folder</option>
-                    <option value="video">Video Folder</option>
-                    <option value="image">Image Folder</option>
-                    <option value="doc">Document Folder</option>
-                    <option value="danger">Danger Folder</option>
+                    <option value="no" <?php echo XSS($selectedlist["no"]);?>>Standard Folder</option>
+                    <option value="star" <?php echo XSS($selectedlist["star"]);?>>Star Folder</option>
+                    <option value="music" <?php echo XSS($selectedlist["music"]);?>>Music Folder</option>
+                    <option value="video" <?php echo XSS($selectedlist["video"]);?>>Video Folder</option>
+                    <option value="image" <?php echo XSS($selectedlist["image"]);?>>Image Folder</option>
+                    <option value="doc" <?php echo XSS($selectedlist["doc"]);?>>Document Folder</option>
+                    <option value="danger" <?php echo XSS($selectedlist["danger"]);?>>Danger Folder</option>
                 </select>
                 <p></p>
                 <input id="btn_upload" type="submit" value="Save"/>
