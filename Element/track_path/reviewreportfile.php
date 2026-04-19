@@ -4,7 +4,7 @@
 <html lang="en">
     <?php
     // NET.ESCAPE | (C) 2024-2026 PHUC-GIT | GNU AGPLv3 (See /LICENSE)
-    
+
     // Check if someone direct URL without index.php
     if (!defined('NETE_INTEGRITY_CHECK')) {
         header('location: ../../Index.php');
@@ -112,7 +112,6 @@
             font-size: 15px;
             font-weight: bold;
             margin-left: 10px;
-            transition: 0.1s;
             display: flex;
             align-items: center;
             gap: 5px;
@@ -126,7 +125,6 @@
             border: 3px solid #ff0062;
             background-color: #ff0062;
             border-radius: 0px 5px 5px 0px;
-            transition: 0.1s;
             display: flex;
             align-items: center;
             cursor: pointer;
@@ -141,7 +139,6 @@
             font-family: 'Roboto', sans-serif;
             font-size: 15px;
             font-weight: bold;
-            transition: 0.1s;
             outline: none;
             /* Glassy Effect! */
             -webkit-backdrop-filter: blur(15px);
@@ -173,7 +170,6 @@
             font-size: 15px;
             font-weight: bold;
             color: white;
-            transition: 0.1s;
             margin-left: 10px;
             cursor: pointer;
         }
@@ -197,7 +193,6 @@
             background-color: #ff0062;
             border-radius: 5px 0px 0px 5px;
             margin-left: 10px;
-            transition: 0.1s;
             display: flex;
             align-items: center;
             cursor: pointer;
@@ -210,7 +205,6 @@
             border: 3px solid #ff0062;
             background-color: #ff0062;
             border-radius: 0px 5px 5px 0px;
-            transition: 0.1s;
             display: flex;
             align-items: center;
             cursor: pointer;

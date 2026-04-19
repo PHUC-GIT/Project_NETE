@@ -112,7 +112,6 @@
             font-size: 15px;
             font-weight: bold;
             margin-left: 10px;
-            transition: 0.1s;
             display: flex;
             align-items: center;
             gap: 5px;
@@ -133,7 +132,6 @@
             font-size: 15px;
             font-weight: bold;
             color: white;
-            transition: 0.1s;
             margin-left: 10px;
             cursor: pointer;
         }
@@ -158,7 +156,6 @@
             border: 3px dashed gray;
             display: inline-block;
             cursor: pointer;
-            transition: 0.1s;
             /* Glassy Effect! */
             -webkit-backdrop-filter: blur(15px);
             backdrop-filter: blur(15px);

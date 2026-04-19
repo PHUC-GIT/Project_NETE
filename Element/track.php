@@ -61,7 +61,6 @@
             font-size: 15px;
             font-weight: bold;
             margin-left: 10px;
-            transition: 0.1s;
             cursor: pointer;
         }
 
@@ -79,7 +78,6 @@
             color: white;
             margin-left: 5px;
             margin-right: 5px;
-            transition: 0.1s;
             cursor: pointer;
         }
 

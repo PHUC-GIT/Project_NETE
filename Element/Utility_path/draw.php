@@ -50,7 +50,6 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             font-size: 15px;
             font-weight: bold;
             margin-left: 10px;
-            transition: 0.1s;
             cursor: pointer;
         }
 
@@ -79,7 +78,6 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             border: 3px solid #5bca80ff;
             background-color: #5bca80ff;
             border-radius: 5px 0px 0px 5px;
-            transition: 0.1s;
             display: flex;
             align-items: center;
             cursor: pointer;
@@ -92,7 +90,6 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             border: 3px solid #5bca80ff;
             background-color: #5bca80ff;
             border-radius: 0px 5px 5px 0px;
-            transition: 0.1s;
             display: flex;
             align-items: center;
             cursor: pointer;
@@ -131,7 +128,6 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
           font-size: 15px;
           font-weight: bold;
           margin-left: 10px;
-          transition: 0.1s;
           display: flex;
           align-items: center;
           gap: 5px;

@@ -74,7 +74,6 @@ header("X-Content-Type-Options: nosniff");
                 border-radius: 5px;
                 font-family: 'Roboto', sans-serif; 
                 font-weight: bold; 
-                transition: 0.1s; 
                 cursor: pointer;
             }
             .normal_button:hover {

@@ -66,7 +66,6 @@
             color: white;
             font-size: 15px;
             font-weight: bold;
-            transition: 0.1s;
         }
 
         .btn_card:hover {
@@ -97,14 +96,12 @@
             color: white;
             font-family: 'Roboto', sans-serif;
             font-size: 13px;
-            transition: 0.1s;
             cursor: pointer;
         }
 
         #btn_submit:hover{
             background-color: #ffffff;
             color: #0698c0;
-            transition: 0.1s;
         }
     </style>
     <div>

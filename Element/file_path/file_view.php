@@ -150,7 +150,6 @@ function streamTextToOutput($filepath) {
             font-size: 15px;
             font-weight: bold;
             margin-left: 10px;
-            transition: 0.1s;
             cursor: pointer;
         }
 
@@ -239,7 +238,6 @@ function streamTextToOutput($filepath) {
             background: transparent;
             fill: white;
             border-radius: 5px;
-            transition: 0.1s; 
             cursor: pointer;
         }
 

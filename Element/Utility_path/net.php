@@ -54,7 +54,6 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             font-size: 15px;
             font-weight: bold;
             margin-left: 10px;
-            transition: 0.1s;
             cursor: pointer;
         }
 
@@ -74,7 +73,6 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             font-family: 'Roboto', sans-serif;
             font-size: 20px;
             font-weight: bold;
-            transition: 0.1s;
             /* Glassy Effect! */
             -webkit-backdrop-filter: blur(15px);
             backdrop-filter: blur(15px);
@@ -89,7 +87,6 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             font-family: 'Roboto', sans-serif;
             font-size: 20px;
             font-weight: bold;
-            transition: 0.1s;
             cursor: pointer;
             /* Glassy Effect! */
             -webkit-backdrop-filter: blur(15px);
@@ -110,7 +107,6 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             font-size: 20px;
             font-weight: bold;
             color: white;
-            transition: 0.1s;
             margin-left: 10px;
             cursor: pointer;
             /* Glassy Effect! */

@@ -395,7 +395,6 @@ $get_current_time = time();
                 font-family: 'Roboto', sans-serif; 
                 font-weight: bold; 
                 margin-right: 10px; 
-                transition: 0.1s; 
                 cursor: pointer;
             }
             .del_button:hover {
@@ -411,7 +410,6 @@ $get_current_time = time();
                 border-radius: 5px;
                 font-family: 'Roboto', sans-serif; 
                 font-weight: bold; 
-                transition: 0.1s; 
                 cursor: pointer;
             }
             .normal_button:hover {
@@ -442,7 +440,7 @@ $get_current_time = time();
                 <br><br>
                 <span>Welcome, </span><a style="font-family: 'Roboto', sans-serif; font-weight: bold;"><?php echo XSS($name_login ?? '')?>!</a>
                 <br><br>
-                <span>Current Build: 148.14042026</span>
+                <span>Current Build: 154.15042026</span>
                 <br><br>
                 <button class="normal_button" onclick="closeModalWelcome()">Close</button>
             </div>

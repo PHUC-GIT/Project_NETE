@@ -206,7 +206,6 @@
             font-size: 15px;
             font-weight: bold;
             margin-left: 10px;
-            transition: 0.1s;
             display: flex;
             align-items: center;
             gap: 5px;
@@ -220,7 +219,6 @@
             border: 3px solid #0081d6;
             background-color: #0081d6;
             border-radius: 0px 5px 5px 0px;
-            transition: 0.1s;
             display: flex;
             align-items: center;
             cursor: pointer;
@@ -236,7 +234,6 @@
             color: white;
             font-size: 15px;
             font-weight: bold;
-            transition: 0.1s;
             outline: none;
             /* Glassy Effect! */
             -webkit-backdrop-filter: blur(15px);
@@ -268,7 +265,6 @@
             font-size: 15px;
             font-weight: bold;
             color: white;
-            transition: 0.1s;
             margin-left: 10px;
             cursor: pointer;
         }
@@ -301,7 +297,6 @@
             background-color: #0081d6;
             border-radius: 5px 0px 0px 5px;
             margin-left: 10px;
-            transition: 0.1s;
             display: flex;
             align-items: center;
             cursor: pointer;
@@ -314,7 +309,6 @@
             border: 3px solid #0081d6;
             background-color: #0081d6;
             border-radius: 0px 5px 5px 0px;
-            transition: 0.1s;
             display: flex;
             align-items: center;
             cursor: pointer;
@@ -370,7 +364,6 @@
             border: none;
             background-color: #0081d6;
             border-radius: 5px;
-            transition: 0.1s;
             display: flex;
             align-items: center;
             gap: 5px;
@@ -393,7 +386,6 @@
             border: none;
             background-color: #484848ff;
             border-radius: 5px;
-            transition: 0.1s;
             display: flex;
             align-items: center;
             gap: 5px;
@@ -413,7 +405,6 @@
             font-size: 15px;
             font-weight: bold;
             margin-left: 5px;
-            transition: 0.1s;
             display: flex;
             align-items: center;
             gap: 5px;
@@ -442,7 +433,6 @@
             font-weight: bold;
             text-decoration: none;
             font-family: 'Roboto', sans-serif;
-            transition: 0.1s;
             outline: none;
             white-space: nowrap;
             overflow: hidden;
@@ -470,7 +460,6 @@
             margin-top: 10px;
             margin-left: auto;
             margin-right: auto;
-            transition: 0.1s;
             /* Glassy Effect! */
             -webkit-backdrop-filter: blur(15px);
             backdrop-filter: blur(15px);
@@ -667,7 +656,7 @@
                                     <input type="hidden" name="csrf_token" value="<?php echo XSS($_SESSION['CSRF_TOKEN'] ?? '');?>"/>
                                     <input type="hidden" name="reqact" value="deletefile"/>
                                     <input type="hidden" name="idfile" value="<?php echo urlencode($show->id);?>"/>
-                                    <button type="button" class="btnsmall" title="Delete" onclick="showModalConfirm('Are you sure you want to delete this file? You will not able to recover it afterward.', function() {document.getElementById('fileDelete_<?php echo XSS($show->id);?>').submit();});"><img src="Resource/Delete.png"></button>
+                                    <button type="button" class="btnsmall report" title="Delete" onclick="showModalConfirm('Are you sure you want to delete this file? You will not able to recover it afterward.', function() {document.getElementById('fileDelete_<?php echo XSS($show->id);?>').submit();});"><img src="Resource/Delete.png"></button>
                                 </form>
                                 <p></p>
                             </div>
@@ -694,7 +683,7 @@
                                     <input type="hidden" name="csrf_token" value="<?php echo XSS($_SESSION['CSRF_TOKEN'] ?? '');?>"/>
                                     <input type="hidden" name="reqact" value="deletefolder"/>
                                     <input type="hidden" name="idfile" value="<?php echo urlencode($show->id);?>"/>
-                                    <button type="button" class="btnsmall" title="Delete" onclick="showModalConfirmFolder('Are you sure you want to delete this folder? It also delete everything in the folder!', function() {document.getElementById('folderDelete_<?php echo XSS($show->id);?>').submit();});"><img src="Resource/Delete.png"></button>
+                                    <button type="button" class="btnsmall report" title="Delete" onclick="showModalConfirmFolder('Are you sure you want to delete this folder? It also delete everything in the folder!', function() {document.getElementById('folderDelete_<?php echo XSS($show->id);?>').submit();});"><img src="Resource/Delete.png"></button>
                                 </form>
                                 <p></p>
                             </div>
@@ -781,7 +770,6 @@
                 font-family: 'Roboto', sans-serif; 
                 font-weight: bold; 
                 margin-right: 10px; 
-                transition: 0.1s; 
                 cursor: pointer;
             }
             .del_button:hover {
@@ -796,8 +784,7 @@
                 color: white; 
                 border-radius: 5px;
                 font-family: 'Roboto', sans-serif; 
-                font-weight: bold; 
-                transition: 0.1s; 
+                font-weight: bold;
                 cursor: pointer;
             }
             .normal_button:hover {

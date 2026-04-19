@@ -75,7 +75,6 @@
             color: white;
             font-size: 15px;
             font-weight: bold;
-            transition: 0.1s;
         }
 
         .btn_card:hover {

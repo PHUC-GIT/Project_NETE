@@ -162,7 +162,6 @@ if (!$get_info) {
             font-size: 15px;
             font-weight: bold;
             margin-left: 5px;
-            transition: 0.1s;
             cursor: pointer;
         }
 
@@ -242,7 +241,6 @@ if (!$get_info) {
             background: transparent;
             fill: white;
             border-radius: 5px;
-            transition: 0.1s; 
             cursor: pointer;
         }
         .cross_button_header:hover {

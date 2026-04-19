@@ -58,7 +58,6 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             font-family: 'Roboto', sans-serif;
             font-size: 15px;
             font-weight: bold;
-            transition: 0.1s;
         }
 
         .btn_card:hover {
@@ -85,7 +84,7 @@ if (!defined('NETE_INTEGRITY_CHECK')) {
             Made By: <a class="Custom_Link" href="https://github.com/PHUC-GIT" target="_blank">PHUC-GIT </a>-<a class="Custom_Link" href="./LICENSE" target="_blank"> LICENSE</a><br>
             <br>
             Copyright © 2024-2026 PHUC-GIT. Licensed under the GNU Affero General Public License v3.0.<br>
-            Version: 0.6.1 (Not Release) - Build: 148.14042026<br> <!-- Always remember to changing this when you mess something in source. -->
+            Version: 0.6.1 (Not Release) - Build: 155.16042026<br> <!-- Always remember to changing this when you mess something in source. -->
             <br>
             <a class="Custom_Link" href="https://github.com/PHUC-GIT/Project_NETE" target="_blank">Project_NETE</a><br>
             <br>

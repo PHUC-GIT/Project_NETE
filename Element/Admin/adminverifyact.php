@@ -73,7 +73,7 @@
                             die;
                         }
                     }else{
-                        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Can't read the files");
+                        $_SESSION['MODAL_ERROR_MESSAGE'] = array(true, "Cant read the files");
                         header('location:../../login_admin.php');
                         die;
                     }
