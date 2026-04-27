@@ -3,15 +3,11 @@
 
 ---
 > ⚠️ **Noticed! from v0.2.0 the system change it store path that different from v0.1.6**
+> ⚠️ **Noticed! from v0.7.0 the system change it DB structure that different from v0.6.0**
 
-## 🗑️ When Deploying To Server
-Delete the following as they are not needed in production:
-- `Backup/` folder
-- `Extra/` folder
-- `.gitignore`
-- `.gitattributes`
-- `README`
-- This note file
+Important note: If you use v0.6.0 or below, please use the `migrate60.php` script located inside the `/Extra` folder.
+
+To Deploy, Just copy everything inside `/Deploy` to your server root.
 
 ---
 
@@ -65,8 +61,6 @@ Users can also change their password in Preferences.
 |---|---|---|
 | `1073741824` | Exactly 1GB | Typical user |
 | `104857600` | Exactly 100MB | Guest / Demo |
-
-> ⚠️ **Never let actual `user_id = 0` in the database**
 
 > 📝 When manually creating a user, remember to also create their row in the **preference table**. This is handled automatically when using the Admin user manager.
 
