@@ -75,7 +75,7 @@ Fun little built-ins:
 ## 📦 Installation (so simple that you might think this is a joke)
 
 ### 0. Pre Setup
-Get yourself Apache + PHP + MySQL stack. You can get XAMPP or Laragon, Then put whole folder inside www, htdocs.
+Get yourself Apache + PHP + MySQL stack. You can get XAMPP or Laragon, Then put whole system inside `/Deploy` folder inside www, htdocs.
 
 ### 1. Database Setup
 Create a database and import the schema provided in `Backup/`.
